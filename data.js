@@ -1,6 +1,6 @@
 // =============================================================================
 // Al-Tabakh Premium Catalog — Data Store
-// Last updated: 02/03/2026, 13:06:33
+// Last updated: 02/03/2026, 13:12:28
 // =============================================================================
 
 const db = {
@@ -41,7 +41,7 @@ const db = {
 
     products: [
         { id: '1', category_id: 'spices', name_en: 'Brown Biryani Seasoning', name_ar: 'بهارات برياني بني', desc_en: 'A premium blend of aromatic spices perfect for crafting authentic, flavorful Biryani dishes.', desc_ar: 'مزيج ممتاز من البهارات العطرية مثالي لتحضير أطباق برياني أصيلة ولذيذة.', weight: '40g', pieces_per_carton: '60', image_url: '' },
-        { id: '2', category_id: 'spices', name_en: 'Chicken Seasoning Mix', name_ar: 'بهارات دجاج', desc_en: 'Specially crafted mix to enhance the flavor of roasted, grilled or fried chicken.', desc_ar: 'مزيج معد خصيصًا لتعزيز نكهة الدجاج المحمص أو المشوي أو المقلي.', weight: '40g', pieces_per_carton: '60', image_url: '' },
+        { id: '2', category_id: 'spices', name_en: 'Chicken Seasoning', name_ar: 'بهارات دجاج', desc_en: 'Specially crafted mix to enhance the flavor of roasted, grilled or fried chicken.', desc_ar: 'مزيج معد خصيصًا لتعزيز نكهة الدجاج المحمص أو المشوي أو المقلي.', weight: '40g', pieces_per_carton: '60', image_url: '' },
         { id: '3', category_id: 'sauces', name_en: 'Pomegranate Syrup', name_ar: 'دبس الرمان', desc_en: 'Rich, tangy, and sweet pomegranate molasses, ideal for salads and marinades.', desc_ar: 'دبس رمان غني وحامض وحلو، مثالي للسلطات والتتبيلات.', weight: '675ml', pieces_per_carton: '12', image_url: '' },
         { id: '4', category_id: 'sauces', name_en: 'Lemon Alternative Sauce', name_ar: 'بديل الليمون', desc_en: 'A perfect cooking companion offering the tartness of fresh lemons.', desc_ar: 'رفيق طبخ مثالي يقدم حموضة الليمون الطازج.', weight: '350ml', pieces_per_carton: '24', image_url: '' },
         { id: '5', category_id: 'food', name_en: 'Sella Basmati Rice', name_ar: 'رز بسمتي سيلا', desc_en: 'Premium long-grain Sella Basmati rice, perfect for large gatherings and professional kitchens.', desc_ar: 'رز بسمتي سيلا ممتاز طويل الحبة، مثالي للتجمعات الكبيرة والمطابخ الاحترافية.', weight: '10kg', pieces_per_carton: '1', image_url: '' },
