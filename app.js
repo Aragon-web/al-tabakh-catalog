@@ -29,24 +29,70 @@ document.addEventListener('DOMContentLoaded', () => {
     initApp();
 });
 
-async function initApp() {
-    try {
-        db.products = await fetchProducts();
-        loader.classList.add('hidden');
-        renderCategories();
-        renderProducts();
-        setupEventListeners();
-        applyLanguage();
-    } catch (error) {
-        console.error('Failed to load products:', error);
-        // Use fallback
-        db.products = FALLBACK_PRODUCTS;
-        loader.classList.add('hidden');
-        renderCategories();
-        renderProducts();
-        setupEventListeners();
-        applyLanguage();
+function initApp() {
+    applyTheme();
+    applySiteContent();
+    loader.classList.add('hidden');
+    renderCategories();
+    renderProducts();
+    setupEventListeners();
+    applyLanguage();
+}
+
+// =============================================================================
+// Theme — Apply db.theme as CSS custom properties
+// =============================================================================
+function applyTheme() {
+    const t = db.theme;
+    const root = document.documentElement;
+    root.style.setProperty('--clr-brand-red', t.accentColor);
+    root.style.setProperty('--clr-brand-red-light', t.accentColorLight);
+    root.style.setProperty('--clr-brand-red-dark', t.accentColorDark);
+    root.style.setProperty('--clr-dark-base', t.bgColor);
+    root.style.setProperty('--clr-dark-surface', t.surfaceColor);
+    root.style.setProperty('--clr-dark-surface-2', t.surface2Color);
+    root.style.setProperty('--clr-dark-surface-3', t.surface3Color);
+    root.style.setProperty('--clr-navbar-bg', t.navbarColor || t.surfaceColor);
+}
+
+// =============================================================================
+// Site Content — Hero, footer, contact info
+// =============================================================================
+function applySiteContent() {
+    const s = db.siteContent;
+
+    // Logo
+    document.querySelectorAll('.logo-text, .footer-logo .logo-text').forEach(el => {
+        el.textContent = s.logoText;
+    });
+
+    // Hero image
+    const hero = document.querySelector('.hero');
+    if (hero && s.heroImage) {
+        hero.style.backgroundImage = `url('${s.heroImage}')`;
     }
+
+    // Contact badges / links (phone + instagram)
+    const phoneLinks = document.querySelectorAll('[data-contact="phone"]');
+    phoneLinks.forEach(el => {
+        el.href = `tel:${s.phoneRaw}`;
+        const span = el.querySelector('.contact-label');
+        if (span) span.textContent = s.phone;
+        else el.innerHTML = `<i class='bx bxs-phone'></i> ${s.phone}`;
+    });
+
+    const igLinks = document.querySelectorAll('[data-contact="instagram"]');
+    igLinks.forEach(el => {
+        el.href = `https://www.instagram.com/${s.instagram}`;
+        el.innerHTML = `<i class='bx bxl-instagram'></i> @${s.instagram}`;
+    });
+
+    const waLinks = document.querySelectorAll('[data-contact="whatsapp"]');
+    waLinks.forEach(el => {
+        el.href = `https://wa.me/${s.whatsapp}`;
+    });
+
+    // Footer about & copyright — updated via applyLanguage
 }
 
 // =============================================================================
@@ -84,17 +130,15 @@ function renderCategories() {
 function renderProducts() {
     productGrid.innerHTML = '';
 
-    let filteredProducts = db.products;
+    let filtered = db.products;
 
-    // Filter by category
     if (currentCategory !== 'all') {
-        filteredProducts = filteredProducts.filter(p => p.category_id === currentCategory);
+        filtered = filtered.filter(p => p.category_id === currentCategory);
     }
 
-    // Filter by search
     if (searchQuery.trim()) {
         const q = searchQuery.trim().toLowerCase();
-        filteredProducts = filteredProducts.filter(p =>
+        filtered = filtered.filter(p =>
             p.name_en.toLowerCase().includes(q) ||
             p.name_ar.includes(q) ||
             p.desc_en.toLowerCase().includes(q) ||
@@ -103,34 +147,33 @@ function renderProducts() {
         );
     }
 
-    // Update product count
     const t = db.translations[currentLang];
-    productCountEl.textContent = `${filteredProducts.length} ${t.productCount}`;
+    productCountEl.textContent = `${filtered.length} ${t.productCount}`;
 
-    if (filteredProducts.length === 0) {
+    if (filtered.length === 0) {
         productGrid.innerHTML = `
             <div class="empty-state">
                 <i class='bx bx-search-alt'></i>
-                <p>${searchQuery ? t.noResults : t.noResults}</p>
+                <p>${t.noResults}</p>
             </div>
         `;
         return;
     }
 
-    filteredProducts.forEach((product, index) => {
+    filtered.forEach((product, index) => {
         const card = document.createElement('div');
         card.className = 'product-card fade-in';
         card.style.animationDelay = `${index * 0.04}s`;
 
         const title = currentLang === 'en' ? product.name_en : product.name_ar;
         const imgSrc = product.image_url || '';
-        const hasImage = imgSrc.length > 0;
+        const hasImg = imgSrc.length > 0;
 
         card.innerHTML = `
             <div class="product-image-container">
-                ${hasImage
+                ${hasImg
                 ? `<img src="${imgSrc}" alt="${title}" class="product-image" loading="lazy"
-                           onerror="this.parentElement.innerHTML='<div class=\\'product-placeholder\\'><i class=\\'bx bx-image\\' ></i></div>'">`
+                           onerror="this.parentElement.innerHTML='<div class=\\'product-placeholder\\'><i class=\\'bx bx-image\\'></i></div>'">`
                 : `<div class="product-placeholder"><i class='bx bx-image'></i></div>`
             }
                 <div class="product-overlay"></div>
@@ -161,19 +204,19 @@ function openModal(product) {
     const catName = cat ? (currentLang === 'en' ? cat.name_en : cat.name_ar) : '';
     const t = db.translations[currentLang];
     const imgSrc = product.image_url || '';
-    const hasImage = imgSrc.length > 0;
+    const hasImg = imgSrc.length > 0;
 
-    // Build WhatsApp message
+    const s = db.siteContent;
     const waMsg = currentLang === 'en'
         ? `Hello! I'm interested in: ${product.name_en} (${product.weight}). Could you provide more details?`
         : `مرحباً! أنا مهتم بـ: ${product.name_ar} (${product.weight}). هل يمكنكم تقديم مزيد من التفاصيل؟`;
-    const waUrl = `${WHATSAPP_BASE}?text=${encodeURIComponent(waMsg)}`;
+    const waUrl = `https://wa.me/${s.whatsapp}?text=${encodeURIComponent(waMsg)}`;
 
     modalBody.innerHTML = `
         <div class="modal-img-container">
-            ${hasImage
+            ${hasImg
             ? `<img src="${imgSrc}" alt="${title}" class="modal-img"
-                       onerror="this.parentElement.innerHTML='<div class=\\'modal-placeholder\\'><i class=\\'bx bx-image\\' ></i></div>'">`
+                       onerror="this.parentElement.innerHTML='<div class=\\'modal-placeholder\\'><i class=\\'bx bx-image\\'></i></div>'">`
             : `<div class="modal-placeholder"><i class='bx bx-image'></i></div>`
         }
         </div>
@@ -181,7 +224,6 @@ function openModal(product) {
             <div class="modal-category">${catName}</div>
             <h2 class="modal-title">${title}</h2>
             <p class="modal-desc">${desc}</p>
-            
             <div class="spec-grid">
                 <div class="spec-item">
                     <span class="spec-label">${t.specWeight}</span>
@@ -192,7 +234,6 @@ function openModal(product) {
                     <span class="spec-val">${product.pieces_per_carton}</span>
                 </div>
             </div>
-            
             <div class="modal-actions">
                 <a href="${waUrl}" target="_blank" rel="noopener" class="btn-primary btn-whatsapp">
                     <i class='bx bxl-whatsapp'></i> ${t.btnInquire}
@@ -228,9 +269,7 @@ function setupEventListeners() {
     modalClose.addEventListener('click', closeModal);
     modalBackdrop.addEventListener('click', closeModal);
     document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && modal.classList.contains('active')) {
-            closeModal();
-        }
+        if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
     });
 
     // Search — debounced
@@ -243,24 +282,16 @@ function setupEventListeners() {
         }, 250);
     });
 
-    // Navbar scroll effect + scroll-to-top button
+    // Navbar scroll effect + scroll-to-top
     window.addEventListener('scroll', () => {
         const header = document.querySelector('.navbar');
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
+        if (window.scrollY > 50) header.classList.add('scrolled');
+        else header.classList.remove('scrolled');
 
-        // Show/hide scroll-to-top
-        if (window.scrollY > 600) {
-            scrollTopBtn.classList.add('visible');
-        } else {
-            scrollTopBtn.classList.remove('visible');
-        }
+        if (window.scrollY > 600) scrollTopBtn.classList.add('visible');
+        else scrollTopBtn.classList.remove('visible');
     });
 
-    // Scroll to top button
     scrollTopBtn.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
@@ -275,16 +306,32 @@ function applyLanguage() {
     document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
 
     const t = db.translations[currentLang];
+    const s = db.siteContent;
+
+    // i18n text elements
     document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
-        if (t[key]) el.textContent = t[key];
+        if (t[key] !== undefined) el.textContent = t[key];
     });
 
-    // Update placeholders
+    // Placeholders
     document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
         const key = el.getAttribute('data-i18n-placeholder');
         if (t[key]) el.placeholder = t[key];
     });
 
+    // Footer about
+    const footerAboutEl = document.querySelector('[data-i18n="footerAbout"]');
+    if (footerAboutEl) {
+        footerAboutEl.textContent = currentLang === 'en' ? s.footerAbout_en : s.footerAbout_ar;
+    }
+
+    // Copyright
+    const copyrightEl = document.querySelector('[data-i18n="footerRights"]');
+    if (copyrightEl) {
+        copyrightEl.textContent = currentLang === 'en' ? s.copyright_en : s.copyright_ar;
+    }
+
+    // Lang toggle button text
     langText.textContent = t.langToggle;
 }
