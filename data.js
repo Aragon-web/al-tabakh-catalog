@@ -1,43 +1,34 @@
 // =============================================================================
 // Al-Tabakh Premium Catalog — Data Store
-// All site content is managed here. Edit via admin.html or directly.
+// Last updated: 02/03/2026, 13:06:33
 // =============================================================================
 
 const db = {
 
-    // -------------------------------------------------------------------------
-    // Theme Colors (applied as CSS variables at runtime)
-    // -------------------------------------------------------------------------
     theme: {
-        accentColor: '#D11D1D',
-        accentColorLight: '#E93C3C',
-        accentColorDark: '#A51414',
-        bgColor: '#FFFFFF',
-        surfaceColor: '#F5F5F7',
-        surface2Color: '#EBEBEF',
-        surface3Color: '#DDDDE3',
-        navbarColor: 'rgba(245, 245, 247, 0.75)'
-    },
+        "accentColor": "#D11D1D",
+        "accentColorLight": "#E93C3C",
+        "accentColorDark": "#A51414",
+        "bgColor": "#FFFFFF",
+        "surfaceColor": "#F5F5F7",
+        "surface2Color": "#EBEBEF",
+        "surface3Color": "#DDDDE3",
+        "navbarColor": "rgba(245, 245, 247, 0.75)"
+},
 
-    // -------------------------------------------------------------------------
-    // Site Content (hero, footer, contact info)
-    // -------------------------------------------------------------------------
     siteContent: {
-        logoText: 'AL-TABAKH',
-        phone: '+964 770 888 8389',
-        phoneRaw: '+9647708888389',
-        whatsapp: '9647708888389',
-        instagram: 'altabakhfactory',
-        heroImage: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=80&w=2070&auto=format&fit=crop',
-        footerAbout_en: 'Malek Al-Tabakh Company — Premium food manufacturing since establishment. We craft the finest spices, sauces, and food supplies.',
-        footerAbout_ar: 'شركة ملك الطباخ — تصنيع غذائي متميز منذ التأسيس. نصنع أفضل البهارات والصلصات والمواد الغذائية.',
-        copyright_en: '© 2026 Malek Al-Tabakh Company. All rights reserved.',
-        copyright_ar: '© 2026 شركة ملك الطباخ. جميع الحقوق محفوظة.'
-    },
+        "logoText": "AL-TABAKH CAT",
+        "phone": "+964 770 888 8389",
+        "phoneRaw": "+9647708888389",
+        "whatsapp": "9647708888389",
+        "instagram": "altabakhfactory",
+        "heroImage": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=80&w=2070&auto=format&fit=crop",
+        "footerAbout_en": "Malek Al-Tabakh Company — Premium food manufacturing since establishment. We craft the finest spices, sauces, and food supplies.",
+        "footerAbout_ar": "شركة ملك الطباخ — تصنيع غذائي متميز منذ التأسيس. نصنع أفضل البهارات والصلصات والمواد الغذائية.",
+        "copyright_en": "© 2026 Malek Al-Tabakh Company. All rights reserved.",
+        "copyright_ar": "© 2026 شركة ملك الطباخ. جميع الحقوق محفوظة."
+},
 
-    // -------------------------------------------------------------------------
-    // Categories
-    // -------------------------------------------------------------------------
     categories: [
         { id: 'all', name_en: 'All Products', name_ar: 'جميع المنتجات', icon: 'bx-grid-alt' },
         { id: 'spices', name_en: 'Spices', name_ar: 'بهارات', icon: 'bxs-leaf' },
@@ -48,9 +39,6 @@ const db = {
         { id: 'food', name_en: 'Food Stuffs', name_ar: 'مواد غذائية', icon: 'bx-package' }
     ],
 
-    // -------------------------------------------------------------------------
-    // Products
-    // -------------------------------------------------------------------------
     products: [
         { id: '1', category_id: 'spices', name_en: 'Brown Biryani Seasoning', name_ar: 'بهارات برياني بني', desc_en: 'A premium blend of aromatic spices perfect for crafting authentic, flavorful Biryani dishes.', desc_ar: 'مزيج ممتاز من البهارات العطرية مثالي لتحضير أطباق برياني أصيلة ولذيذة.', weight: '40g', pieces_per_carton: '60', image_url: '' },
         { id: '2', category_id: 'spices', name_en: 'Chicken Seasoning Mix', name_ar: 'بهارات دجاج', desc_en: 'Specially crafted mix to enhance the flavor of roasted, grilled or fried chicken.', desc_ar: 'مزيج معد خصيصًا لتعزيز نكهة الدجاج المحمص أو المشوي أو المقلي.', weight: '40g', pieces_per_carton: '60', image_url: '' },
@@ -62,37 +50,34 @@ const db = {
         { id: '8', category_id: 'sweets', name_en: 'Chocolate Pudding Mix', name_ar: 'مسحوق بودينغ الشوكولاتة', desc_en: 'Rich and creamy chocolate pudding mix for a quick, decadent dessert.', desc_ar: 'مسحوق بودينغ الشوكولاتة الغني والكريمي لحلوى سريعة ولذيذة.', weight: '150g', pieces_per_carton: '36', image_url: '' }
     ],
 
-    // -------------------------------------------------------------------------
-    // Translations
-    // -------------------------------------------------------------------------
     translations: {
-        en: {
-            heroTitle: 'Premium Ingredients for Perfect Meals',
-            heroSubtitle: 'With Al-Tabakh, life has a different taste.',
-            btnInquire: 'Inquire via WhatsApp',
-            specWeight: 'Pack Weight',
-            specCarton: 'Pieces / Carton',
-            langToggle: 'العربية',
-            searchPlaceholder: 'Search products...',
-            productCount: 'products',
-            footerContact: 'Contact Us',
-            noResults: 'No products match your search.',
-            allProducts: 'All Products',
-            scrollTop: 'Back to top'
+        "en": {
+                "heroTitle": "Premium Ingredients for Perfect Meals",
+                "heroSubtitle": "With Al-Tabakh, life has a different taste.",
+                "btnInquire": "Inquire via WhatsApp",
+                "specWeight": "Pack Weight",
+                "specCarton": "Pieces / Carton",
+                "langToggle": "العربية",
+                "searchPlaceholder": "Search products...",
+                "productCount": "products",
+                "footerContact": "Contact Us",
+                "noResults": "No products match your search.",
+                "allProducts": "All Products",
+                "scrollTop": "Back to top"
         },
-        ar: {
-            heroTitle: 'مكونات ممتازة لوجبات مثالية',
-            heroSubtitle: 'مع الطباخ، للحياة طعم مختلف.',
-            btnInquire: 'استفسر عبر واتساب',
-            specWeight: 'وزن العبوة',
-            specCarton: 'قطعة / كارتون',
-            langToggle: 'English',
-            searchPlaceholder: 'ابحث عن المنتجات...',
-            productCount: 'منتج',
-            footerContact: 'اتصل بنا',
-            noResults: 'لا توجد منتجات تطابق بحثك.',
-            allProducts: 'جميع المنتجات',
-            scrollTop: 'العودة للأعلى'
+        "ar": {
+                "heroTitle": "مكونات ممتازة لوجبات مثالية",
+                "heroSubtitle": "مع الطباخ، للحياة طعم مختلف.",
+                "btnInquire": "استفسر عبر واتساب",
+                "specWeight": "وزن العبوة",
+                "specCarton": "قطعة / كارتون",
+                "langToggle": "English",
+                "searchPlaceholder": "ابحث عن المنتجات...",
+                "productCount": "منتج",
+                "footerContact": "اتصل بنا",
+                "noResults": "لا توجد منتجات تطابق بحثك.",
+                "allProducts": "جميع المنتجات",
+                "scrollTop": "العودة للأعلى"
         }
-    }
+}
 };
