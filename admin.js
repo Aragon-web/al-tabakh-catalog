@@ -12,6 +12,7 @@ let adminDb = null;
 let editingProductId = null;
 let editingCatId = null;
 let confirmCallback = null;
+let selectedProductIds = new Set();
 
 async function hashPassword(pwd) {
     if (window.crypto && window.crypto.subtle) {
@@ -133,9 +134,12 @@ function initAdminApp() {
     setupPreviewBtn();
     loadLocationsForm();
     setupLocationForm();
+    populateBatchCategorySelect();
+    setupBatchActions();
 
     document.getElementById('csvImport').addEventListener('change', handleCsvImport);
     document.getElementById('productSearch').addEventListener('input', (e) => {
+        selectedProductIds.clear();
         renderProductsTable(e.target.value);
     });
 }
@@ -193,7 +197,7 @@ function renderProductsTable(filter = '') {
 
     const tbody = document.getElementById('productsTableBody');
     if (list.length === 0) {
-        tbody.innerHTML = `<tr><td colspan="8" style="text-align:center;padding:2rem;color:var(--text-muted);">No products found.</td></tr>`;
+        tbody.innerHTML = `<tr><td colspan="9" style="text-align:center;padding:2rem;color:var(--text-muted);">No products found.</td></tr>`;
         return;
     }
 
@@ -202,8 +206,10 @@ function renderProductsTable(filter = '') {
             ? `<img src="${p.image_url}" class="td-img" onerror="this.style.display='none'" loading="lazy">`
             : `<div class="td-img-placeholder"><i class='bx bx-image'></i></div>`;
         const price = parseFloat(p.price) || 0;
+        const checked = selectedProductIds.has(p.id) ? 'checked' : '';
         return `
             <tr>
+                <td><input type="checkbox" class="product-checkbox" value="${p.id}" ${checked}></td>
                 <td>${imgHtml}</td>
                 <td class="truncate">${p.name_en}</td>
                 <td class="truncate">${p.name_ar}</td>
@@ -224,6 +230,90 @@ function renderProductsTable(filter = '') {
             </tr>
         `;
     }).join('');
+
+    const selectAll = document.getElementById('selectAllCheckbox');
+    const checkboxes = tbody.querySelectorAll('.product-checkbox');
+    const allChecked = checkboxes.length > 0 && Array.from(checkboxes).every(cb => cb.checked);
+    selectAll.checked = allChecked;
+
+    checkboxes.forEach(cb => {
+        cb.addEventListener('change', (e) => {
+            if (e.target.checked) {
+                selectedProductIds.add(e.target.value);
+            } else {
+                selectedProductIds.delete(e.target.value);
+            }
+            updateBatchBar();
+        });
+    });
+}
+
+function updateBatchBar() {
+    const bar = document.getElementById('batchBar');
+    const count = document.getElementById('selectedCount');
+    const visibleCheckboxes = document.querySelectorAll('#productsTableBody .product-checkbox');
+    const visibleSelected = Array.from(visibleCheckboxes).filter(cb => cb.checked).length;
+    count.textContent = `${visibleSelected} selected`;
+    if (visibleSelected > 0) {
+        bar.classList.remove('hidden');
+    } else {
+        bar.classList.add('hidden');
+    }
+}
+
+function setupBatchActions() {
+    document.getElementById('selectAllCheckbox').addEventListener('change', (e) => {
+        const checkboxes = document.querySelectorAll('#productsTableBody .product-checkbox');
+        checkboxes.forEach(cb => {
+            cb.checked = e.target.checked;
+            if (e.target.checked) {
+                selectedProductIds.add(cb.value);
+            } else {
+                selectedProductIds.delete(cb.value);
+            }
+        });
+        updateBatchBar();
+    });
+
+    document.getElementById('batchClearBtn').addEventListener('click', () => {
+        selectedProductIds.clear();
+        document.getElementById('selectAllCheckbox').checked = false;
+        document.querySelectorAll('#productsTableBody .product-checkbox').forEach(cb => cb.checked = false);
+        updateBatchBar();
+    });
+
+    document.getElementById('batchApplyBtn').addEventListener('click', () => {
+        const catId = document.getElementById('batchCategorySelect').value;
+        if (!catId) {
+            toast('Please select a category first.', 'warning');
+            return;
+        }
+        const ids = Array.from(selectedProductIds);
+        if (ids.length === 0) {
+            toast('No products selected.', 'warning');
+            return;
+        }
+        ids.forEach(id => {
+            const prod = adminDb.products.find(p => p.id === id);
+            if (prod) prod.category_id = catId;
+        });
+        const cat = adminDb.categories.find(c => c.id === catId);
+        toast(`Assigned ${ids.length} product(s) to "${cat ? cat.name_en : catId}"`, 'success');
+        selectedProductIds.clear();
+        document.getElementById('selectAllCheckbox').checked = false;
+        renderProductsTable(document.getElementById('productSearch').value);
+        renderDashboard();
+        renderCategoriesTable();
+    });
+}
+
+function populateBatchCategorySelect() {
+    const sel = document.getElementById('batchCategorySelect');
+    sel.innerHTML = '<option value="">— Assign category —</option>' +
+        adminDb.categories
+            .filter(c => c.id !== 'all')
+            .map(c => `<option value="${c.id}">${c.name_en}</option>`)
+            .join('');
 }
 
 function setupProductModal() {
