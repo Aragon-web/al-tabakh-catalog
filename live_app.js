@@ -20,7 +20,7 @@ const scrollTopBtn = document.getElementById('scrollTopBtn');
 // =============================================================================
 // State
 // =============================================================================
-let currentLang = 'en';
+let currentLang = 'ar';
 let currentCategory = 'all';
 let searchQuery = '';
 
