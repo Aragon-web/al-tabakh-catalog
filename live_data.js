@@ -1,19 +1,27 @@
+// =============================================================================
+// Al-Tabakh Premium Catalog — Data Store
+// All site content is managed here. Edit via admin.html or directly.
+// =============================================================================
+
 const db = {
+
+    // -------------------------------------------------------------------------
+    // Theme Colors (applied as CSS variables at runtime)
+    // -------------------------------------------------------------------------
     theme: {
         accentColor: '#D11D1D',
         accentColorLight: '#E93C3C',
         accentColorDark: '#A51414',
-        bgColor: '#0D0D12',
-        surfaceColor: '#16161E',
-        surface2Color: '#1E1E2A',
-        surface3Color: '#262635',
-        navbarColor: 'rgba(22, 22, 30, 0.75)',
-        textPrimary: '#F0F0F5',
-        textSecondary: 'rgba(240, 240, 245, 0.70)',
-        textMuted: 'rgba(240, 240, 245, 0.45)',
-        borderColor: 'rgba(255, 255, 255, 0.10)'
+        bgColor: '#FFFFFF',
+        surfaceColor: '#F5F5F7',
+        surface2Color: '#EBEBEF',
+        surface3Color: '#DDDDE3',
+        navbarColor: 'rgba(245, 245, 247, 0.75)'
     },
 
+    // -------------------------------------------------------------------------
+    // Site Content (hero, footer, contact info)
+    // -------------------------------------------------------------------------
     siteContent: {
         logoText: 'AL-TABAKH',
         phone: '+964 770 888 8389',
@@ -27,6 +35,9 @@ const db = {
         copyright_ar: '© 2026 شركة ملك الطباخ. جميع الحقوق محفوظة.'
     },
 
+    // -------------------------------------------------------------------------
+    // Categories
+    // -------------------------------------------------------------------------
     categories: [
         { id: 'all', name_en: 'All Products', name_ar: 'جميع المنتجات', icon: 'bx-grid-alt' },
         { id: 'cat_57', name_en: 'Spices', name_ar: 'البهارات', icon: 'bx-shield-quarter' },
@@ -46,6 +57,9 @@ const db = {
         { id: 'cat_113', name_en: 'Vinger and Citrus', name_ar: 'الخل و الحوامض', icon: 'bx-droplet' },
         { id: 'cat_968', name_en: 'special sauces', name_ar: 'صلصات مميزة', icon: 'bx-droplet' }
     ],
+    // -------------------------------------------------------------------------
+    // Products
+    // -------------------------------------------------------------------------
     products: [
         { id: '9086', category_id: 'all', name_en: 'Pizza Sauce', name_ar: 'صلصة البيتزا', desc_en: 'Weight : 450 g\nPieces  NO : 12', desc_ar: 'الوزن : 450 غم\nالعدد : 12', weight: '450 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1768997860صلصة البيتزا.png' },
         { id: '9085', category_id: 'all', name_en: 'Smoked Sas', name_ar: 'صاص مدخن', desc_en: 'Weight : 425 g\nPieces  NO : 12', desc_ar: 'الوزن : 425 غم\nالعدد : 12', weight: '425 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1768996183صاص مدخن.png' },
@@ -529,6 +543,9 @@ const db = {
         { id: '210', category_id: 'all', name_en: 'Saffron', name_ar: 'زعفران', desc_en: 'Weight : 10 g\nPieces  NO : 12', desc_ar: 'الوزن : 10 غم\nالعدد : 12', weight: '10 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703939870505.png' },
         { id: '209', category_id: 'all', name_en: 'Citric Acid', name_ar: 'ليمون دوزي', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703939792119.png' }
     ],
+    // -------------------------------------------------------------------------
+    // Translations
+    // -------------------------------------------------------------------------
     themePresets: [
         {
             id: 'dark',
@@ -629,6 +646,9 @@ const db = {
             btnInquire: 'Inquire via WhatsApp',
             specWeight: 'Pack Weight',
             specCarton: 'Pieces / Carton',
+            locations: 'Our Locations',
+            locationsTitle: 'Our Sales Network',
+            locationsDesc: 'Find Al-Tabakh sales centers across Iraq',
             langToggle: 'العربية',
             searchPlaceholder: 'Search products...',
             productCount: 'products',
@@ -636,9 +656,6 @@ const db = {
             noResults: 'No products match your search.',
             allProducts: 'All Products',
             scrollTop: 'Back to top',
-            locations: 'Our Locations',
-            locationsTitle: 'Our Sales Network',
-            locationsDesc: 'Find Al-Tabakh sales centers across Iraq',
             cart: 'Cart',
             cartEmpty: 'Your cart is empty',
             cartTotal: 'Total',
@@ -662,13 +679,13 @@ const db = {
         },
         ar: {
             heroTitle: 'مكونات ممتازة لوجبات مثالية',
-            locations: 'فروعنا',
-            locationsTitle: 'شبكة مبيعاتنا',
-            locationsDesc: 'اعثر على مراكز مبيعات الطباخ في جميع أنحاء العراق',
             heroSubtitle: 'مع الطباخ، للحياة طعم مختلف.',
             btnInquire: 'استفسر عبر واتساب',
             specWeight: 'وزن العبوة',
             specCarton: 'قطعة / كارتون',
+            locations: 'فروعنا',
+            locationsTitle: 'شبكة مبيعاتنا',
+            locationsDesc: 'اعثر على مراكز مبيعات الطباخ في جميع أنحاء العراق',
             langToggle: 'English',
             searchPlaceholder: 'ابحث عن المنتجات...',
             productCount: 'منتج',

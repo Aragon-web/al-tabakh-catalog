@@ -22,12 +22,9 @@
         rel="stylesheet">
     <!-- Boxicons -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <!-- Leaflet -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <!-- Styles -->
-    <link rel="stylesheet" href="./style.css?v=2.0">
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="alternate icon" href="favicon.ico">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 
 <body class="theme-dark lang-en">
@@ -55,13 +52,6 @@
                         <div class="theme-options" id="themeOptions"></div>
                     </div>
                 </div>
-                <button id="locationsToggle" class="btn-icon" aria-label="Our Locations">
-                    <i class='bx bx-map'></i>
-                </button>
-                <button id="cartToggle" class="btn-icon" aria-label="Open Cart">
-                    <i class='bx bx-cart'></i>
-                    <span class="cart-badge" id="cartBadge">0</span>
-                </button>
                 <button id="langToggle" class="btn-icon" aria-label="Toggle Language">
                     <i class='bx bx-globe'></i>
                     <span class="lang-text">العربية</span>
@@ -119,19 +109,6 @@
         </section>
     </main>
 
-    <!-- Locations Map Section -->
-    <section class="locations-section" id="locationsSection">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title" data-i18n="locationsTitle">Our Sales Network</h2>
-                <p class="locations-desc" data-i18n="locationsDesc">Find Al-Tabakh sales centers across Iraq</p>
-            </div>
-            <div class="map-wrapper">
-                <div id="map"></div>
-            </div>
-        </div>
-    </section>
-
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-wave">
@@ -157,12 +134,12 @@
                             <a data-contact="phone"><i class='bx bxs-phone'></i> +964 770 888 8389</a>
                         </li>
                         <li>
-                            <a data-contact="instagram" target="_blank" rel="noopener"><i class='bx bxl-instagram'></i>
-                                @altabakhfactory</a>
+                            <a data-contact="instagram" target="_blank" rel="noopener"><i
+                                    class='bx bxl-instagram'></i> @altabakhfactory</a>
                         </li>
                         <li>
-                            <a data-contact="whatsapp" target="_blank" rel="noopener"><i class='bx bxl-whatsapp'></i>
-                                WhatsApp</a>
+                            <a data-contact="whatsapp" target="_blank" rel="noopener"><i
+                                    class='bx bxl-whatsapp'></i> WhatsApp</a>
                         </li>
                     </ul>
                 </div>
@@ -189,70 +166,9 @@
         <i class='bx bx-chevron-up'></i>
     </button>
 
-    <!-- Cart Drawer -->
-    <div class="cart-overlay" id="cartOverlay"></div>
-    <div class="cart-drawer" id="cartDrawer">
-        <div class="cart-header">
-            <h3 class="cart-title" data-i18n="cart">Cart</h3>
-            <button class="btn-icon-only cart-close" id="cartClose"><i class='bx bx-x'></i></button>
-        </div>
-        <div class="cart-items" id="cartItems">
-            <div class="cart-empty" data-i18n="cartEmpty">Your cart is empty</div>
-        </div>
-        <div class="cart-footer">
-            <div class="cart-total-row">
-                <span data-i18n="cartTotal">Total</span>
-                <span id="cartTotalAmount">$0.00</span>
-            </div>
-            <button class="btn-primary btn-checkout" id="checkoutBtn">
-                <i class='bx bx-receipt'></i> <span data-i18n="checkout">Generate Order</span>
-            </button>
-        </div>
-    </div>
-
-    <!-- Order Preview Modal -->
-    <div class="order-overlay" id="orderOverlay">
-        <div class="order-modal">
-            <div class="order-modal-header">
-                <h3 data-i18n="orderTitle">Purchase Order</h3>
-                <button class="btn-icon-only" id="orderClose"><i class='bx bx-x'></i></button>
-            </div>
-            <div class="order-body" id="orderBody">
-                <div class="order-info">
-                    <div><strong data-i18n="orderDate">Date</strong>: <span id="orderDate"></span></div>
-                    <div><strong data-i18n="orderCustomer">Customer</strong>: <input type="text" id="orderCustomerName" class="order-input" placeholder="Enter your name or company"></div>
-                </div>
-                <div class="order-table-wrapper" id="orderTableWrapper"></div>
-                <div class="order-total-line" id="orderTotalLine"></div>
-                <p class="order-note" data-i18n="orderNote">Please send this order to the factory for processing.</p>
-            </div>
-            <div class="order-modal-footer">
-                <button class="btn btn-ghost" id="orderCsvBtn"><i class='bx bx-file'></i> <span data-i18n="downloadCsv">Download CSV</span></button>
-                <button class="btn btn-primary" id="orderPrintBtn"><i class='bx bx-printer'></i> <span data-i18n="printPdf">Print / Save as PDF</span></button>
-            </div>
-        </div>
-    </div>
-
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <!-- Analytics (configured via admin panel) -->
-    <script>
-        (function() {
-            var gaId = localStorage.getItem('atk_ga_id');
-            if (gaId) {
-                var s = document.createElement('script');
-                s.async = true;
-                s.src = 'https://www.googletagmanager.com/gtag/js?id=' + gaId;
-                document.head.appendChild(s);
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', gaId);
-            }
-        })();
-    </script>
     <!-- Scripts -->
-    <script src="./data.js?v=2.0"></script>
-    <script src="./app.js?v=2.0"></script>
+    <script src="./data.js"></script>
+    <script src="./app.js"></script>
 </body>
 
 </html>

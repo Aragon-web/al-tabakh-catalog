@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Al-Tabakh Admin Panel</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="./admin.css">
+</head>
+
+<body>
+
+    <!-- =====================================================================
+     LOGIN SCREEN
+     ===================================================================== -->
+    <div id="loginScreen">
+        <div class="login-card">
+            <div class="login-logo"><i class='bx bxs-lock-alt'></i></div>
+            <h1>Admin Panel</h1>
+            <p>Al-Tabakh Premium Catalog</p>
+            <div class="login-field">
+                <i class='bx bx-key'></i>
+                <input type="password" id="loginPassword" placeholder="Enter admin password"
+                    autocomplete="current-password">
+            </div>
+            <div class="login-error" id="loginError">Incorrect password. Try again.</div>
+            <button class="btn-login" id="loginBtn">
+                <i class='bx bx-log-in'></i> Sign In
+            </button>
+        </div>
+    </div>
+
+    <!-- =====================================================================
+     APP SHELL
+     ===================================================================== -->
+    <div id="appShell">
+
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo-icon"><i class='bx bxs-leaf'></i></div>
+                <div>
+                    <div class="sidebar-brand">AL-TABAKH</div>
+                </div>
+                <span class="sidebar-badge">ADMIN</span>
+            </div>
+            <nav class="sidebar-nav">
+                <div class="nav-section-label">Dashboard</div>
+                <button class="nav-item active" data-panel="dashboard">
+                    <i class='bx bx-home-alt'></i> Dashboard
+                </button>
+                <div class="nav-section-label">Catalog</div>
+                <button class="nav-item" data-panel="products">
+                    <i class='bx bx-package'></i> Products
+                </button>
+                <button class="nav-item" data-panel="categories">
+                    <i class='bx bx-category'></i> Categories
+                </button>
+                <div class="nav-section-label">Site</div>
+                <button class="nav-item" data-panel="locations">
+                    <i class='bx bx-map'></i> Locations
+                </button>
+                <button class="nav-item" data-panel="siteContent">
+                    <i class='bx bx-globe'></i> Site Content
+                </button>
+                <button class="nav-item" data-panel="theme">
+                    <i class='bx bx-palette'></i> Theme & Colors
+                </button>
+                <button class="nav-item" data-panel="translations">
+                    <i class='bx bx-world'></i> Translations
+                </button>
+                <div class="nav-section-label">System</div>
+                <button class="nav-item" data-panel="settings">
+                    <i class='bx bx-cog'></i> Settings
+                </button>
+            </nav>
+            <div class="sidebar-footer">
+                <button class="nav-item" id="logoutBtn">
+                    <i class='bx bx-log-out'></i> Logout
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Area -->
+        <div class="main-area">
+            <div class="topbar">
+                <div class="flex-center">
+                    <button class="btn-icon-only" id="sidebarToggle" style="display:none;">
+                        <i class='bx bx-menu'></i>
+                    </button>
+                    <span class="topbar-title" id="topbarTitle">Dashboard</span>
+                </div>
+                <div class="topbar-actions">
+                    <button class="btn btn-ghost" id="previewBtn"
+                        title="Preview your changes in a new tab">
+                        <i class='bx bx-show'></i> Preview
+                    </button>
+                    <button class="btn btn-ghost" id="exportBtn"
+                        title="Download updated data.js to replace your local file">
+                        <i class='bx bx-download'></i> Export data.js
+                    </button>
+                    <button class="btn btn-success" id="syncBtn">
+                        <i class='bx bx-cloud-upload'></i> Save & Sync to GitHub
+                    </button>
+                </div>
+            </div>
+
+            <!-- ============================================================
+             DASHBOARD
+             ============================================================ -->
+            <div class="page-panel active" id="panel-dashboard">
+                <div class="page-header">
+                    <div>
+                        <h2>Welcome back 👋</h2>
+                        <p>Here's an overview of your catalog.</p>
+                    </div>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon red"><i class='bx bx-package'></i></div>
+                        <div>
+                            <div class="stat-val" id="stat-products">0</div>
+                            <div class="stat-label">Total Products</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon blue"><i class='bx bx-category'></i></div>
+                        <div>
+                            <div class="stat-val" id="stat-categories">0</div>
+                            <div class="stat-label">Categories</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon green"><i class='bx bx-image'></i></div>
+                        <div>
+                            <div class="stat-val" id="stat-withimg">0</div>
+                            <div class="stat-label">With Images</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon yellow"><i class='bx bx-cloud'></i></div>
+                        <div>
+                            <div class="stat-val" id="stat-sync">—</div>
+                            <div class="stat-label">Last Synced</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header"><span class="card-title">Recent Products</span></div>
+                    <div id="recentProducts"></div>
+                </div>
+            </div>
+
+            <!-- ============================================================
+             PRODUCTS
+             ============================================================ -->
+            <div class="page-panel" id="panel-products">
+                <div class="page-header">
+                    <div>
+                        <h2>Products</h2>
+                        <p>Add, edit, or remove products from your catalog.</p>
+                    </div>
+                    <div class="flex-center" style="gap:0.6rem;">
+                        <label class="btn btn-ghost btn-sm" style="cursor:pointer;">
+                            <i class='bx bx-import'></i> Import CSV
+                            <input type="file" id="csvImport" accept=".csv" style="display:none;">
+                        </label>
+                        <button class="btn btn-primary" id="addProductBtn">
+                            <i class='bx bx-plus'></i> Add Product
+                        </button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <span class="card-title" id="productsCountLabel">Products</span>
+                        <div class="table-search">
+                            <i class='bx bx-search'></i>
+                            <input type="text" id="productSearch" placeholder="Search products...">
+                        </div>
+                    </div>
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Image</th>
+                                    <th>Name (EN)</th>
+                                    <th>Name (AR)</th>
+                                    <th>Category</th>
+                                    <th>Weight</th>
+                                    <th>Pcs/Carton</th>
+                                    <th>Price</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="productsTableBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================================
+             CATEGORIES
+             ============================================================ -->
+            <div class="page-panel" id="panel-categories">
+                <div class="page-header">
+                    <div>
+                        <h2>Categories</h2>
+                        <p>Manage the category navigation of your catalog.</p>
+                    </div>
+                    <button class="btn btn-primary" id="addCatBtn">
+                        <i class='bx bx-plus'></i> Add Category
+                    </button>
+                </div>
+                <div class="card">
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Icon</th>
+                                    <th>ID</th>
+                                    <th>Name (EN)</th>
+                                    <th>Name (AR)</th>
+                                    <th>Products</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="categoriesTableBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================================
+             LOCATIONS
+             ============================================================ -->
+            <div class="page-panel" id="panel-locations">
+                <div class="page-header">
+                    <div>
+                        <h2>Sales Locations</h2>
+                        <p>Manage sales center locations shown on the Iraq map.</p>
+                    </div>
+                </div>
+                <div class="glass-card" style="padding:1.5rem">
+                    <div id="locationsList"></div>
+                    <hr style="border-color:var(--border-color,#2A2A3E);margin:1.5rem 0">
+                    <h3>Add / Edit Location</h3>
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem">
+                        <div class="field-group">
+                            <label>City Name (English)</label>
+                            <input type="text" id="locNameEn" placeholder="e.g. Baghdad">
+                        </div>
+                        <div class="field-group">
+                            <label>City Name (Arabic)</label>
+                            <input type="text" id="locNameAr" placeholder="مثال: بغداد">
+                        </div>
+                        <div class="field-group">
+                            <label>Latitude</label>
+                            <input type="number" id="locLat" step="any" placeholder="e.g. 33.3152">
+                        </div>
+                        <div class="field-group">
+                            <label>Longitude</label>
+                            <input type="number" id="locLng" step="any" placeholder="e.g. 44.3661">
+                        </div>
+                        <div class="field-group">
+                            <label>Label (English)</label>
+                            <input type="text" id="locLabelEn" placeholder="e.g. Sales Center">
+                        </div>
+                        <div class="field-group">
+                            <label>Label (Arabic)</label>
+                            <input type="text" id="locLabelAr" placeholder="مثال: مركز مبيعات">
+                        </div>
+                        <div class="field-group" style="align-self:end">
+                            <label>
+                                <input type="checkbox" id="locIsMain"> Main Center
+                            </label>
+                        </div>
+                        <div class="field-group" style="display:flex;gap:0.5rem;align-self:end">
+                            <button class="btn-primary" id="locSaveBtn" style="font-size:0.9rem;padding:0.7rem 1.5rem"><i class='bx bx-save'></i> Save Location</button>
+                            <button class="btn-secondary" id="locCancelBtn" style="font-size:0.9rem;padding:0.7rem 1.5rem">Cancel</button>
+                        </div>
+                    </div>
+                    <input type="hidden" id="locEditId" value="">
+                </div>
+            </div>
+
+            <!-- ============================================================
+             SITE CONTENT
+             ============================================================ -->
+            <div class="page-panel" id="panel-siteContent">
+                <div class="page-header">
+                    <div>
+                        <h2>Site Content</h2>
+                        <p>Edit text, contact info, and branding.</p>
+                    </div>
+                    <button class="btn btn-primary" id="saveSiteContentBtn">
+                        <i class='bx bx-save'></i> Save Changes
+                    </button>
+                </div>
+                <div class="card">
+                    <div class="card-header"><span class="card-title">Branding</span></div>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Logo Text</label>
+                            <input type="text" class="form-control" id="sc-logoText">
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header"><span class="card-title">Hero Section</span></div>
+                    <div class="form-grid">
+                        <div class="form-group full">
+                            <label>Hero Image URL</label>
+                            <input type="text" class="form-control" id="sc-heroImage" placeholder="https://...">
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header"><span class="card-title">Contact Information</span></div>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Phone (display)</label>
+                            <input type="text" class="form-control" id="sc-phone" placeholder="+964 770 888 8389">
+                        </div>
+                        <div class="form-group">
+                            <label>Phone (raw, for tel: link)</label>
+                            <input type="text" class="form-control" id="sc-phoneRaw" placeholder="+9647708888389">
+                        </div>
+                        <div class="form-group">
+                            <label>WhatsApp Number (digits only)</label>
+                            <input type="text" class="form-control" id="sc-whatsapp" placeholder="9647708888389">
+                        </div>
+                        <div class="form-group">
+                            <label>Instagram Handle (no @)</label>
+                            <input type="text" class="form-control" id="sc-instagram" placeholder="altabakhfactory">
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header"><span class="card-title">Footer Text</span></div>
+                    <div class="form-grid">
+                        <div class="form-group full">
+                            <label>About (English)</label>
+                            <textarea class="form-control" id="sc-footerAbout_en"></textarea>
+                        </div>
+                        <div class="form-group full">
+                            <label>About (Arabic)</label>
+                            <textarea class="form-control" id="sc-footerAbout_ar"
+                                style="direction:rtl;text-align:right;"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Copyright (English)</label>
+                            <input type="text" class="form-control" id="sc-copyright_en">
+                        </div>
+                        <div class="form-group">
+                            <label>Copyright (Arabic)</label>
+                            <input type="text" class="form-control" id="sc-copyright_ar"
+                                style="direction:rtl;text-align:right;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================================
+             THEME & COLORS
+             ============================================================ -->
+            <div class="page-panel" id="panel-theme">
+                <div class="page-header">
+                    <div>
+                        <h2>Theme & Colors</h2>
+                        <p>Customize the visual identity of your catalog.</p>
+                    </div>
+                    <button class="btn btn-primary" id="saveThemeBtn">
+                        <i class='bx bx-save'></i> Save Changes
+                    </button>
+                </div>
+                <div class="card">
+                    <div class="card-header"><span class="card-title">Brand Colors</span></div>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Accent Color (Main Brand)</label>
+                            <div class="color-row">
+                                <input type="color" id="th-accentColor">
+                                <input type="text" class="form-control" id="th-accentColor-hex" placeholder="#D11D1D">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Accent Light</label>
+                            <div class="color-row">
+                                <input type="color" id="th-accentColorLight">
+                                <input type="text" class="form-control" id="th-accentColorLight-hex"
+                                    placeholder="#E93C3C">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Accent Dark</label>
+                            <div class="color-row">
+                                <input type="color" id="th-accentColorDark">
+                                <input type="text" class="form-control" id="th-accentColorDark-hex"
+                                    placeholder="#A51414">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header"><span class="card-title">Background Colors</span></div>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Page Background</label>
+                            <div class="color-row">
+                                <input type="color" id="th-bgColor">
+                                <input type="text" class="form-control" id="th-bgColor-hex" placeholder="#0D0D12">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Surface Color</label>
+                            <div class="color-row">
+                                <input type="color" id="th-surfaceColor">
+                                <input type="text" class="form-control" id="th-surfaceColor-hex" placeholder="#16161E">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Surface 2</label>
+                            <div class="color-row">
+                                <input type="color" id="th-surface2Color">
+                                <input type="text" class="form-control" id="th-surface2Color-hex" placeholder="#1E1E2A">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Surface 3</label>
+                            <div class="color-row">
+                                <input type="color" id="th-surface3Color">
+                                <input type="text" class="form-control" id="th-surface3Color-hex" placeholder="#262635">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Navbar Background</label>
+                            <div class="color-row">
+                                <input type="color" id="th-navbarColor">
+                                <input type="text" class="form-control" id="th-navbarColor-hex" placeholder="#16161E">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header"><span class="card-title">Text Colors</span></div>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Text Primary</label>
+                            <div class="color-row">
+                                <input type="color" id="th-textPrimary">
+                                <input type="text" class="form-control" id="th-textPrimary-hex" placeholder="#F0F0F5">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Border Color</label>
+                            <div class="color-row">
+                                <input type="color" id="th-borderColor" value="#ffffff">
+                                <input type="text" class="form-control" id="th-borderColor-hex" placeholder="rgba(255,255,255,0.10)">
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-muted" style="font-size:0.78rem;margin-top:0.5rem;">
+                        Secondary and muted text colors are derived from the primary color with opacity. Border color uses the hex value with low opacity.
+                    </p>
+                </div>
+            </div>
+
+            <!-- ============================================================
+             TRANSLATIONS
+             ============================================================ -->
+            <div class="page-panel" id="panel-translations">
+                <div class="page-header">
+                    <div>
+                        <h2>Translations</h2>
+                        <p>Edit all UI text in English and Arabic.</p>
+                    </div>
+                    <button class="btn btn-primary" id="saveTranslationsBtn">
+                        <i class='bx bx-save'></i> Save Changes
+                    </button>
+                </div>
+                <div id="translationsContainer"></div>
+            </div>
+
+            <!-- ============================================================
+             SETTINGS
+             ============================================================ -->
+            <div class="page-panel" id="panel-settings">
+                <div class="page-header">
+                    <div>
+                        <h2>Settings</h2>
+                        <p>Configure GitHub sync and admin password.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header"><span class="card-title"><i class='bx bxl-github'></i> GitHub Sync</span>
+                    </div>
+                    <p class="text-muted" style="font-size:0.84rem;margin-bottom:1rem;">
+                        Connect to your GitHub repository so "Save & Sync" automatically updates your live site.
+                        <br>Generate a <strong>Personal Access Token</strong> at: GitHub → Settings → Developer settings
+                        → Tokens (classic) → with <strong>repo</strong> scope.
+                    </p>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>GitHub Username</label>
+                            <input type="text" class="form-control" id="gh-username" placeholder="your-github-username">
+                        </div>
+                        <div class="form-group">
+                            <label>Repository Name</label>
+                            <input type="text" class="form-control" id="gh-repo" placeholder="Al-Tabakh-Catalog">
+                        </div>
+                        <div class="form-group">
+                            <label>Branch</label>
+                            <input type="text" class="form-control" id="gh-branch" placeholder="main">
+                        </div>
+                        <div class="form-group">
+                            <label>Personal Access Token</label>
+                            <input type="password" class="form-control" id="gh-token"
+                                placeholder="ghp_xxxxxxxxxxxxxxxx">
+                        </div>
+                    </div>
+                    <div class="flex-center mt-2">
+                        <button class="btn btn-secondary" id="saveGithubBtn">
+                            <i class='bx bx-save'></i> Save GitHub Settings
+                        </button>
+                        <button class="btn btn-ghost" id="testGithubBtn">
+                            <i class='bx bx-plug'></i> Test Connection
+                        </button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header"><span class="card-title"><i class='bx bx-lock'></i> Change Password</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-note">
+                            <i class='bx bx-shield'></i> Password is stored as a SHA-256 hash in browser localStorage. This provides better security than plaintext but a true backend is recommended for production.
+                        </div>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label>New Password</label>
+                                <input type="password" class="form-control" id="newPassword"
+                                    placeholder="Enter new password">
+                            </div>
+                            <div class="form-group">
+                                <label>Confirm Password</label>
+                                <input type="password" class="form-control" id="confirmPassword"
+                                    placeholder="Confirm new password">
+                            </div>
+                        </div>
+                        <div class="mt-2">
+                            <button class="btn btn-secondary" id="changePasswordBtn">
+                                <i class='bx bx-key'></i> Change Password
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header"><span class="card-title"><i class='bx bx-line-chart'></i> Analytics</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="text-muted" style="font-size:0.84rem;margin-bottom:1rem;">
+                            Enable Google Analytics tracking for your live catalog. Enter your Measurement ID (e.g., <strong>G-XXXXXXXXXX</strong>).
+                            Leave blank to disable.
+                        </p>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label>Google Analytics ID</label>
+                                <input type="text" class="form-control" id="ga-id" placeholder="G-XXXXXXXXXX">
+                            </div>
+                        </div>
+                        <div class="mt-2">
+                            <button class="btn btn-secondary" id="saveGaBtn">
+                                <i class='bx bx-save'></i> Save Analytics Setting
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header"><span class="card-title"><i class='bx bx-info-circle'></i> About</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="text-muted" style="font-size:0.88rem;line-height:1.7;">
+                            <strong>Al-Tabakh Premium Catalog alpha v2</strong><br>
+                            A serverless product catalog with built-in admin panel.<br><br>
+                            <strong>Deployment:</strong> Commit to GitHub and enable GitHub Pages, or upload to any static hosting (Netlify, Vercel, Cloudflare Pages).<br>
+                            <strong>Setup:</strong> Configure GitHub credentials in Settings → GitHub Sync, then use "Save & Sync" to publish changes.<br>
+                            <strong>Security:</strong> For production, replace the client-side auth with a proper backend.
+                        </p>
+                    </div>
+                </div>
+            </div>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>New Password</label>
+                            <input type="password" class="form-control" id="newPassword"
+                                placeholder="Enter new password">
+                        </div>
+                        <div class="form-group">
+                            <label>Confirm Password</label>
+                            <input type="password" class="form-control" id="confirmPassword"
+                                placeholder="Confirm new password">
+                        </div>
+                    </div>
+                    <div class="mt-2">
+                        <button class="btn btn-secondary" id="changePasswordBtn">
+                            <i class='bx bx-key'></i> Change Password
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- /main-area -->
+    </div><!-- /appShell -->
+
+    <!-- =====================================================================
+     PRODUCT MODAL
+     ===================================================================== -->
+    <div class="admin-modal-overlay" id="productModal">
+        <div class="admin-modal">
+            <div class="admin-modal-header">
+                <h3 id="productModalTitle">Add Product</h3>
+                <button class="btn-icon-only" id="closeProductModal"><i class='bx bx-x'></i></button>
+            </div>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label>Name (English)</label>
+                    <input type="text" class="form-control" id="p-name_en">
+                </div>
+                <div class="form-group">
+                    <label>Name (Arabic)</label>
+                    <input type="text" class="form-control" id="p-name_ar" style="direction:rtl;text-align:right;">
+                </div>
+                <div class="form-group full">
+                    <label>Description (English)</label>
+                    <textarea class="form-control" id="p-desc_en"></textarea>
+                </div>
+                <div class="form-group full">
+                    <label>Description (Arabic)</label>
+                    <textarea class="form-control" id="p-desc_ar" style="direction:rtl;text-align:right;"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Category</label>
+                    <select class="form-control" id="p-category_id"></select>
+                </div>
+                <div class="form-group">
+                    <label>Weight (e.g. 40g, 350ml)</label>
+                    <input type="text" class="form-control" id="p-weight">
+                </div>
+                <div class="form-group">
+                    <label>Price ($)</label>
+                    <input type="text" class="form-control" id="p-price" placeholder="e.g. 2.50">
+                </div>
+                <div class="form-group">
+                    <label>Pieces per Carton</label>
+                    <input type="text" class="form-control" id="p-pieces_per_carton">
+                </div>
+                <div class="form-group">
+                    <label>Image URL (Google Drive or direct)</label>
+                    <input type="text" class="form-control" id="p-image_url" placeholder="https://...">
+                </div>
+            </div>
+            <div class="admin-modal-footer">
+                <button class="btn btn-ghost" id="cancelProductModal">Cancel</button>
+                <button class="btn btn-primary" id="saveProductBtn">Save Product</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- =====================================================================
+     CATEGORY MODAL
+     ===================================================================== -->
+    <div class="admin-modal-overlay" id="catModal">
+        <div class="admin-modal" style="max-width:480px;">
+            <div class="admin-modal-header">
+                <h3 id="catModalTitle">Add Category</h3>
+                <button class="btn-icon-only" id="closeCatModal"><i class='bx bx-x'></i></button>
+            </div>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label>Category ID (lowercase, no spaces)</label>
+                    <input type="text" class="form-control" id="cat-id" placeholder="e.g. juices">
+                </div>
+                <div class="form-group">
+                    <label>Boxicons Class (icon)</label>
+                    <input type="text" class="form-control" id="cat-icon" placeholder="e.g. bx-lemon">
+                </div>
+                <div class="form-group">
+                    <label>Name (English)</label>
+                    <input type="text" class="form-control" id="cat-name_en">
+                </div>
+                <div class="form-group">
+                    <label>Name (Arabic)</label>
+                    <input type="text" class="form-control" id="cat-name_ar" style="direction:rtl;text-align:right;">
+                </div>
+            </div>
+            <div class="admin-modal-footer">
+                <button class="btn btn-ghost" id="cancelCatModal">Cancel</button>
+                <button class="btn btn-primary" id="saveCatBtn">Save Category</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- =====================================================================
+     CONFIRM DIALOG
+     ===================================================================== -->
+    <div class="confirm-overlay" id="confirmOverlay">
+        <div class="confirm-box">
+            <div class="confirm-icon"><i class='bx bx-error-circle'></i></div>
+            <h3 id="confirmTitle">Delete Item?</h3>
+            <p id="confirmMessage">This action cannot be undone.</p>
+            <div class="confirm-actions">
+                <button class="btn btn-ghost" id="confirmCancel">Cancel</button>
+                <button class="btn btn-danger" id="confirmOk">Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- =====================================================================
+     TOAST CONTAINER
+     ===================================================================== -->
+    <div id="toastContainer"></div>
+
+    <!-- Scripts -->
+    <script src="./data.js"></script>
+    <script src="./admin.js"></script>
+</body>
+
+</html>

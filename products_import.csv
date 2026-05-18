@@ -1,0 +1,9 @@
+id,category_id,name_en,name_ar,desc_en,desc_ar,weight,pieces_per_carton,image_url
+1,spices,Brown Biryani Seasoning,بهارات برياني بني,A premium blend of aromatic spices perfect for crafting authentic Biryani dishes.,مزيج ممتاز من البهارات العطرية مثالي لتحضير أطباق برياني أصيلة ولذيذة.,40g,60,
+2,spices,Chicken Seasoning Mix,بهارات دجاج,Specially crafted mix to enhance the flavor of roasted grilled or fried chicken.,مزيج معد خصيصًا لتعزيز نكهة الدجاج المحمص أو المشوي أو المقلي.,40g,60,
+3,sauces,Pomegranate Syrup,دبس الرمان,"Rich, tangy, and sweet pomegranate molasses ideal for salads and marinades.","دبس رمان غني وحامض وحلو، مثالي للسلطات والتتبيلات.",675ml,12,
+4,sauces,Lemon Alternative Sauce,بديل الليمون,A perfect cooking companion offering the tartness of fresh lemons.,رفيق طبخ مثالي يقدم حموضة الليمون الطازج.,350ml,24,
+5,food,Sella Basmati Rice,رز بسمتي سيلا,"Premium long-grain Sella Basmati rice, perfect for large gatherings.","رز بسمتي سيلا ممتاز طويل الحبة، مثالي للتجمعات الكبيرة.",10kg,1,
+6,jelly,Strawberry Jelly Powder,مسحوق جلي الفراولة,"Sweet and fruity strawberry jelly, easy to prepare and loved by all.","جلي فراولة حلو ومليء بالفاكهة، سهل التحضير ومحبوب من الجميع.",80g,48,
+7,pastry,Premium Baking Powder,بيكنج باودر ممتاز,Ensure perfect rises for all your cakes and pastries.,اضمن ارتفاعًا مثاليًا لجميع الكعك والمعجنات.,100g,72,
+8,sweets,Chocolate Pudding Mix,مسحوق بودينغ الشوكولاتة,"Rich and creamy chocolate pudding mix for a quick, decadent dessert.",مسحوق بودينغ الشوكولاتة الغني والكريمي لحلوى سريعة ولذيذة.,150g,36,

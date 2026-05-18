@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Al-Tabakh Preview</title>
+    <meta name="robots" content="noindex">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="./style.css?v=2.0">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <style>
+        .preview-banner {
+            background: #D11D1D;
+            color: white;
+            text-align: center;
+            padding: 0.5rem;
+            font-size: 0.82rem;
+            font-weight: 600;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 9999;
+            letter-spacing: 1px;
+        }
+        .navbar { top: 32px; }
+        .preview-banner i { margin-right: 0.4rem; }
+    </style>
+</head>
+<body class="theme-dark lang-en">
+    <div class="preview-banner"><i class='bx bx-show'></i> PREVIEW MODE — Changes are not yet published</div>
+
+    <div id="loader" class="loader-wrapper">
+        <div class="loader-content">
+            <div class="spinner"></div>
+            <span class="loader-text">AL-TABAKH</span>
+        </div>
+    </div>
+
+    <header class="navbar glass-effect">
+        <div class="container nav-content">
+            <div class="logo">
+                <span class="logo-icon"><i class='bx bxs-leaf'></i></span>
+                <span class="logo-text">AL-TABAKH</span>
+            </div>
+            <div class="nav-actions">
+                <div class="theme-switcher" id="themeSwitcher">
+                    <button class="btn-icon" id="themeToggle" aria-label="Switch Theme">
+                        <i class='bx bx-palette'></i>
+                    </button>
+                    <div class="theme-dropdown" id="themeDropdown">
+                        <div class="theme-dropdown-label">Theme</div>
+                        <div class="theme-options" id="themeOptions"></div>
+                    </div>
+                </div>
+                <button id="locationsToggle" class="btn-icon" aria-label="Our Locations">
+                    <i class='bx bx-map'></i>
+                </button>
+                <button id="langToggle" class="btn-icon" aria-label="Toggle Language">
+                    <i class='bx bx-globe'></i>
+                    <span class="lang-text">العربية</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-overlay"></div>
+            <div class="container hero-content">
+                <h1 class="hero-title" data-i18n="heroTitle">Premium Ingredients for Perfect Meals</h1>
+                <p class="hero-subtitle" data-i18n="heroSubtitle">With Al-Tabakh, life has a different taste.</p>
+                <div class="contact-badges">
+                    <a data-contact="instagram" target="_blank" rel="noopener" class="badge">
+                        <i class='bx bxl-instagram'></i> @altabakhfactory
+                    </a>
+                    <a data-contact="phone" class="badge">
+                        <i class='bx bxs-phone'></i> +964 770 888 8389
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <div class="search-wrapper">
+            <div class="container">
+                <div class="search-bar glass-effect">
+                    <i class='bx bx-search'></i>
+                    <input type="text" id="searchInput" data-i18n-placeholder="searchPlaceholder"
+                        placeholder="Search products..." autocomplete="off">
+                </div>
+            </div>
+        </div>
+
+        <nav class="category-nav-wrapper">
+            <div class="category-nav scroll-hide glass-effect" id="categoryNav"></div>
+        </nav>
+
+        <section class="products-section container">
+            <div class="section-header">
+                <h2 id="currentCategoryTitle" class="section-title" data-i18n="allProducts">All Products</h2>
+                <span id="productCount" class="product-count"></span>
+            </div>
+            <div class="product-grid" id="productGrid"></div>
+        </section>
+
+        <!-- Locations Map Section -->
+        <section class="locations-section" id="locationsSection">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title" data-i18n="locationsTitle">Our Sales Network</h2>
+                    <p class="locations-desc" data-i18n="locationsDesc">Find Al-Tabakh sales centers across Iraq</p>
+                </div>
+                <div class="map-wrapper">
+                    <div id="map"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-wave">
+            <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+                <path d="M0,40 C360,100 720,0 1080,60 C1260,90 1380,50 1440,40 L1440,100 L0,100 Z" fill="currentColor"></path>
+            </svg>
+        </div>
+        <div class="container footer-content">
+            <div class="footer-grid">
+                <div class="footer-section footer-about">
+                    <div class="footer-logo">
+                        <span class="logo-icon"><i class='bx bxs-leaf'></i></span>
+                        <span class="logo-text">AL-TABAKH</span>
+                    </div>
+                    <p class="footer-desc" data-i18n="footerAbout">Malek Al-Tabakh Company — Premium food manufacturing since establishment.</p>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-heading" data-i18n="footerContact">Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><a data-contact="phone"><i class='bx bxs-phone'></i> +964 770 888 8389</a></li>
+                        <li><a data-contact="instagram" target="_blank" rel="noopener"><i class='bx bxl-instagram'></i> @altabakhfactory</a></li>
+                        <li><a data-contact="whatsapp" target="_blank" rel="noopener"><i class='bx bxl-whatsapp'></i> WhatsApp</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-i18n="footerRights">© 2026 Malek Al-Tabakh Company. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="productModal" class="modal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content glass-card">
+            <button class="modal-close" aria-label="Close"><i class='bx bx-x'></i></button>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to top">
+        <i class='bx bx-chevron-up'></i>
+    </button>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        var previewRaw = sessionStorage.getItem('atk_preview_data');
+        var presetsRaw = sessionStorage.getItem('atk_preview_presets');
+        if (previewRaw) {
+            try { var previewData = JSON.parse(previewRaw); } catch(e) {}
+        }
+        if (previewData) {
+            var db = previewData;
+            if (presetsRaw) {
+                try { db.themePresets = JSON.parse(presetsRaw); } catch(e) {}
+            }
+        } else {
+            document.body.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;min-height:100vh;font-family:sans-serif;color:#666;"><p>No preview data available. Open from the Admin Panel.</p></div>';
+        }
+    </script>
+    <script src="./app.js?v=2.0"></script>
+</body>
+</html>

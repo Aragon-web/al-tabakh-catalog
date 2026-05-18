@@ -8,34 +8,14 @@ const currentCategoryTitle = document.getElementById('currentCategoryTitle');
 const productCountEl = document.getElementById('productCount');
 const langToggleBtn = document.getElementById('langToggle');
 const langText = langToggleBtn.querySelector('.lang-text');
-const themeToggleBtn = document.getElementById('themeToggle');
-const themeDropdown = document.getElementById('themeDropdown');
-const themeOptions = document.getElementById('themeOptions');
+const locationsToggle = document.getElementById('locationsToggle');
+const locationsSection = document.getElementById('locationsSection');
 const modal = document.getElementById('productModal');
 const modalBody = document.getElementById('modalBody');
 const modalClose = document.querySelector('.modal-close');
 const modalBackdrop = document.querySelector('.modal-backdrop');
 const searchInput = document.getElementById('searchInput');
 const scrollTopBtn = document.getElementById('scrollTopBtn');
-const locationsToggle = document.getElementById('locationsToggle');
-const locationsSection = document.getElementById('locationsSection');
-const cartToggle = document.getElementById('cartToggle');
-const cartBadge = document.getElementById('cartBadge');
-const cartDrawer = document.getElementById('cartDrawer');
-const cartOverlay = document.getElementById('cartOverlay');
-const cartClose = document.getElementById('cartClose');
-const cartItems = document.getElementById('cartItems');
-const cartTotalAmount = document.getElementById('cartTotalAmount');
-const checkoutBtn = document.getElementById('checkoutBtn');
-const orderOverlay = document.getElementById('orderOverlay');
-const orderClose = document.getElementById('orderClose');
-const orderBody = document.getElementById('orderBody');
-const orderDate = document.getElementById('orderDate');
-const orderCustomerName = document.getElementById('orderCustomerName');
-const orderTableWrapper = document.getElementById('orderTableWrapper');
-const orderTotalLine = document.getElementById('orderTotalLine');
-const orderCsvBtn = document.getElementById('orderCsvBtn');
-const orderPrintBtn = document.getElementById('orderPrintBtn');
 
 // =============================================================================
 // State
@@ -43,9 +23,6 @@ const orderPrintBtn = document.getElementById('orderPrintBtn');
 let currentLang = 'en';
 let currentCategory = 'all';
 let searchQuery = '';
-const LS_THEME = 'atk_theme_preset';
-const CART_KEY = 'atk_cart';
-let cart = [];
 
 // =============================================================================
 // Initialize
@@ -55,60 +32,13 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function initApp() {
-    loadThemePreset();
     applyTheme();
     applySiteContent();
-    renderThemeSwitcher();
     loader.classList.add('hidden');
-    loadCart();
     renderCategories();
     renderProducts();
     setupEventListeners();
     applyLanguage();
-}
-
-// =============================================================================
-// Theme Presets
-// =============================================================================
-function loadThemePreset() {
-    const saved = localStorage.getItem(LS_THEME);
-    if (saved && db.themePresets) {
-        const preset = db.themePresets.find(p => p.id === saved);
-        if (preset) {
-            Object.assign(db.theme, preset.theme);
-            return;
-        }
-    }
-    if (db.themePresets && db.themePresets.length > 0) {
-        Object.assign(db.theme, db.themePresets[0].theme);
-    }
-}
-
-function renderThemeSwitcher() {
-    if (!db.themePresets || !themeOptions) return;
-    const currentId = localStorage.getItem(LS_THEME) || db.themePresets[0]?.id;
-    themeOptions.innerHTML = db.themePresets.map(p => `
-        <button class="theme-option ${p.id === currentId ? 'active' : ''}" data-theme="${p.id}">
-            <i class='bx ${p.icon}'></i>
-            <span>${currentLang === 'en' ? p.name_en : p.name_ar}</span>
-            ${p.id === currentId ? '<i class="bx bx-check"></i>' : ''}
-        </button>
-    `).join('');
-
-    themeOptions.querySelectorAll('.theme-option').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            const id = btn.dataset.theme;
-            const preset = db.themePresets.find(p => p.id === id);
-            if (preset) {
-                Object.assign(db.theme, preset.theme);
-                applyTheme();
-                localStorage.setItem(LS_THEME, id);
-                renderThemeSwitcher();
-            }
-            themeDropdown.classList.remove('open');
-        });
-    });
 }
 
 // =============================================================================
@@ -144,17 +74,8 @@ function applySiteContent() {
 
     // Hero image
     const hero = document.querySelector('.hero');
-    if (hero) {
-        if (s.heroImage) {
-            hero.style.backgroundImage = `url('${s.heroImage}')`;
-            const link = document.createElement('link');
-            link.rel = 'preload';
-            link.as = 'image';
-            link.href = s.heroImage;
-            document.head.appendChild(link);
-        } else {
-            hero.style.backgroundImage = 'linear-gradient(135deg, var(--clr-dark-base) 0%, var(--clr-dark-surface-2) 100%)';
-        }
+    if (hero && s.heroImage) {
+        hero.style.backgroundImage = `url('${s.heroImage}')`;
     }
 
     // Contact badges / links (phone + instagram)
@@ -254,8 +175,6 @@ function renderProducts() {
         const imgSrc = product.image_url || '';
         const hasImg = imgSrc.length > 0;
 
-        const price = parseFloat(product.price) || 0;
-
         card.innerHTML = `
             <div class="product-image-container">
                 ${hasImg
@@ -271,7 +190,6 @@ function renderProducts() {
                     <span class="product-weight">
                         <i class='bx bx-archive'></i> ${product.weight}
                     </span>
-                    <span class="product-price-badge">$${price.toFixed(2)}</span>
                     <span class="product-arrow"><i class='bx bx-right-arrow-alt'></i></span>
                 </div>
             </div>
@@ -301,10 +219,6 @@ function openModal(product) {
         : `مرحباً! أنا مهتم بـ: ${product.name_ar}${waWeight}. هل يمكنكم تقديم مزيد من التفاصيل؟`;
     const waUrl = `https://wa.me/${s.whatsapp}?text=${encodeURIComponent(waMsg)}`;
 
-    const price = parseFloat(product.price) || 0;
-    const inCart = cart.find(i => i.id === product.id);
-    const cartQty = inCart ? inCart.qty : 0;
-
     modalBody.innerHTML = `
         <div class="modal-img-container">
             ${hasImg
@@ -317,9 +231,6 @@ function openModal(product) {
             <div class="modal-category">${catName}</div>
             <h2 class="modal-title">${title}</h2>
             <p class="modal-desc">${desc}</p>
-            <div class="modal-price-row">
-                <span class="modal-price">$${price.toFixed(2)}</span>
-            </div>
             <div class="spec-grid">
                 <div class="spec-item">
                     <span class="spec-label">${t.specWeight}</span>
@@ -331,23 +242,12 @@ function openModal(product) {
                 </div>
             </div>
             <div class="modal-actions">
-                <button class="btn-primary btn-add-cart" data-id="${product.id}">
-                    <i class='bx bx-cart-add'></i> ${t.addToCart} ${cartQty > 0 ? `(${cartQty})` : ''}
-                </button>
                 <a href="${waUrl}" target="_blank" rel="noopener" class="btn-primary btn-whatsapp">
-                    <i class='bx bxl-whatsapp'></i>
+                    <i class='bx bxl-whatsapp'></i> ${t.btnInquire}
                 </a>
             </div>
         </div>
     `;
-
-    const addBtn = modalBody.querySelector('.btn-add-cart');
-    if (addBtn) {
-        addBtn.addEventListener('click', () => {
-            addToCart(product.id);
-            closeModal();
-        });
-    }
 
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';
@@ -356,231 +256,6 @@ function openModal(product) {
 function closeModal() {
     modal.classList.remove('active');
     document.body.style.overflow = '';
-}
-
-// =============================================================================
-// Cart
-// =============================================================================
-function loadCart() {
-    try {
-        const saved = localStorage.getItem(CART_KEY);
-        cart = saved ? JSON.parse(saved) : [];
-    } catch(e) { cart = []; }
-}
-
-function saveCart() {
-    localStorage.setItem(CART_KEY, JSON.stringify(cart));
-    updateCartUI();
-}
-
-function updateCartUI() {
-    const count = cart.reduce((s, i) => s + i.qty, 0);
-    cartBadge.textContent = count;
-    cartBadge.style.display = count > 0 ? 'flex' : 'none';
-
-    const t = db.translations[currentLang];
-    if (cart.length === 0) {
-        cartItems.innerHTML = `<div class="cart-empty">${t.cartEmpty}</div>`;
-        cartTotalAmount.textContent = '$0.00';
-        return;
-    }
-
-    let total = 0;
-    cartItems.innerHTML = cart.map((item, idx) => {
-        const prod = db.products.find(p => p.id === item.id);
-        if (!prod) return '';
-        const name = currentLang === 'en' ? prod.name_en : prod.name_ar;
-        const price = parseFloat(prod.price) || 0;
-        const subtotal = price * item.qty;
-        total += subtotal;
-        return `
-            <div class="cart-item">
-                <div class="cart-item-info">
-                    <div class="cart-item-name">${name}</div>
-                    <div class="cart-item-weight">${prod.weight}</div>
-                    <div class="cart-item-price">$${price.toFixed(2)}</div>
-                </div>
-                <div class="cart-item-qty">
-                    <button class="cart-qty-btn" data-index="${idx}" data-action="dec">−</button>
-                    <span class="cart-qty-val">${item.qty}</span>
-                    <button class="cart-qty-btn" data-index="${idx}" data-action="inc">+</button>
-                </div>
-                <button class="cart-item-remove" data-index="${idx}" data-action="remove"><i class='bx bx-trash'></i></button>
-            </div>
-        `;
-    }).join('');
-
-    cartTotalAmount.textContent = `$${total.toFixed(2)}`;
-
-    cartItems.querySelectorAll('.cart-qty-btn').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            const idx = parseInt(btn.dataset.index);
-            const action = btn.dataset.action;
-            if (action === 'inc') {
-                cart[idx].qty++;
-            } else if (action === 'dec') {
-                cart[idx].qty--;
-                if (cart[idx].qty <= 0) cart.splice(idx, 1);
-            }
-            saveCart();
-        });
-    });
-    cartItems.querySelectorAll('.cart-item-remove').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            const idx = parseInt(btn.dataset.index);
-            cart.splice(idx, 1);
-            saveCart();
-        });
-    });
-}
-
-function addToCart(productId) {
-    const existing = cart.find(i => i.id === productId);
-    if (existing) {
-        existing.qty++;
-    } else {
-        cart.push({ id: productId, qty: 1 });
-    }
-    saveCart();
-    cartDrawer.classList.add('open');
-    cartOverlay.classList.add('open');
-}
-
-// =============================================================================
-// Order Generation
-// =============================================================================
-function openOrder() {
-    if (cart.length === 0) return;
-    const t = db.translations[currentLang];
-    orderDate.textContent = new Date().toLocaleDateString();
-    orderCustomerName.value = '';
-
-    let html = `<table class="order-table">
-        <thead><tr>
-            <th>#</th>
-            <th>${t.orderProduct}</th>
-            <th>${t.orderWeight}</th>
-            <th>${t.orderPrice}</th>
-            <th>${t.orderQty}</th>
-            <th>${t.orderSubtotal}</th>
-        </tr></thead><tbody>`;
-
-    let grandTotal = 0;
-    cart.forEach((item, idx) => {
-        const prod = db.products.find(p => p.id === item.id);
-        if (!prod) return;
-        const name = currentLang === 'en' ? prod.name_en : prod.name_ar;
-        const price = parseFloat(prod.price) || 0;
-        const subtotal = price * item.qty;
-        grandTotal += subtotal;
-        html += `<tr>
-            <td>${idx + 1}</td>
-            <td>${name}</td>
-            <td>${prod.weight}</td>
-            <td>$${price.toFixed(2)}</td>
-            <td>${item.qty}</td>
-            <td>$${subtotal.toFixed(2)}</td>
-        </tr>`;
-    });
-
-    html += `</tbody></table>`;
-    orderTableWrapper.innerHTML = html;
-    orderTotalLine.innerHTML = `<strong>${t.orderTotal}: $${grandTotal.toFixed(2)}</strong>`;
-
-    cartDrawer.classList.remove('open');
-    cartOverlay.classList.remove('open');
-    orderOverlay.classList.add('open');
-    document.body.style.overflow = 'hidden';
-}
-
-function closeOrder() {
-    orderOverlay.classList.remove('open');
-    document.body.style.overflow = '';
-}
-
-function generateOrderCsv() {
-    const t = db.translations[currentLang];
-    const customer = orderCustomerName.value.trim() || 'Customer';
-    const date = new Date().toLocaleDateString();
-    let csv = `Purchase Order,${date}\nCustomer,${customer}\n\n`;
-    csv += `${t.orderProduct},${t.orderWeight},${t.orderPrice},${t.orderQty},${t.orderSubtotal}\n`;
-
-    let total = 0;
-    cart.forEach(item => {
-        const prod = db.products.find(p => p.id === item.id);
-        if (!prod) return;
-        const name = currentLang === 'en' ? prod.name_en : prod.name_ar;
-        const price = parseFloat(prod.price) || 0;
-        const subtotal = price * item.qty;
-        total += subtotal;
-        csv += `"${name}",${prod.weight},${price},${item.qty},${subtotal.toFixed(2)}\n`;
-    });
-    csv += `\n${t.orderTotal},,,,${total.toFixed(2)}`;
-
-    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = `order_${Date.now()}.csv`;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
-}
-
-function printOrder() {
-    const t = db.translations[currentLang];
-    const customer = orderCustomerName.value.trim() || 'Customer';
-    const date = new Date().toLocaleDateString();
-    const title = currentLang === 'en' ? 'AL-TABAKH - Purchase Order' : 'الطباخ - أمر شراء';
-
-    const printWin = window.open('', '_blank');
-    let html = `<!DOCTYPE html><html><head><title>${title}</title>
-        <style>
-            * { margin: 0; padding: 0; box-sizing: border-box; }
-            body { font-family: 'Segoe UI', Arial, sans-serif; padding: 40px; color: #1a1a2e; }
-            .header { text-align: center; margin-bottom: 30px; border-bottom: 2px solid #D11D1D; padding-bottom: 15px; }
-            .header h1 { color: #D11D1D; font-size: 24px; letter-spacing: 2px; }
-            .info { margin-bottom: 20px; display: flex; justify-content: space-between; }
-            .info div { font-size: 14px; color: #555; }
-            table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
-            th { background: #D11D1D; color: white; padding: 10px 12px; text-align: left; font-size: 13px; }
-            td { padding: 10px 12px; border-bottom: 1px solid #eee; font-size: 13px; }
-            tr:nth-child(even) td { background: #fafafa; }
-            .total { text-align: right; font-size: 18px; font-weight: 700; margin-top: 10px; padding-top: 10px; border-top: 2px solid #D11D1D; }
-            .note { margin-top: 30px; font-size: 12px; color: #888; text-align: center; }
-            .footer { margin-top: 40px; text-align: center; font-size: 11px; color: #aaa; }
-    `;
-    if (currentLang === 'ar') {
-        html += `body { direction: rtl; text-align: right; } th, td { text-align: right; } .total { text-align: left; }`;
-    }
-    html += `</style></head><body>
-        <div class="header"><h1>AL-TABAKH</h1><p style="color:#888;font-size:13px;margin-top:4px;">${t.orderTitle}</p></div>
-        <div class="info"><div><strong>${t.orderDate}:</strong> ${date}</div><div><strong>${t.orderCustomer}:</strong> ${customer}</div></div>
-        <table><thead><tr><th>#</th><th>${t.orderProduct}</th><th>${t.orderWeight}</th><th>${t.orderPrice}</th><th>${t.orderQty}</th><th>${t.orderSubtotal}</th></tr></thead><tbody>`;
-
-    let total = 0;
-    cart.forEach((item, idx) => {
-        const prod = db.products.find(p => p.id === item.id);
-        if (!prod) return;
-        const name = currentLang === 'en' ? prod.name_en : prod.name_ar;
-        const price = parseFloat(prod.price) || 0;
-        const subtotal = price * item.qty;
-        total += subtotal;
-        html += `<tr><td>${idx + 1}</td><td>${name}</td><td>${prod.weight}</td><td>$${price.toFixed(2)}</td><td>${item.qty}</td><td>$${subtotal.toFixed(2)}</td></tr>`;
-    });
-
-    html += `</tbody></table>
-        <div class="total">${t.orderTotal}: $${total.toFixed(2)}</div>
-        <p class="note">${t.orderNote}</p>
-        <div class="footer">Malek Al-Tabakh Company &bull; ${date}</div>
-    </body></html>`;
-
-    printWin.document.write(html);
-    printWin.document.close();
-    setTimeout(() => printWin.print(), 500);
 }
 
 // =============================================================================
@@ -643,42 +318,6 @@ function renderMapMarkers() {
 // Events
 // =============================================================================
 function setupEventListeners() {
-    // Theme switcher dropdown
-    themeToggleBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        themeDropdown.classList.toggle('open');
-    });
-    document.addEventListener('click', (e) => {
-        if (!themeToggleBtn.contains(e.target) && !themeDropdown.contains(e.target)) {
-            themeDropdown.classList.remove('open');
-        }
-    });
-
-    // Cart toggle
-    cartToggle.addEventListener('click', () => {
-        cartDrawer.classList.toggle('open');
-        cartOverlay.classList.toggle('open');
-    });
-    cartClose.addEventListener('click', () => {
-        cartDrawer.classList.remove('open');
-        cartOverlay.classList.remove('open');
-    });
-    cartOverlay.addEventListener('click', () => {
-        cartDrawer.classList.remove('open');
-        cartOverlay.classList.remove('open');
-    });
-
-    // Checkout
-    checkoutBtn.addEventListener('click', openOrder);
-
-    // Order modal
-    orderClose.addEventListener('click', closeOrder);
-    orderOverlay.addEventListener('click', (e) => {
-        if (e.target === orderOverlay) closeOrder();
-    });
-    orderCsvBtn.addEventListener('click', generateOrderCsv);
-    orderPrintBtn.addEventListener('click', printOrder);
-
     // Language toggle
     langToggleBtn.addEventListener('click', () => {
         currentLang = currentLang === 'en' ? 'ar' : 'en';
