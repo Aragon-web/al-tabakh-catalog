@@ -12,7 +12,7 @@ let adminDb = null;
 let editingProductId = null;
 let editingCatId = null;
 let confirmCallback = null;
-let selectedProductIds = new Set();
+let catProductsCategoryId = null;
 
 async function hashPassword(pwd) {
     if (window.crypto && window.crypto.subtle) {
@@ -134,12 +134,10 @@ function initAdminApp() {
     setupPreviewBtn();
     loadLocationsForm();
     setupLocationForm();
-    populateBatchCategorySelect();
-    setupBatchActions();
+    setupCatProductsModal();
 
     document.getElementById('csvImport').addEventListener('change', handleCsvImport);
     document.getElementById('productSearch').addEventListener('input', (e) => {
-        selectedProductIds.clear();
         renderProductsTable(e.target.value);
     });
 }
@@ -197,7 +195,7 @@ function renderProductsTable(filter = '') {
 
     const tbody = document.getElementById('productsTableBody');
     if (list.length === 0) {
-        tbody.innerHTML = `<tr><td colspan="9" style="text-align:center;padding:2rem;color:var(--text-muted);">No products found.</td></tr>`;
+        tbody.innerHTML = `<tr><td colspan="8" style="text-align:center;padding:2rem;color:var(--text-muted);">No products found.</td></tr>`;
         return;
     }
 
@@ -206,10 +204,8 @@ function renderProductsTable(filter = '') {
             ? `<img src="${p.image_url}" class="td-img" onerror="this.style.display='none'" loading="lazy">`
             : `<div class="td-img-placeholder"><i class='bx bx-image'></i></div>`;
         const price = parseFloat(p.price) || 0;
-        const checked = selectedProductIds.has(p.id) ? 'checked' : '';
         return `
             <tr>
-                <td><input type="checkbox" class="product-checkbox" value="${p.id}" ${checked}></td>
                 <td>${imgHtml}</td>
                 <td class="truncate">${p.name_en}</td>
                 <td class="truncate">${p.name_ar}</td>
@@ -230,90 +226,6 @@ function renderProductsTable(filter = '') {
             </tr>
         `;
     }).join('');
-
-    const selectAll = document.getElementById('selectAllCheckbox');
-    const checkboxes = tbody.querySelectorAll('.product-checkbox');
-    const allChecked = checkboxes.length > 0 && Array.from(checkboxes).every(cb => cb.checked);
-    selectAll.checked = allChecked;
-
-    checkboxes.forEach(cb => {
-        cb.addEventListener('change', (e) => {
-            if (e.target.checked) {
-                selectedProductIds.add(e.target.value);
-            } else {
-                selectedProductIds.delete(e.target.value);
-            }
-            updateBatchBar();
-        });
-    });
-}
-
-function updateBatchBar() {
-    const bar = document.getElementById('batchBar');
-    const count = document.getElementById('selectedCount');
-    const visibleCheckboxes = document.querySelectorAll('#productsTableBody .product-checkbox');
-    const visibleSelected = Array.from(visibleCheckboxes).filter(cb => cb.checked).length;
-    count.textContent = `${visibleSelected} selected`;
-    if (visibleSelected > 0) {
-        bar.classList.remove('hidden');
-    } else {
-        bar.classList.add('hidden');
-    }
-}
-
-function setupBatchActions() {
-    document.getElementById('selectAllCheckbox').addEventListener('change', (e) => {
-        const checkboxes = document.querySelectorAll('#productsTableBody .product-checkbox');
-        checkboxes.forEach(cb => {
-            cb.checked = e.target.checked;
-            if (e.target.checked) {
-                selectedProductIds.add(cb.value);
-            } else {
-                selectedProductIds.delete(cb.value);
-            }
-        });
-        updateBatchBar();
-    });
-
-    document.getElementById('batchClearBtn').addEventListener('click', () => {
-        selectedProductIds.clear();
-        document.getElementById('selectAllCheckbox').checked = false;
-        document.querySelectorAll('#productsTableBody .product-checkbox').forEach(cb => cb.checked = false);
-        updateBatchBar();
-    });
-
-    document.getElementById('batchApplyBtn').addEventListener('click', () => {
-        const catId = document.getElementById('batchCategorySelect').value;
-        if (!catId) {
-            toast('Please select a category first.', 'warning');
-            return;
-        }
-        const ids = Array.from(selectedProductIds);
-        if (ids.length === 0) {
-            toast('No products selected.', 'warning');
-            return;
-        }
-        ids.forEach(id => {
-            const prod = adminDb.products.find(p => p.id === id);
-            if (prod) prod.category_id = catId;
-        });
-        const cat = adminDb.categories.find(c => c.id === catId);
-        toast(`Assigned ${ids.length} product(s) to "${cat ? cat.name_en : catId}"`, 'success');
-        selectedProductIds.clear();
-        document.getElementById('selectAllCheckbox').checked = false;
-        renderProductsTable(document.getElementById('productSearch').value);
-        renderDashboard();
-        renderCategoriesTable();
-    });
-}
-
-function populateBatchCategorySelect() {
-    const sel = document.getElementById('batchCategorySelect');
-    sel.innerHTML = '<option value="">— Assign category —</option>' +
-        adminDb.categories
-            .filter(c => c.id !== 'all')
-            .map(c => `<option value="${c.id}">${c.name_en}</option>`)
-            .join('');
 }
 
 function setupProductModal() {
@@ -435,7 +347,6 @@ function deleteProduct(id) {
         `Are you sure you want to delete "${product?.name_en}"? This cannot be undone.`,
         () => {
             adminDb.products = adminDb.products.filter(p => p.id !== id);
-            selectedProductIds.delete(id);
             renderProductsTable(document.getElementById('productSearch').value);
             renderDashboard();
             toast('Product deleted.', 'info');
@@ -458,6 +369,9 @@ function renderCategoriesTable() {
                 <td><span class="badge-cat">${count}</span></td>
                 <td>
                     <div class="td-actions">
+                        <button class="btn-icon-only" style="color:var(--admin-blue);" title="Manage Products" onclick="openCategoryProducts('${cat.id}')">
+                            <i class='bx bx-list-ul'></i>
+                        </button>
                         <button class="btn-icon-only" title="Edit" onclick="openEditCat('${cat.id}')">
                             <i class='bx bx-edit'></i>
                         </button>
@@ -533,7 +447,6 @@ function saveCat() {
     closeCatModal();
     renderCategoriesTable();
     renderDashboard();
-    populateBatchCategorySelect();
     populateCategorySelect();
 }
 
@@ -546,10 +459,98 @@ function deleteCat(id) {
             adminDb.categories = adminDb.categories.filter(c => c.id !== id);
             renderCategoriesTable();
             toast('Category deleted.', 'info');
-            populateBatchCategorySelect();
             populateCategorySelect();
         }
     );
+}
+
+// =============================================================================
+// Category Products Management
+// =============================================================================
+function openCategoryProducts(catId) {
+    catProductsCategoryId = catId;
+    const cat = adminDb.categories.find(c => c.id === catId);
+    document.getElementById('catProductsModalTitle').textContent =
+        `Manage Products — ${cat ? cat.name_en : catId}`;
+    renderCatProductsTable('');
+    document.getElementById('catProductsModal').classList.add('active');
+}
+
+function renderCatProductsTable(filter) {
+    const q = filter.trim().toLowerCase();
+    const tbody = document.getElementById('catProductsTableBody');
+    const list = q
+        ? adminDb.products.filter(p =>
+            p.name_en.toLowerCase().includes(q) || p.name_ar.includes(q))
+        : adminDb.products;
+
+    document.getElementById('catProductsCount').textContent =
+        `${list.length} products`;
+
+    tbody.innerHTML = list.map(p => {
+        const checked = p.category_id === catProductsCategoryId ? 'checked' : '';
+        const catLabel = p.category_id === 'all' ? '—' : p.category_id;
+        return `
+            <tr>
+                <td class="truncate">${p.name_en}</td>
+                <td class="truncate" style="direction:rtl;text-align:right;">${p.name_ar}</td>
+                <td><span class="badge-cat" style="${p.category_id === 'all' ? 'background:var(--admin-surface-3);color:var(--text-muted);' : ''}">${catLabel}</span></td>
+                <td style="text-align:center;"><input type="checkbox" class="cat-prod-checkbox" value="${p.id}" ${checked}></td>
+            </tr>
+        `;
+    }).join('');
+
+    document.getElementById('catProductsSelectAll').checked =
+        list.length > 0 && list.every(p => p.category_id === catProductsCategoryId);
+}
+
+function setupCatProductsModal() {
+    document.getElementById('closeCatProductsModal').addEventListener('click', () => {
+        document.getElementById('catProductsModal').classList.remove('active');
+    });
+    document.getElementById('cancelCatProductsModal').addEventListener('click', () => {
+        document.getElementById('catProductsModal').classList.remove('active');
+    });
+    document.getElementById('catProductsModal').addEventListener('click', (e) => {
+        if (e.target === document.getElementById('catProductsModal')) {
+            document.getElementById('catProductsModal').classList.remove('active');
+        }
+    });
+
+    document.getElementById('catProductsSelectAll').addEventListener('change', (e) => {
+        document.querySelectorAll('.cat-prod-checkbox').forEach(cb => cb.checked = e.target.checked);
+    });
+
+    document.getElementById('catProductSearch').addEventListener('input', (e) => {
+        renderCatProductsTable(e.target.value);
+    });
+
+    document.getElementById('saveCatProductsBtn').addEventListener('click', () => {
+        const checkboxes = document.querySelectorAll('.cat-prod-checkbox');
+        let changed = 0;
+        checkboxes.forEach(cb => {
+            const prod = adminDb.products.find(p => p.id === cb.value);
+            if (!prod) return;
+            const shouldAssign = cb.checked;
+            const isAssigned = prod.category_id === catProductsCategoryId;
+            if (shouldAssign && !isAssigned) {
+                prod.category_id = catProductsCategoryId;
+                changed++;
+            } else if (!shouldAssign && isAssigned) {
+                prod.category_id = 'all';
+                changed++;
+            }
+        });
+        document.getElementById('catProductsModal').classList.remove('active');
+        renderProductsTable(document.getElementById('productSearch').value);
+        renderDashboard();
+        renderCategoriesTable();
+        if (changed > 0) {
+            toast(`Updated ${changed} product(s).`, 'success');
+        } else {
+            toast('No changes made.', 'info');
+        }
+    });
 }
 
 function loadSiteContentForm() {
