@@ -795,7 +795,7 @@ async function syncToGitHub() {
             headers,
             body: JSON.stringify({
                 message: `Admin: update data.js [${new Date().toLocaleString()}]`,
-                content: btoa(unesc(encodeURIComponent(newDataJs))),
+                content: btoa(unescape(encodeURIComponent(newDataJs))),
                 sha,
                 branch
             })
@@ -846,7 +846,7 @@ function setupPreviewBtn() {
 
 function generateDataJs() {
     const d = adminDb;
-    const esc = (str) => (str || '').replace(/\\/g, '\\\\').replace(/'/g, "\\'").replace(/`/g, '\\`').replace(/\${/g, '\\${');
+    const esc = (str) => (str || '').replace(/\\/g, '\\\\').replace(/'/g, "\\'").replace(/\n/g, '\\n').replace(/\r/g, '').replace(/`/g, '\\`').replace(/\${/g, '\\${');
 
     const themeStr = `    theme: ${JSON.stringify(d.theme, null, 8)},`;
     const scStr = `    siteContent: ${JSON.stringify(d.siteContent, null, 8)},`;
