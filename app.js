@@ -40,7 +40,7 @@ const orderPrintBtn = document.getElementById('orderPrintBtn');
 // =============================================================================
 // State
 // =============================================================================
-let currentLang = 'en';
+let currentLang = 'ar';
 let currentCategory = 'all';
 let searchQuery = '';
 const LS_THEME = 'atk_theme_preset';
