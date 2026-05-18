@@ -795,7 +795,7 @@ async function syncToGitHub() {
             headers,
             body: JSON.stringify({
                 message: `Admin: update data.js [${new Date().toLocaleString()}]`,
-                content: btoa(unescape(encodeURIComponent(newDataJs))),
+                content: btoa(unesc(encodeURIComponent(newDataJs))),
                 sha,
                 branch
             })
@@ -846,25 +846,25 @@ function setupPreviewBtn() {
 
 function generateDataJs() {
     const d = adminDb;
-    const escape = (str) => (str || '').replace(/\\/g, '\\\\').replace(/`/g, '\\`').replace(/\${/g, '\\${');
+    const esc = (str) => (str || '').replace(/\\/g, '\\\\').replace(/'/g, "\\'").replace(/`/g, '\\`').replace(/\${/g, '\\${');
 
     const themeStr = `    theme: ${JSON.stringify(d.theme, null, 8)},`;
     const scStr = `    siteContent: ${JSON.stringify(d.siteContent, null, 8)},`;
 
     const catsStr = `    categories: [\n` +
         d.categories.map(c =>
-            `        { id: '${c.id}', name_en: '${escape(c.name_en)}', name_ar: '${escape(c.name_ar)}', icon: '${c.icon}' }`
+            `        { id: '${esc(c.id)}', name_en: '${esc(c.name_en)}', name_ar: '${esc(c.name_ar)}', icon: '${esc(c.icon)}' }`
         ).join(',\n') +
         `\n    ],`;
 
     const prodsStr = `    products: [\n` +
         d.products.map(p =>
-            `        { id: '${p.id}', category_id: '${p.category_id}', ` +
-            `name_en: '${escape(p.name_en)}', name_ar: '${escape(p.name_ar)}', ` +
-            `desc_en: '${escape(p.desc_en)}', desc_ar: '${escape(p.desc_ar)}', ` +
-            `weight: '${escape(p.weight)}', pieces_per_carton: '${escape(p.pieces_per_carton)}', ` +
-            `price: '${escape(p.price || '0')}', ` +
-            `image_url: '${escape(p.image_url)}' }`
+            `        { id: '${esc(p.id)}', category_id: '${esc(p.category_id)}', ` +
+            `name_en: '${esc(p.name_en)}', name_ar: '${esc(p.name_ar)}', ` +
+            `desc_en: '${esc(p.desc_en)}', desc_ar: '${esc(p.desc_ar)}', ` +
+            `weight: '${esc(p.weight)}', pieces_per_carton: '${esc(p.pieces_per_carton)}', ` +
+            `price: '${esc(p.price || '0')}', ` +
+            `image_url: '${esc(p.image_url)}' }`
         ).join(',\n') +
         `\n    ],`;
 
