@@ -179,23 +179,10 @@
                                 <input type="text" id="productSearch" placeholder="Search products...">
                             </div>
                         </div>
-                        <div id="batchBar" class="batch-bar hidden">
-                            <span id="selectedCount">0 selected</span>
-                            <select id="batchCategorySelect" class="form-control" style="width:auto;display:inline-block;font-size:0.85rem;">
-                                <option value="">— Assign category —</option>
-                            </select>
-                            <button class="btn btn-primary btn-sm" id="batchApplyBtn">
-                                <i class='bx bx-check'></i> Assign
-                            </button>
-                            <button class="btn btn-ghost btn-sm" id="batchClearBtn">
-                                <i class='bx bx-x'></i> Clear
-                            </button>
-                        </div>
                         <div class="table-wrapper">
                             <table>
                                 <thead>
                                     <tr>
-                                        <th style="width:36px;"><input type="checkbox" id="selectAllCheckbox" title="Select All"></th>
                                         <th>Image</th>
                                         <th>Name (EN)</th>
                                         <th>Name (AR)</th>
@@ -709,6 +696,40 @@
             <div class="admin-modal-footer">
                 <button class="btn btn-ghost" id="cancelCatModal">Cancel</button>
                 <button class="btn btn-primary" id="saveCatBtn">Save Category</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- =====================================================================
+     CATEGORY PRODUCTS MODAL
+     ===================================================================== -->
+    <div class="admin-modal-overlay" id="catProductsModal">
+        <div class="admin-modal" style="max-width:700px;">
+            <div class="admin-modal-header">
+                <h3 id="catProductsModalTitle">Manage Products</h3>
+                <button class="btn-icon-only" id="closeCatProductsModal"><i class='bx bx-x'></i></button>
+            </div>
+            <div style="padding:0 1.5rem 0.5rem;display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap;">
+                <span id="catProductsCount" style="font-size:0.85rem;font-weight:500;"></span>
+                <div class="table-search" style="flex:1;max-width:300px;">
+                    <i class='bx bx-search'></i>
+                    <input type="text" id="catProductSearch" placeholder="Search products..." style="font-size:0.8rem;">
+                </div>
+                <label style="font-size:0.82rem;display:flex;align-items:center;gap:0.3rem;cursor:pointer;">
+                    <input type="checkbox" id="catProductsSelectAll"> Select All
+                </label>
+            </div>
+            <div class="table-wrapper" style="margin:0 1.5rem 1rem;border-radius:var(--radius-sm);">
+                <table>
+                    <thead>
+                        <tr><th>Name (EN)</th><th>Name (AR)</th><th>Current Category</th><th style="width:50px;">Assign</th></tr>
+                    </thead>
+                    <tbody id="catProductsTableBody"></tbody>
+                </table>
+            </div>
+            <div class="admin-modal-footer">
+                <button class="btn btn-ghost" id="cancelCatProductsModal">Cancel</button>
+                <button class="btn btn-primary" id="saveCatProductsBtn"><i class='bx bx-save'></i> Save Changes</button>
             </div>
         </div>
     </div>
