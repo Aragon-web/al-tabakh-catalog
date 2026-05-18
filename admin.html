@@ -171,32 +171,45 @@
                         </button>
                     </div>
                 </div>
-                <div class="card">
-                    <div class="card-header">
-                        <span class="card-title" id="productsCountLabel">Products</span>
-                        <div class="table-search">
-                            <i class='bx bx-search'></i>
-                            <input type="text" id="productSearch" placeholder="Search products...">
+                    <div class="card">
+                        <div class="card-header">
+                            <span class="card-title" id="productsCountLabel">Products</span>
+                            <div class="table-search">
+                                <i class='bx bx-search'></i>
+                                <input type="text" id="productSearch" placeholder="Search products...">
+                            </div>
+                        </div>
+                        <div id="batchBar" class="batch-bar hidden">
+                            <span id="selectedCount">0 selected</span>
+                            <select id="batchCategorySelect" class="form-control" style="width:auto;display:inline-block;font-size:0.85rem;">
+                                <option value="">— Assign category —</option>
+                            </select>
+                            <button class="btn btn-primary btn-sm" id="batchApplyBtn">
+                                <i class='bx bx-check'></i> Assign
+                            </button>
+                            <button class="btn btn-ghost btn-sm" id="batchClearBtn">
+                                <i class='bx bx-x'></i> Clear
+                            </button>
+                        </div>
+                        <div class="table-wrapper">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th style="width:36px;"><input type="checkbox" id="selectAllCheckbox" title="Select All"></th>
+                                        <th>Image</th>
+                                        <th>Name (EN)</th>
+                                        <th>Name (AR)</th>
+                                        <th>Category</th>
+                                        <th>Weight</th>
+                                        <th>Pcs/Carton</th>
+                                        <th>Price</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="productsTableBody"></tbody>
+                            </table>
                         </div>
                     </div>
-                    <div class="table-wrapper">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Image</th>
-                                    <th>Name (EN)</th>
-                                    <th>Name (AR)</th>
-                                    <th>Category</th>
-                                    <th>Weight</th>
-                                    <th>Pcs/Carton</th>
-                                    <th>Price</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody id="productsTableBody"></tbody>
-                        </table>
-                    </div>
-                </div>
             </div>
 
             <!-- ============================================================
