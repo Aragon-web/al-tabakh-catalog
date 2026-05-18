@@ -110,7 +110,18 @@
         <section class="products-section container">
             <div class="section-header">
                 <h2 id="currentCategoryTitle" class="section-title" data-i18n="allProducts">All Products</h2>
-                <span id="productCount" class="product-count"></span>
+                <div class="section-header-actions">
+                    <span id="productCount" class="product-count"></span>
+                    <select id="sortSelect" class="sort-select">
+                        <option value="default" data-i18n-opt="sortDefault">Default</option>
+                        <option value="name_asc" data-i18n-opt="sortNameAsc">Name A-Z</option>
+                        <option value="name_desc" data-i18n-opt="sortNameDesc">Name Z-A</option>
+                        <option value="price_asc" data-i18n-opt="sortPriceAsc">Price Low-High</option>
+                        <option value="price_desc" data-i18n-opt="sortPriceDesc">Price High-Low</option>
+                        <option value="weight_asc" data-i18n-opt="sortWeightAsc">Weight Low-High</option>
+                        <option value="weight_desc" data-i18n-opt="sortWeightDesc">Weight High-Low</option>
+                    </select>
+                </div>
             </div>
 
             <div class="product-grid" id="productGrid">

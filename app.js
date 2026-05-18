@@ -185,6 +185,10 @@ function applySiteContent() {
 // =============================================================================
 function renderCategories() {
     categoryNav.innerHTML = '';
+    const counts = {};
+    db.products.forEach(p => {
+        counts[p.category_id] = (counts[p.category_id] || 0) + 1;
+    });
     db.categories.forEach(cat => {
         const btn = document.createElement('button');
         btn.className = `cat-btn ${cat.id === currentCategory ? 'active' : ''}`;
@@ -196,6 +200,14 @@ function renderCategories() {
 
         const text = document.createTextNode(' ' + (currentLang === 'en' ? cat.name_en : cat.name_ar));
         btn.appendChild(text);
+
+        const count = counts[cat.id] || 0;
+        if (count > 0) {
+            const badge = document.createElement('span');
+            badge.className = 'cat-count-badge';
+            badge.textContent = count;
+            btn.appendChild(badge);
+        }
 
         btn.addEventListener('click', () => {
             document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
@@ -232,10 +244,42 @@ function renderProducts() {
         );
     }
 
-    const t = db.translations[currentLang];
-    productCountEl.textContent = `${filtered.length} ${t.productCount}`;
+    // Sort
+    const sorted = [...filtered];
+    const sortLocale = currentLang === 'en' ? 'en' : 'ar';
+    switch (sortBy) {
+        case 'name_asc':
+            sorted.sort((a, b) => (currentLang === 'en' ? a.name_en : a.name_ar).localeCompare(currentLang === 'en' ? b.name_en : b.name_ar, sortLocale));
+            break;
+        case 'name_desc':
+            sorted.sort((a, b) => (currentLang === 'en' ? b.name_en : b.name_ar).localeCompare(currentLang === 'en' ? a.name_en : a.name_ar, sortLocale));
+            break;
+        case 'price_asc':
+            sorted.sort((a, b) => (parseFloat(a.price) || 0) - (parseFloat(b.price) || 0));
+            break;
+        case 'price_desc':
+            sorted.sort((a, b) => (parseFloat(b.price) || 0) - (parseFloat(a.price) || 0));
+            break;
+        case 'weight_asc':
+            sorted.sort((a, b) => {
+                const wa = parseFloat(a.weight) || 0;
+                const wb = parseFloat(b.weight) || 0;
+                return wa - wb;
+            });
+            break;
+        case 'weight_desc':
+            sorted.sort((a, b) => {
+                const wa = parseFloat(a.weight) || 0;
+                const wb = parseFloat(b.weight) || 0;
+                return wb - wa;
+            });
+            break;
+    }
 
-    if (filtered.length === 0) {
+    const t = db.translations[currentLang];
+    productCountEl.textContent = `${sorted.length} ${t.productCount}`;
+
+    if (sorted.length === 0) {
         productGrid.innerHTML = `
             <div class="empty-state">
                 <i class='bx bx-search-alt'></i>
@@ -245,7 +289,9 @@ function renderProducts() {
         return;
     }
 
-    filtered.forEach((product, index) => {
+    const newThreshold = parseInt(db.products[Math.min(20, db.products.length - 1)].id) || 9000;
+
+    sorted.forEach((product, index) => {
         const card = document.createElement('div');
         card.className = 'product-card fade-in';
         card.style.animationDelay = `${index * 0.04}s`;
@@ -255,6 +301,12 @@ function renderProducts() {
         const hasImg = imgSrc.length > 0;
 
         const price = parseFloat(product.price) || 0;
+        const isNew = parseInt(product.id) > newThreshold;
+
+        const waMsg = currentLang === 'en'
+            ? `Hello! I'm interested in: ${product.name_en}${product.weight ? ' (' + product.weight + ')' : ''}. Could you provide more details?`
+            : `مرحباً! أنا مهتم بـ: ${product.name_ar}${product.weight ? ' (' + product.weight + ')' : ''}. هل يمكنكم تقديم مزيد من التفاصيل؟`;
+        const waUrl = `https://wa.me/${db.siteContent.whatsapp}?text=${encodeURIComponent(waMsg)}`;
 
         card.innerHTML = `
             <div class="product-image-container">
@@ -263,7 +315,17 @@ function renderProducts() {
                            onerror="this.parentElement.innerHTML='<div class=\\'product-placeholder\\'><i class=\\'bx bx-image\\'></i></div>'">`
                 : `<div class="product-placeholder"><i class='bx bx-image'></i></div>`
             }
-                <div class="product-overlay"></div>
+                ${isNew ? '<span class="product-badge-new">' + (currentLang === 'en' ? 'NEW' : 'جديد') + '</span>' : ''}
+                <div class="product-hover-overlay">
+                    <div class="product-hover-actions">
+                        <button class="hover-btn hover-btn-quickview" title="${t.btnInquire || 'Quick View'}">
+                            <i class='bx bx-show'></i>
+                        </button>
+                        <a href="${waUrl}" target="_blank" rel="noopener" class="hover-btn hover-btn-whatsapp" title="WhatsApp">
+                            <i class='bx bxl-whatsapp'></i>
+                        </a>
+                    </div>
+                </div>
             </div>
             <div class="product-info">
                 <h3 class="product-title">${title}</h3>
@@ -276,6 +338,14 @@ function renderProducts() {
                 </div>
             </div>
         `;
+
+        const quickviewBtn = card.querySelector('.hover-btn-quickview');
+        if (quickviewBtn) {
+            quickviewBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                openModal(product);
+            });
+        }
 
         card.addEventListener('click', () => openModal(product));
         productGrid.appendChild(card);
@@ -586,6 +656,7 @@ function printOrder() {
 // =============================================================================
 // Locations Map
 // =============================================================================
+let sortBy = 'default';
 let mapInstance = null;
 
 function initMap() {
@@ -727,6 +798,15 @@ function setupEventListeners() {
             if (mapInstance) mapInstance.invalidateSize();
         }, 500);
     });
+
+    // Sort
+    const sortSelect = document.getElementById('sortSelect');
+    if (sortSelect) {
+        sortSelect.addEventListener('change', (e) => {
+            sortBy = e.target.value;
+            renderProducts();
+        });
+    }
 }
 
 // =============================================================================
@@ -766,4 +846,13 @@ function applyLanguage() {
 
     // Lang toggle button text
     langText.textContent = t.langToggle;
+
+    // Sort select options
+    const sortSelect = document.getElementById('sortSelect');
+    if (sortSelect) {
+        sortSelect.querySelectorAll('option').forEach(opt => {
+            const key = opt.getAttribute('data-i18n-opt');
+            if (key && t[key]) opt.textContent = t[key];
+        });
+    }
 }
