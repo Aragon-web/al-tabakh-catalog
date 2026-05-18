@@ -1,37 +1,31 @@
-// =============================================================================
-// Al-Tabakh Premium Catalog — Data Store
-// Last updated: 18/05/2026, 10:38:54
-// =============================================================================
-
 const db = {
-
     theme: {
-        "accentColor": "#D11D1D",
-        "accentColorLight": "#E93C3C",
-        "accentColorDark": "#A51414",
-        "bgColor": "#0D0D12",
-        "surfaceColor": "#16161E",
-        "surface2Color": "#1E1E2A",
-        "surface3Color": "#262635",
-        "navbarColor": "rgba(22, 22, 30, 0.75)",
-        "textPrimary": "#F0F0F5",
-        "textSecondary": "rgba(240, 240, 245, 0.70)",
-        "textMuted": "rgba(240, 240, 245, 0.45)",
-        "borderColor": "rgba(255, 255, 255, 0.10)"
-},
+        accentColor: '#D11D1D',
+        accentColorLight: '#E93C3C',
+        accentColorDark: '#A51414',
+        bgColor: '#0D0D12',
+        surfaceColor: '#16161E',
+        surface2Color: '#1E1E2A',
+        surface3Color: '#262635',
+        navbarColor: 'rgba(22, 22, 30, 0.75)',
+        textPrimary: '#F0F0F5',
+        textSecondary: 'rgba(240, 240, 245, 0.70)',
+        textMuted: 'rgba(240, 240, 245, 0.45)',
+        borderColor: 'rgba(255, 255, 255, 0.10)'
+    },
 
     siteContent: {
-        "logoText": "AL-TABAKH",
-        "phone": "+964 770 888 8389",
-        "phoneRaw": "+9647708888389",
-        "whatsapp": "9647708888389",
-        "instagram": "altabakhfactory",
-        "heroImage": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=80&w=2070&auto=format&fit=crop",
-        "footerAbout_en": "Malek Al-Tabakh Company — Premium food manufacturing since establishment. We craft the finest spices, sauces, and food supplies.",
-        "footerAbout_ar": "شركة ملك الطباخ — تصنيع غذائي متميز منذ التأسيس. نصنع أفضل البهارات والصلصات والمواد الغذائية.",
-        "copyright_en": "© 2026 Malek Al-Tabakh Company. All rights reserved.",
-        "copyright_ar": "© 2026 شركة ملك الطباخ. جميع الحقوق محفوظة."
-},
+        logoText: 'AL-TABAKH',
+        phone: '+964 770 888 8389',
+        phoneRaw: '+9647708888389',
+        whatsapp: '9647708888389',
+        instagram: 'altabakhfactory',
+        heroImage: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=80&w=2070&auto=format&fit=crop',
+        footerAbout_en: 'Malek Al-Tabakh Company — Premium food manufacturing since establishment. We craft the finest spices, sauces, and food supplies.',
+        footerAbout_ar: 'شركة ملك الطباخ — تصنيع غذائي متميز منذ التأسيس. نصنع أفضل البهارات والصلصات والمواد الغذائية.',
+        copyright_en: '© 2026 Malek Al-Tabakh Company. All rights reserved.',
+        copyright_ar: '© 2026 شركة ملك الطباخ. جميع الحقوق محفوظة.'
+    },
 
     categories: [
         { id: 'all', name_en: 'All Products', name_ar: 'جميع المنتجات', icon: 'bx-grid-alt' },
@@ -52,1581 +46,656 @@ const db = {
         { id: 'cat_113', name_en: 'Vinger and Citrus', name_ar: 'الخل و الحوامض', icon: 'bx-droplet' },
         { id: 'cat_968', name_en: 'special sauces', name_ar: 'صلصات مميزة', icon: 'bx-droplet' }
     ],
-
     products: [
-        { id: '9086', category_id: 'cat_968', name_en: 'Pizza Sauce', name_ar: 'صلصة البيتزا', desc_en: 'Weight : 450 g
-Pieces  NO : 12', desc_ar: 'الوزن : 450 غم
-العدد : 12', weight: '450 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1768997860صلصة البيتزا.png' },
-        { id: '9085', category_id: 'cat_968', name_en: 'Smoked Sas', name_ar: 'صاص مدخن', desc_en: 'Weight : 425 g
-Pieces  NO : 12', desc_ar: 'الوزن : 425 غم
-العدد : 12', weight: '425 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1768996183صاص مدخن.png' },
-        { id: '9084', category_id: 'cat_968', name_en: 'Mayochup', name_ar: 'مايوتشب', desc_en: 'Weight : 425 g
-Pieces  NO : 12', desc_ar: 'الوزن : 425 غم
-العدد : 12', weight: '425 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_9084/1768998027مايوتشاب.png' },
-        { id: '9083', category_id: 'cat_968', name_en: 'Sumak Sauce', name_ar: 'صلصة السماق', desc_en: 'Weight : 400 g
-Pieces  NO : 12', desc_ar: 'الوزن : 400 غم
-العدد : 12', weight: '400 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1768991599سماق.png' },
-        { id: '9043', category_id: 'cat_968', name_en: 'Mustard Sauce', name_ar: 'صلصة خردل', desc_en: 'Weight : 425 g
-Pieces  NO : 12', desc_ar: 'الوزن : 425 غم
-العدد : 12', weight: '425 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1765356814صلصة خردل.png' },
-        { id: '9042', category_id: 'cat_968', name_en: 'Classic Rizo', name_ar: 'ريزو كلاسك', desc_en: 'Weight : 425 g
-Pieces  NO : 12', desc_ar: 'الوزن : 425 غم
-العدد : 12', weight: '425 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1765356619ريزو كلاسك.png' },
-        { id: '9041', category_id: 'cat_968', name_en: 'Lemon Mayo', name_ar: 'مايونيز بالليمون', desc_en: 'Weight : 425 g
-Pieces  NO : 12', desc_ar: 'الوزن : 425 غم
-العدد : 12', weight: '425 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1765355841مايونيز بالليمون.png' },
-        { id: '9040', category_id: 'cat_968', name_en: 'Garlic Sauce', name_ar: 'صلصة ثومية', desc_en: 'Weight : 425 g
-Pieces  NO : 12', desc_ar: 'الوزن : 425 غم
-العدد : 12', weight: '425 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1765355562صلصة ثومية.png' },
-        { id: '9039', category_id: 'cat_968', name_en: 'Smoked Ketchup', name_ar: 'كتشاب مدخن', desc_en: 'Weight : 425 g
-Pieces  NO : 12', desc_ar: 'الوزن : 425 غم
-العدد : 12', weight: '425 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1765355343كتشاب مدخن.png' },
-        { id: '9038', category_id: 'cat_968', name_en: 'Golden Sweet Ketchup', name_ar: 'كتشاب بارد ذهبي', desc_en: 'Weight : 435 g
-Pieces  NO : 12', desc_ar: 'الوزن : 435 غم
-العدد : 12', weight: '435 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1765355096كتشاب بارد ذهبي.png' },
-        { id: '9037', category_id: 'cat_968', name_en: 'Golden Hot Ketchup', name_ar: 'كتشاب حار ذهبي', desc_en: 'Weight : 435 g
-Pieces  NO : 12', desc_ar: 'الوزن : 435 غم
-العدد : 12', weight: '435 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1765354749كتشاب حار ذهبي.png' },
-        { id: '8091', category_id: 'cat_968', name_en: 'Ranch dressing', name_ar: 'صلصة الرانش', desc_en: 'Weight : 425 g
-Pieces  NO : 12', desc_ar: 'الوزن : 425 غم
-العدد : 12', weight: '425 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/17487780943-1-0١.png' },
-        { id: '8090', category_id: 'cat_968', name_en: 'Texas sauce', name_ar: 'صلصة تكساس', desc_en: 'Weight : 425 g
-Pieces  NO : 12', desc_ar: 'الوزن : 425 غم
-العدد : 12', weight: '425 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/17487776635-2-0١.png' },
-        { id: '8089', category_id: 'cat_968', name_en: 'BBQ sauce', name_ar: 'صلصة الباربكيو', desc_en: 'Weight : 425 g
-Pieces  NO : 12', desc_ar: 'الوزن : 425 غم
-العدد : 12', weight: '425 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/17487774312.23-0١.png' },
-        { id: '8088', category_id: 'cat_968', name_en: 'Cheddar cheese sauce', name_ar: 'صلصة جبن الشيدر', desc_en: 'Weight : 425 g
-Pieces  NO : 12', desc_ar: 'الوزن : 425 غم
-العدد : 12', weight: '425 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/17487771434-1-0١.png' },
-        { id: '8087', category_id: 'cat_968', name_en: 'golden mayonnaise', name_ar: 'مايونيز ذهبي', desc_en: 'Weight : 435 g
-Pieces  NO : 12', desc_ar: 'الوزن : 435 غم
-العدد : 12', weight: '435 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/17487767441.1-3-0١.png' },
-        { id: '5854', category_id: 'cat_57', name_en: 'Maklube Spices', name_ar: 'بهارات مقلوبة', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1726573096maklube baharatı 40 gr 2.png' },
-        { id: '3452', category_id: 'all', name_en: 'Chickpea Spice', name_ar: 'بهارات حمص اصفر ( مملحة )', desc_en: 'Weight : 100 g
-Pieces NO : 12', desc_ar: 'الوزن : 100 غم 
-العدد : 12', weight: '100 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1717935022مملحة حمص اصفر.png' },
-        { id: '3451', category_id: 'all', name_en: 'Yellow Pickle Spice', name_ar: 'بهارات الطرشي الاصفر ( مملحة )', desc_en: 'Weight : 100 g
-Pieces NO : 12', desc_ar: 'الوزن : 100 غم 
-العدد : 12', weight: '100 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1717934642مملحة بهارات طرشي اصفر.png' },
-        { id: '3450', category_id: 'all', name_en: 'Mandi Spice ( Chicken )', name_ar: 'بهارات مندي دجاج ( مملحة )', desc_en: 'Weight : 100 g
-Pieces NO : 12', desc_ar: 'الوزن : 100 غم 
-العدد : 12', weight: '100 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1717933322علبة بهارات مندي.png' },
-        { id: '1754', category_id: 'all', name_en: 'Soda', name_ar: 'صودا ( مملحة )', desc_en: 'Weight : 100 g
-Pieces  NO : 12', desc_ar: 'الوزن : 100 غم 
-العدد : 12', weight: '100 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1715058933صودا ( مملحة ) 100 غم.png' },
-        { id: '1740', category_id: 'all', name_en: 'Tea Scent and flavor', name_ar: 'نكهة وعطر جاي ( علبة )', desc_en: 'Weight : 100 g
-Pieces  NO : --', desc_ar: 'الوزن : 100 غم
-العدد : --', weight: '100 g', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1714800689tea can 100 g.png' },
-        { id: '1678', category_id: 'cat_57', name_en: 'Ketchup Powder ( CHili )', name_ar: 'مسحوق الكاتشب ( حار )', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_1678/1726573255Ketcap Chili 1.2.png' },
-        { id: '1677', category_id: 'cat_57', name_en: 'Ketchup Powder ( Sweet )', name_ar: 'مسحوق الكتشاب ( بارد )', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_1677/1726573360Ketcap Sweet 1.2.png' },
-        { id: '1676', category_id: 'cat_57', name_en: 'Curry ( CHili )', name_ar: 'كاري  ( حار )', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_1676/1726574079كاري حار.png' },
-        { id: '1675', category_id: 'cat_57', name_en: 'Omelet Seasoning', name_ar: 'توابل اومليت البيض', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1714459770omlet çeşni.png' },
-        { id: '1674', category_id: 'cat_57', name_en: 'Fried Egg Seasoning', name_ar: 'توابل البيض المقلي ( بيض عيون )', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_1674/1714459880yumurta çeşni.png' },
-        { id: '1668', category_id: 'all', name_en: 'Tea Scent and flavor', name_ar: 'نكهة وعطر جاي ( علبة )', desc_en: 'Weight : 250 g
-Pieces  NO : 6', desc_ar: 'الوزن : 250 غم
-العدد : 6', weight: '250 g', pieces_per_carton: '6', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/17142123221.png' },
-        { id: '1665', category_id: 'cat_57', name_en: 'Aleppo Meatball Spice', name_ar: 'بهارات كبة حلب', desc_en: 'Weight : 100 g
-Pieces  NO : 12', desc_ar: 'الوزن : 100 غم 
-العدد : 12', weight: '100 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_1665/1714480102كبة حلب.png' },
-        { id: '1664', category_id: 'cat_57', name_en: 'Internal Odor of Dry Cake Batter', name_ar: 'ريحة كليجة للعجين', desc_en: 'Weight : 100 g
-Pieces  NO : 12', desc_ar: 'الوزن : 100 غم
-العدد : 12', weight: '100 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_1664/1714480206كليجة.png' },
+        { id: '9086', category_id: 'all', name_en: 'Pizza Sauce', name_ar: 'صلصة البيتزا', desc_en: 'Weight : 450 g\nPieces  NO : 12', desc_ar: 'الوزن : 450 غم\nالعدد : 12', weight: '450 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1768997860صلصة البيتزا.png' },
+        { id: '9085', category_id: 'all', name_en: 'Smoked Sas', name_ar: 'صاص مدخن', desc_en: 'Weight : 425 g\nPieces  NO : 12', desc_ar: 'الوزن : 425 غم\nالعدد : 12', weight: '425 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1768996183صاص مدخن.png' },
+        { id: '9084', category_id: 'all', name_en: 'Mayochup', name_ar: 'مايوتشب', desc_en: 'Weight : 425 g\nPieces  NO : 12', desc_ar: 'الوزن : 425 غم\nالعدد : 12', weight: '425 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_9084/1768998027مايوتشاب.png' },
+        { id: '9083', category_id: 'all', name_en: 'Sumak Sauce', name_ar: 'صلصة السماق', desc_en: 'Weight : 400 g\nPieces  NO : 12', desc_ar: 'الوزن : 400 غم\nالعدد : 12', weight: '400 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1768991599سماق.png' },
+        { id: '9043', category_id: 'all', name_en: 'Mustard Sauce', name_ar: 'صلصة خردل', desc_en: 'Weight : 425 g\nPieces  NO : 12', desc_ar: 'الوزن : 425 غم\nالعدد : 12', weight: '425 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1765356814صلصة خردل.png' },
+        { id: '9042', category_id: 'all', name_en: 'Classic Rizo', name_ar: 'ريزو كلاسك', desc_en: 'Weight : 425 g\nPieces  NO : 12', desc_ar: 'الوزن : 425 غم\nالعدد : 12', weight: '425 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1765356619ريزو كلاسك.png' },
+        { id: '9041', category_id: 'all', name_en: 'Lemon Mayo', name_ar: 'مايونيز بالليمون', desc_en: 'Weight : 425 g\nPieces  NO : 12', desc_ar: 'الوزن : 425 غم\nالعدد : 12', weight: '425 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1765355841مايونيز بالليمون.png' },
+        { id: '9040', category_id: 'all', name_en: 'Garlic Sauce', name_ar: 'صلصة ثومية', desc_en: 'Weight : 425 g\nPieces  NO : 12', desc_ar: 'الوزن : 425 غم\nالعدد : 12', weight: '425 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1765355562صلصة ثومية.png' },
+        { id: '9039', category_id: 'all', name_en: 'Smoked Ketchup', name_ar: 'كتشاب مدخن', desc_en: 'Weight : 425 g\nPieces  NO : 12', desc_ar: 'الوزن : 425 غم\nالعدد : 12', weight: '425 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1765355343كتشاب مدخن.png' },
+        { id: '9038', category_id: 'all', name_en: 'Golden Sweet Ketchup', name_ar: 'كتشاب بارد ذهبي', desc_en: 'Weight : 435 g\nPieces  NO : 12', desc_ar: 'الوزن : 435 غم\nالعدد : 12', weight: '435 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1765355096كتشاب بارد ذهبي.png' },
+        { id: '9037', category_id: 'all', name_en: 'Golden Hot Ketchup', name_ar: 'كتشاب حار ذهبي', desc_en: 'Weight : 435 g\nPieces  NO : 12', desc_ar: 'الوزن : 435 غم\nالعدد : 12', weight: '435 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1765354749كتشاب حار ذهبي.png' },
+        { id: '8091', category_id: 'all', name_en: 'Ranch dressing', name_ar: 'صلصة الرانش', desc_en: 'Weight : 425 g\nPieces  NO : 12', desc_ar: 'الوزن : 425 غم\nالعدد : 12', weight: '425 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/17487780943-1-0١.png' },
+        { id: '8090', category_id: 'all', name_en: 'Texas sauce', name_ar: 'صلصة تكساس', desc_en: 'Weight : 425 g\nPieces  NO : 12', desc_ar: 'الوزن : 425 غم\nالعدد : 12', weight: '425 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/17487776635-2-0١.png' },
+        { id: '8089', category_id: 'all', name_en: 'BBQ sauce', name_ar: 'صلصة الباربكيو', desc_en: 'Weight : 425 g\nPieces  NO : 12', desc_ar: 'الوزن : 425 غم\nالعدد : 12', weight: '425 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/17487774312.23-0١.png' },
+        { id: '8088', category_id: 'all', name_en: 'Cheddar cheese sauce', name_ar: 'صلصة جبن الشيدر', desc_en: 'Weight : 425 g\nPieces  NO : 12', desc_ar: 'الوزن : 425 غم\nالعدد : 12', weight: '425 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/17487771434-1-0١.png' },
+        { id: '8087', category_id: 'all', name_en: 'golden mayonnaise', name_ar: 'مايونيز ذهبي', desc_en: 'Weight : 435 g\nPieces  NO : 12', desc_ar: 'الوزن : 435 غم\nالعدد : 12', weight: '435 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/17487767441.1-3-0١.png' },
+        { id: '5854', category_id: 'all', name_en: 'Maklube Spices', name_ar: 'بهارات مقلوبة', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1726573096maklube baharatı 40 gr 2.png' },
+        { id: '3452', category_id: 'all', name_en: 'Chickpea Spice', name_ar: 'بهارات حمص اصفر ( مملحة )', desc_en: 'Weight : 100 g\nPieces NO : 12', desc_ar: 'الوزن : 100 غم \nالعدد : 12', weight: '100 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1717935022مملحة حمص اصفر.png' },
+        { id: '3451', category_id: 'all', name_en: 'Yellow Pickle Spice', name_ar: 'بهارات الطرشي الاصفر ( مملحة )', desc_en: 'Weight : 100 g\nPieces NO : 12', desc_ar: 'الوزن : 100 غم \nالعدد : 12', weight: '100 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1717934642مملحة بهارات طرشي اصفر.png' },
+        { id: '3450', category_id: 'all', name_en: 'Mandi Spice ( Chicken )', name_ar: 'بهارات مندي دجاج ( مملحة )', desc_en: 'Weight : 100 g\nPieces NO : 12', desc_ar: 'الوزن : 100 غم \nالعدد : 12', weight: '100 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1717933322علبة بهارات مندي.png' },
+        { id: '1754', category_id: 'all', name_en: 'Soda', name_ar: 'صودا ( مملحة )', desc_en: 'Weight : 100 g\nPieces  NO : 12', desc_ar: 'الوزن : 100 غم \nالعدد : 12', weight: '100 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1715058933صودا ( مملحة ) 100 غم.png' },
+        { id: '1740', category_id: 'all', name_en: 'Tea Scent and flavor', name_ar: 'نكهة وعطر جاي ( علبة )', desc_en: 'Weight : 100 g\nPieces  NO : --', desc_ar: 'الوزن : 100 غم\nالعدد : --', weight: '100 g', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1714800689tea can 100 g.png' },
+        { id: '1678', category_id: 'all', name_en: 'Ketchup Powder ( CHili )', name_ar: 'مسحوق الكاتشب ( حار )', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_1678/1726573255Ketcap Chili 1.2.png' },
+        { id: '1677', category_id: 'all', name_en: 'Ketchup Powder ( Sweet )', name_ar: 'مسحوق الكتشاب ( بارد )', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_1677/1726573360Ketcap Sweet 1.2.png' },
+        { id: '1676', category_id: 'all', name_en: 'Curry ( CHili )', name_ar: 'كاري  ( حار )', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_1676/1726574079كاري حار.png' },
+        { id: '1675', category_id: 'all', name_en: 'Omelet Seasoning', name_ar: 'توابل اومليت البيض', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1714459770omlet çeşni.png' },
+        { id: '1674', category_id: 'all', name_en: 'Fried Egg Seasoning', name_ar: 'توابل البيض المقلي ( بيض عيون )', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_1674/1714459880yumurta çeşni.png' },
+        { id: '1668', category_id: 'all', name_en: 'Tea Scent and flavor', name_ar: 'نكهة وعطر جاي ( علبة )', desc_en: 'Weight : 250 g\nPieces  NO : 6', desc_ar: 'الوزن : 250 غم\nالعدد : 6', weight: '250 g', pieces_per_carton: '6', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/17142123221.png' },
+        { id: '1665', category_id: 'all', name_en: 'Aleppo Meatball Spice', name_ar: 'بهارات كبة حلب', desc_en: 'Weight : 100 g\nPieces  NO : 12', desc_ar: 'الوزن : 100 غم \nالعدد : 12', weight: '100 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_1665/1714480102كبة حلب.png' },
+        { id: '1664', category_id: 'all', name_en: 'Internal Odor of Dry Cake Batter', name_ar: 'ريحة كليجة للعجين', desc_en: 'Weight : 100 g\nPieces  NO : 12', desc_ar: 'الوزن : 100 غم\nالعدد : 12', weight: '100 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_1664/1714480206كليجة.png' },
         { id: '1596', category_id: 'all', name_en: '', name_ar: '', desc_en: '', desc_ar: '', weight: '', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1713790169ريحة كليجة للموققع.png' },
         { id: '1595', category_id: 'all', name_en: '', name_ar: '', desc_en: '', desc_ar: '', weight: '', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1713788140كب حلب للموقع.png' },
         { id: '1594', category_id: 'all', name_en: '', name_ar: '', desc_en: '', desc_ar: '', weight: '', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1713787913ريحة كليجة للموققع.png' },
-        { id: '1171', category_id: 'cat_57', name_en: 'Chicken Shawarma Spice', name_ar: 'بهارات كص الدجاج', desc_en: 'Weight : 100 g
-Pieces  NO : 12', desc_ar: 'الوزن : 100 غم
-العدد : 12', weight: '100 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_1171/1714480135كص الموقع.png' },
-        { id: '1170', category_id: 'cat_57', name_en: 'Pizza Spice', name_ar: 'بهارات بيتزا', desc_en: 'Weight : 100 g
-Pieces  NO : 12', desc_ar: 'الوزن : 100 غم
-العدد : 12', weight: '100 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_1170/1714480150بيتزا.png' },
-        { id: '1169', category_id: 'cat_57', name_en: 'Chapli Kebab Spice', name_ar: 'بهارات كباب عروك ( شفتة )', desc_en: 'Weight : 100 g
-Pieces  NO : 12', desc_ar: 'الوزن : 100 غم
-العدد : 12', weight: '100 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_1169/1714480162شفتة.png' },
-        { id: '1168', category_id: 'cat_57', name_en: 'Round Meatball Spice', name_ar: 'بهارات كبة مدورة', desc_en: 'Weight : 100 g
-Pieces  NO : 12', desc_ar: 'الوزن : 100 غم 
-العدد : 12', weight: '100 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_1168/1714480176kuba.png' },
-        { id: '1036', category_id: 'cat_57', name_en: 'Meat bouillon', name_ar: 'مرق اللحم', desc_en: 'Weight : 650 g', desc_ar: 'الوزن : 650 غم', weight: '650 g', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1711348852مرق لحم 650 غم.png' },
-        { id: '1035', category_id: 'cat_57', name_en: 'CURRY ( BY MASTER  CHEF )', name_ar: 'كاري', desc_en: 'Weight : 200 g', desc_ar: 'الوزن : 200 غم', weight: '200 g', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1710918257كاري.png' },
-        { id: '1034', category_id: 'all', name_en: 'ORANGE  TEA', name_ar: 'شاي البرتقال', desc_en: 'Weight : 225 g
-Pieces  NO :--', desc_ar: 'الوزن : 225 غم
-العدد :--', weight: '225 g', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/171091449210 ch.png' },
-        { id: '1033', category_id: 'all', name_en: 'APPLE  TEA', name_ar: 'شاي التفاح', desc_en: 'Weight : 225 g
-Pieces  NO :--', desc_ar: 'الوزن : 225 غم
-العدد :--', weight: '225 g', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/17109141496 ch.png' },
-        { id: '1032', category_id: 'all', name_en: 'POMEGRANATE   TEA', name_ar: 'شاي الرمان', desc_en: 'Weight : 225 g
-Pieces  NO :--', desc_ar: 'الوزن : 225 غم
-العدد :--', weight: '225 g', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/17109140444 ch.png' },
-        { id: '1031', category_id: 'all', name_en: 'APRICOTA  TEA', name_ar: 'شاي المشمش', desc_en: 'Weight : 225 g
-Pieces  NO :--', desc_ar: 'الوزن : 225 غم
-العدد :--', weight: '225 g', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/17109139112ch.png' },
-        { id: '1029', category_id: 'all', name_en: 'Pure Pomegranate Syrup', name_ar: 'شراب  الرمان  المركز', desc_en: 'Weight : 345 ml
-Pieces  NO :--', desc_ar: 'الوزن : 345 مل
-العدد : --', weight: '345 ml', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_1029/17108459168.png' },
-        { id: '1013', category_id: 'all', name_en: 'Cappucino', name_ar: 'كابتشينو', desc_en: 'Weight : 20 g
-Pieces  NO : 18', desc_ar: 'الوزن : 20 غم 
-العدد : 18', weight: '20 g', pieces_per_carton: '18', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_1013/1711359368كابوجينو.png' },
-        { id: '1012', category_id: 'all', name_en: 'Cherry', name_ar: 'عصير كرز', desc_en: 'Weight :--
-Pieces  NO : 24', desc_ar: 'الوزن :--
-العدد : 24', weight: '', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_1012/1711004556o (8).png' },
-        { id: '1011', category_id: 'all', name_en: 'Watermelon', name_ar: 'عصير البطيخ', desc_en: 'Weight :--
-Pieces  NO : 24', desc_ar: 'الوزن :--
-العدد : 24', weight: '', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_1011/1711005403o (6).png' },
-        { id: '1010', category_id: 'all', name_en: 'Tamarind', name_ar: 'عصير تمر هند', desc_en: 'Weight :--
-Pieces  NO : 24', desc_ar: 'الوزن :--
-العدد : 24', weight: '', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_1010/1711004511o (7).png' },
-        { id: '1009', category_id: 'all', name_en: 'Coctail', name_ar: 'عصير كوكتيل', desc_en: 'Weight :--
-Pieces  NO : 24', desc_ar: 'الوزن :--
-العدد : 24', weight: '', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_1009/17110017900 (1).png' },
-        { id: '1008', category_id: 'all', name_en: 'Apple', name_ar: 'عصير تفاح', desc_en: 'Weight :--
-Pieces  NO : 24', desc_ar: 'الوزن :--
-العدد : 24', weight: '', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_1008/1711004447o (3).png' },
-        { id: '1007', category_id: 'all', name_en: 'Apricot', name_ar: 'عصير مشمش', desc_en: 'Weight :--
-Pieces  NO :  24', desc_ar: 'الوزن :--
-العدد :  24', weight: '', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_1007/1711004806o (4).png' },
-        { id: '1006', category_id: 'all', name_en: 'Pineapple', name_ar: 'عصير أنناس', desc_en: 'Weight :--
-Pieces  NO :  24', desc_ar: 'الوزن :--
-العدد :  24', weight: '', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_1006/1711004410o (1).png' },
-        { id: '1005', category_id: 'all', name_en: 'Lemon Mint', name_ar: 'عصير ليمون بالنعناع', desc_en: 'Weight :--
-Pieces  NO :  24', desc_ar: 'الوزن :--
-العدد :  24', weight: '', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_1005/17110052229.png' },
-        { id: '1004', category_id: 'all', name_en: 'Peach', name_ar: 'عصير خوخ', desc_en: 'Weight :--
-Pieces   NO :  24', desc_ar: 'الوزن :--
-العدد : 24', weight: '', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_1004/1711004379o (5).png' },
-        { id: '1003', category_id: 'all', name_en: 'MINT - LEMON TEA', name_ar: 'شاي بالنعناع والليمون', desc_en: 'Weight : 225 g
-Pieces  NO :--', desc_ar: 'الوزن : 225 غم
-العدد :--', weight: '225 g', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_1003/17109137178 ch.png' },
+        { id: '1171', category_id: 'all', name_en: 'Chicken Shawarma Spice', name_ar: 'بهارات كص الدجاج', desc_en: 'Weight : 100 g\nPieces  NO : 12', desc_ar: 'الوزن : 100 غم\nالعدد : 12', weight: '100 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_1171/1714480135كص الموقع.png' },
+        { id: '1170', category_id: 'all', name_en: 'Pizza Spice', name_ar: 'بهارات بيتزا', desc_en: 'Weight : 100 g\nPieces  NO : 12', desc_ar: 'الوزن : 100 غم\nالعدد : 12', weight: '100 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_1170/1714480150بيتزا.png' },
+        { id: '1169', category_id: 'all', name_en: 'Chapli Kebab Spice', name_ar: 'بهارات كباب عروك ( شفتة )', desc_en: 'Weight : 100 g\nPieces  NO : 12', desc_ar: 'الوزن : 100 غم\nالعدد : 12', weight: '100 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_1169/1714480162شفتة.png' },
+        { id: '1168', category_id: 'all', name_en: 'Round Meatball Spice', name_ar: 'بهارات كبة مدورة', desc_en: 'Weight : 100 g\nPieces  NO : 12', desc_ar: 'الوزن : 100 غم \nالعدد : 12', weight: '100 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_1168/1714480176kuba.png' },
+        { id: '1036', category_id: 'all', name_en: 'Meat bouillon', name_ar: 'مرق اللحم', desc_en: 'Weight : 650 g', desc_ar: 'الوزن : 650 غم', weight: '650 g', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1711348852مرق لحم 650 غم.png' },
+        { id: '1035', category_id: 'all', name_en: 'CURRY ( BY MASTER  CHEF )', name_ar: 'كاري', desc_en: 'Weight : 200 g', desc_ar: 'الوزن : 200 غم', weight: '200 g', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1710918257كاري.png' },
+        { id: '1034', category_id: 'all', name_en: 'ORANGE  TEA', name_ar: 'شاي البرتقال', desc_en: 'Weight : 225 g\nPieces  NO :--', desc_ar: 'الوزن : 225 غم\nالعدد :--', weight: '225 g', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/171091449210 ch.png' },
+        { id: '1033', category_id: 'all', name_en: 'APPLE  TEA', name_ar: 'شاي التفاح', desc_en: 'Weight : 225 g\nPieces  NO :--', desc_ar: 'الوزن : 225 غم\nالعدد :--', weight: '225 g', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/17109141496 ch.png' },
+        { id: '1032', category_id: 'all', name_en: 'POMEGRANATE   TEA', name_ar: 'شاي الرمان', desc_en: 'Weight : 225 g\nPieces  NO :--', desc_ar: 'الوزن : 225 غم\nالعدد :--', weight: '225 g', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/17109140444 ch.png' },
+        { id: '1031', category_id: 'all', name_en: 'APRICOTA  TEA', name_ar: 'شاي المشمش', desc_en: 'Weight : 225 g\nPieces  NO :--', desc_ar: 'الوزن : 225 غم\nالعدد :--', weight: '225 g', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/17109139112ch.png' },
+        { id: '1029', category_id: 'all', name_en: 'Pure Pomegranate Syrup', name_ar: 'شراب  الرمان  المركز', desc_en: 'Weight : 345 ml\nPieces  NO :--', desc_ar: 'الوزن : 345 مل\nالعدد : --', weight: '345 ml', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_1029/17108459168.png' },
+        { id: '1013', category_id: 'all', name_en: 'Cappucino', name_ar: 'كابتشينو', desc_en: 'Weight : 20 g\nPieces  NO : 18', desc_ar: 'الوزن : 20 غم \nالعدد : 18', weight: '20 g', pieces_per_carton: '18', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_1013/1711359368كابوجينو.png' },
+        { id: '1012', category_id: 'all', name_en: 'Cherry', name_ar: 'عصير كرز', desc_en: 'Weight :--\nPieces  NO : 24', desc_ar: 'الوزن :--\nالعدد : 24', weight: '', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_1012/1711004556o (8).png' },
+        { id: '1011', category_id: 'all', name_en: 'Watermelon', name_ar: 'عصير البطيخ', desc_en: 'Weight :--\nPieces  NO : 24', desc_ar: 'الوزن :--\nالعدد : 24', weight: '', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_1011/1711005403o (6).png' },
+        { id: '1010', category_id: 'all', name_en: 'Tamarind', name_ar: 'عصير تمر هند', desc_en: 'Weight :--\nPieces  NO : 24', desc_ar: 'الوزن :--\nالعدد : 24', weight: '', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_1010/1711004511o (7).png' },
+        { id: '1009', category_id: 'all', name_en: 'Coctail', name_ar: 'عصير كوكتيل', desc_en: 'Weight :--\nPieces  NO : 24', desc_ar: 'الوزن :--\nالعدد : 24', weight: '', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_1009/17110017900 (1).png' },
+        { id: '1008', category_id: 'all', name_en: 'Apple', name_ar: 'عصير تفاح', desc_en: 'Weight :--\nPieces  NO : 24', desc_ar: 'الوزن :--\nالعدد : 24', weight: '', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_1008/1711004447o (3).png' },
+        { id: '1007', category_id: 'all', name_en: 'Apricot', name_ar: 'عصير مشمش', desc_en: 'Weight :--\nPieces  NO :  24', desc_ar: 'الوزن :--\nالعدد :  24', weight: '', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_1007/1711004806o (4).png' },
+        { id: '1006', category_id: 'all', name_en: 'Pineapple', name_ar: 'عصير أنناس', desc_en: 'Weight :--\nPieces  NO :  24', desc_ar: 'الوزن :--\nالعدد :  24', weight: '', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_1006/1711004410o (1).png' },
+        { id: '1005', category_id: 'all', name_en: 'Lemon Mint', name_ar: 'عصير ليمون بالنعناع', desc_en: 'Weight :--\nPieces  NO :  24', desc_ar: 'الوزن :--\nالعدد :  24', weight: '', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_1005/17110052229.png' },
+        { id: '1004', category_id: 'all', name_en: 'Peach', name_ar: 'عصير خوخ', desc_en: 'Weight :--\nPieces   NO :  24', desc_ar: 'الوزن :--\nالعدد : 24', weight: '', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_1004/1711004379o (5).png' },
+        { id: '1003', category_id: 'all', name_en: 'MINT - LEMON TEA', name_ar: 'شاي بالنعناع والليمون', desc_en: 'Weight : 225 g\nPieces  NO :--', desc_ar: 'الوزن : 225 غم\nالعدد :--', weight: '225 g', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_1003/17109137178 ch.png' },
         { id: '1002', category_id: 'all', name_en: 'Coffee', name_ar: 'قهوة', desc_en: 'Weight : 16 g', desc_ar: 'الوزن : 16 غم', weight: '16 g', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_1002/1710845533155.png' },
         { id: '1001', category_id: 'all', name_en: 'Date dibek coffee', name_ar: 'قهوة التمر', desc_en: 'Weight : 250 g', desc_ar: 'الوزن : 250 غم', weight: '250 g', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_1001/17108409673.png' },
         { id: '1000', category_id: 'all', name_en: 'Ottoman dibek coffee', name_ar: 'قهوة الدبك العثمانية', desc_en: 'Weight : 250 g', desc_ar: 'الوزن : 250 غم', weight: '250 g', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_1000/17108409362.png' },
         { id: '999', category_id: 'all', name_en: 'Pistachio coffee', name_ar: 'قهوة قزوان الطبيعية  (بطم )', desc_en: 'Weight : 250 g', desc_ar: 'الوزن :250 غم', weight: '250 g', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_999/17108409114.png' },
-        { id: '997', category_id: 'all', name_en: 'HIMALAYAN SALT  POWDER', name_ar: 'ملح هيمالايا مطحون', desc_en: 'Weight : 500 g
-Pieces  NO :--', desc_ar: 'الوزن : 500 غم
-العدد :--', weight: '500 g', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_997/17108457186.png' },
-        { id: '996', category_id: 'all', name_en: 'HIMALAYAN SALT', name_ar: 'ملح الهيمالايا', desc_en: 'Weight : 400 g
-Pieces  NO :--', desc_ar: 'الوزن : 400 غم
-العدد :--', weight: '400 g', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_996/17108458487.png' },
+        { id: '997', category_id: 'all', name_en: 'HIMALAYAN SALT  POWDER', name_ar: 'ملح هيمالايا مطحون', desc_en: 'Weight : 500 g\nPieces  NO :--', desc_ar: 'الوزن : 500 غم\nالعدد :--', weight: '500 g', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_997/17108457186.png' },
+        { id: '996', category_id: 'all', name_en: 'HIMALAYAN SALT', name_ar: 'ملح الهيمالايا', desc_en: 'Weight : 400 g\nPieces  NO :--', desc_ar: 'الوزن : 400 غم\nالعدد :--', weight: '400 g', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_996/17108458487.png' },
         { id: '995', category_id: 'all', name_en: '', name_ar: '', desc_en: '', desc_ar: '', weight: '', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1710416537شراب الرمان المركز 345 مل.png' },
         { id: '994', category_id: 'all', name_en: 'INSTANT  COCOA', name_ar: 'كاكاو جاهز', desc_en: 'Weight : 18 g', desc_ar: 'الوزن : 18 غم', weight: '18 g', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_994/171084085814.png' },
         { id: '993', category_id: 'all', name_en: 'Hot Chocolate', name_ar: 'شوكولاتة ساخنة', desc_en: 'Weight : 16 g', desc_ar: 'الوزن : 16 غم', weight: '16 g', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_993/171084083817.png' },
         { id: '992', category_id: 'all', name_en: 'Chocolate Coffee', name_ar: 'قهوة جكليتية', desc_en: 'Weight : 220 g', desc_ar: 'الوزن : 220 غم', weight: '220 g', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_992/17108452479.png' },
         { id: '991', category_id: 'all', name_en: 'Coffee Whitener', name_ar: 'مبيض القهوة', desc_en: 'Weight : 100 g', desc_ar: 'الوزن : 100 غم', weight: '100 g', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_991/171084475010.png' },
         { id: '990', category_id: 'all', name_en: 'Chocolate Coffee', name_ar: 'قهوة جكليتية', desc_en: 'Weight : 18 g', desc_ar: 'الوزن : 18 غم', weight: '18 g', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_990/171084069218.png' },
-        { id: '989', category_id: 'all', name_en: 'ALQUIK', name_ar: 'الكويك', desc_en: 'Weight : 100 g', desc_ar: 'الوزن : 100 غم 
-العدد :--', weight: '100 g', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_989/171084484311.png' },
-        { id: '988', category_id: 'all', name_en: 'ALQUIK', name_ar: 'الكويك', desc_en: 'Weight : 14 g
-Pieces  NO : 24', desc_ar: 'الوزن : 14 غم 
-العدد : 24', weight: '14 g', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_988/171084062016.png' },
-        { id: '837', category_id: 'all', name_en: 'Meat bouillon', name_ar: 'مرق لحم  ( علبة )', desc_en: 'Weight : 400 g 
-Pieces  NO : 12', desc_ar: 'الوزن : 400 غم 
-العدد : 12', weight: '400 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_837/1710318220مرق لحم علبة.png' },
-        { id: '836', category_id: 'all', name_en: '', name_ar: 'شراب لومي بصرة', desc_en: '', desc_ar: 'الوزن : 
-العدد : 6', weight: '', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1710228916شراب لومي بصرة 2.png' },
-        { id: '835', category_id: 'all', name_en: 'Grape Juice', name_ar: 'عصير (شربت ) زبيب', desc_en: 'Weight : 550 ml
-Pieces   NO : 6', desc_ar: 'الوزن : 550 مل
-العدد : 6', weight: '550 ml', pieces_per_carton: '6', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1710228873شراب زبيب 2.png' },
-        { id: '834', category_id: 'all', name_en: 'Tamarind Juice', name_ar: 'عصر ( شربت )  تمر هند', desc_en: 'Weight : 550 ml
-Pieces   NO : 6', desc_ar: 'الوزن : 550 مل 
-العدد : 6', weight: '550 ml', pieces_per_carton: '6', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1710228821شراب تمر هند 2.png' },
-        { id: '833', category_id: 'all', name_en: 'Orange Juice', name_ar: 'عصير ( شربت )  برتقال', desc_en: 'Weight : 550 ml
-Pieces   NO : 24', desc_ar: 'الوزن : 550 مل 
-العدد : 6', weight: '550 ml', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1710228762شراب برتقال 2.png' },
-        { id: '832', category_id: 'all', name_en: 'Tamarind Juice', name_ar: 'عصير ( شربت )  تمر هند', desc_en: 'Weight : 1050 ml
-Pieces  NO : 24', desc_ar: 'الوزن : 1050 مل 
-العدد : 6', weight: '1050 ml', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1710228560شراب تمر هند.png' },
-        { id: '831', category_id: 'all', name_en: 'Dried Lemon Juice', name_ar: 'عصير ( شربت ) لومي بصرة', desc_en: 'Weight : 1050 ml 
-Pieces  NO : 24', desc_ar: 'الوزن : 1050 مل
-العدد : 6', weight: '1050 ml', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1710228482شراب لومي بصرة.png' },
-        { id: '830', category_id: 'all', name_en: 'Orange Juice', name_ar: 'عصير ( شربت )  برتقال', desc_en: 'Weight : 1050 ml 
-Pieces  NO : 24', desc_ar: 'الوزن : 1050 مل
-العدد : 6', weight: '1050 ml', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1710228388شراب برتقال.png' },
-        { id: '829', category_id: 'all', name_en: 'Grape Juice', name_ar: 'عصير ( شربت )  زبيب', desc_en: 'Weight : 1050 ml 
-Pieces NO : 24', desc_ar: 'الوزن : 1050 مل
-العدد : 6', weight: '1050 ml', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1710228267شراب زبيب 1050غم.png' },
-        { id: '828', category_id: 'all', name_en: 'INSTANT  COCOA', name_ar: 'كاكاو جاهز', desc_en: 'Weight : 18 g
-
-Pieces  NO : 24', desc_ar: 'الوزن : 18 غم 
-العدد : 24', weight: '18 g', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1710155968كاكو جاهز.png' },
-        { id: '827', category_id: 'all', name_en: '', name_ar: 'شاي أسود - تنكة', desc_en: 'Weight : 1.142 g
-Pure Weight : 800 g
-Pieces  NO :--', desc_ar: 'الوزن الكلي : 1.142 كغم
-الوزن الصافي : 800  غم
-العدد :--', weight: '1.142 g', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1710155170شاي اسود -تنكة  ( 800 ) غم.png' },
-        { id: '826', category_id: 'all', name_en: 'Custard Vanila Flavoured', name_ar: 'كاستر بالفانيلا ( سطل )', desc_en: 'Weight : 500 g
-Pieces  NO :--', desc_ar: 'الوزن : 500 غم 
-العدد :--', weight: '500 g', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_826/17108405925.png' },
-        { id: '825', category_id: 'all', name_en: 'Carrot Jam', name_ar: 'مربي الجزر', desc_en: 'Weight : 380 g
-Pieces  NO :--', desc_ar: 'الوزن : 380 غم 
-العدد :--', weight: '380 g', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_825/171084498312.png' },
-        { id: '824', category_id: 'all', name_en: 'Strawberry Jam', name_ar: 'مربي الفراولة', desc_en: 'Weight : 380 g
-Pieces  NO : --', desc_ar: 'الوزن : 380 غم 
-العدد :--', weight: '380 g', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_824/171084510613.png' },
-        { id: '823', category_id: 'all', name_en: 'Tahini', name_ar: 'راشي التمر - تنكة', desc_en: 'Weight : 5 kg 
-Pieces  NO : 1', desc_ar: 'الوزن : 5 كغم
-العدد : 1', weight: '5 kg', pieces_per_carton: '1', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1710152325راشي.png' },
-        { id: '820', category_id: 'all', name_en: 'COCO BALLS', name_ar: 'كرات الذرة بالكاكاو', desc_en: 'Weight : 250 g
-Pieces  NO : 12', desc_ar: 'الوزن : 250 غم 
-العدد : 12', weight: '250 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/17101435431335 Coco Balls.png' },
-        { id: '819', category_id: 'all', name_en: 'Vegetable Bouillon', name_ar: 'مرق خضار ( علبة )', desc_en: 'Weight : 400 g
-Pieces  NO : 12', desc_ar: 'الوزن : 400 غم 
-العدد : 12', weight: '400 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1710137078مرق خضار 400غم.png' },
-        { id: '818', category_id: 'all', name_en: 'Chicken Bouillen', name_ar: 'مرق دجاج ( علبة )', desc_en: 'Weight : 400 g
-Pieces  NO : 12', desc_ar: 'الوزن : 400 غم 
-العدد : 12', weight: '400 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1710136974مرق دجاج 400غم.png' },
-        { id: '817', category_id: 'all', name_en: '', name_ar: 'فلفل احمر حار ( مملحة )', desc_en: 'Weight : 100 g
-Pieces  NO : 12', desc_ar: 'الوزن : 100 غم 
-العدد : 12', weight: '100 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1710136874فلفل احمر حار100 غم مملحة جديد 1في 12.png' },
-        { id: '816', category_id: 'all', name_en: '', name_ar: 'بصل ( مملحة )', desc_en: 'Weight : 125 g
-Pieces  NO : 12', desc_ar: 'الوزن : 125 غم 
-العدد : 12', weight: '125 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1710136732بصل م 125غم مملحة جديد 1في12.png' },
-        { id: '815', category_id: 'all', name_en: '', name_ar: 'تتبيلة و بهارات دجاج ( علبة )', desc_en: 'Weight : 300 g
-Pieces  NO : 12', desc_ar: 'الوزن : 300 غم 
-العدد : 12', weight: '300 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1710136670تتبيلة وبهارات دجاج300غم علبة1في 12.png' },
-        { id: '814', category_id: 'all', name_en: 'Adana kebab Seasoning', name_ar: 'كباب ادنا حار ( علبة )', desc_en: 'Weight : 250 g
-Pieces  NO : 12', desc_ar: 'الوزن : 250 غم 
-العدد : 12', weight: '250 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_814/1710137244كباب ادانا حار.png' },
-        { id: '813', category_id: 'all', name_en: '', name_ar: 'تتبيلة و بهارات بيتزا ايطالية ( علبة )', desc_en: 'Weight : 250 g
-Pieces  NO : 12', desc_ar: 'الوزن : 250 غم 
-العدد : 12', weight: '250 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1710136472تتبيلة وبهارات بيتزا ايطالية 250غم علبة1في12.png' },
-        { id: '812', category_id: 'all', name_en: '', name_ar: 'تتبيلة و بهارات بطاطا ( علبة )', desc_en: 'Weight : 250 g
-Pieces  NO : 12', desc_ar: 'الوزن : 250 غم 
-العدد : 12', weight: '250 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1710136356تتبيلة وبهارات بطاطا 250غم علبة1في 12.png' },
-        { id: '811', category_id: 'all', name_en: 'Chicken Tashreeb Spice', name_ar: 'بهارات تشريب دجاج ( مملحة )', desc_en: 'Weight : 100 g
-Pieces NO : 12', desc_ar: 'الوزن : 100 غم 
-العدد : 12', weight: '100 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709982749تشريب دجاج.png' },
-        { id: '810', category_id: 'all', name_en: 'Mandi Spice ( Meat )', name_ar: 'بهارات مندي لحم ( مملحة )', desc_en: 'Weight : 100 g
-Pieces NO : 12', desc_ar: 'الوزن : 100 غم 
-العدد : 12', weight: '100 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709982367مندي لحم.png' },
-        { id: '809', category_id: 'all', name_en: 'Lahmacun Spice', name_ar: 'بهارات  لحم بعجين ( مملحة )', desc_en: 'Weight : 100 g
-Pieces  NO : 12', desc_ar: 'الوزن : 100 غم 
-العدد : 12', weight: '100 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709982246لحم بعجين.png' },
-        { id: '808', category_id: 'all', name_en: 'Cumin', name_ar: 'بهارات  كمون ( مملحة )', desc_en: 'Weight : 100 g
-Pieces  NO : 12', desc_ar: 'الوزن : 100 غم 
-العدد : 12', weight: '100 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709982095كمون.png' },
-        { id: '807', category_id: 'all', name_en: 'Meat Shawarma Spice', name_ar: 'بهارات  كص لحم ( مملحة )', desc_en: 'Weight : 100 g
-Pieces  NO : 12', desc_ar: 'الوزن : 100 غم 
-العدد : 12', weight: '100 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709981977كص لحم.png' },
-        { id: '806', category_id: 'all', name_en: 'Turmeric', name_ar: 'كركم ( مملحة )', desc_en: 'Weight : 100 g
-Pieces  NO : 12', desc_ar: 'الوزن : 100 غم 
-العدد : 12', weight: '100 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709981772كركم.png' },
-        { id: '805', category_id: 'all', name_en: 'Curry', name_ar: 'كاري ( مملحة )', desc_en: 'Weight : 100 g
-Pieces  NO : 12', desc_ar: 'الوزن : 100 غم 
-العدد : 12', weight: '100 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709981536كاري.png' },
-        { id: '804', category_id: 'all', name_en: 'Falafel Spice', name_ar: 'بهارات  فلافل ( مملحة )', desc_en: 'Weight : 100 g
-Pieces  NO : 12', desc_ar: 'الوزن : 100 غم 
-العدد : 12', weight: '100 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709981368فلافل.png' },
-        { id: '803', category_id: 'all', name_en: 'Thyme', name_ar: 'زعتر ( مملحة )', desc_en: 'Weight : 25 g
-Pieces  NO : 12', desc_ar: 'الوزن : 25 غم 
-العدد : 12', weight: '25 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709981287زعتر.png' },
-        { id: '802', category_id: 'all', name_en: 'Dolma Spice', name_ar: 'بهارات  دولمة ( مملحة )', desc_en: 'Weight : 100 g
-Pieces  NO : 12', desc_ar: 'الوزن : 100 غم 
-العدد : 12', weight: '100 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709981173دولمة.png' },
-        { id: '801', category_id: 'all', name_en: 'Chicken Spice', name_ar: 'بهارات دجاج ( مملحة )', desc_en: 'Weight : 100 g 
-Pieces  NO : 12', desc_ar: 'الوزن : 100 غم 
-العدد : 12', weight: '100 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709980408دجاج.png' },
-        { id: '800', category_id: 'all', name_en: '7 Kind Spice', name_ar: 'بهارات 7 حبات ( مملحة )', desc_en: 'Weight : 100 g
-Pieces  NO : 12', desc_ar: 'الوزن : 100 غم 
-العدد : 12', weight: '100 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709980202حبات 7.png' },
-        { id: '799', category_id: 'all', name_en: 'Meat Tirit Spice', name_ar: 'بهارات تشريب لحم ( مملحة )', desc_en: 'Weight : 100g 
-Pieces  NO : 12', desc_ar: 'الوزن : 100 غم 
-العدد : 12', weight: '100g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709980015تشريب لحم.png' },
-        { id: '798', category_id: 'all', name_en: 'Rizo Rice Spice', name_ar: 'بهارات  ارز ريزو ( مملحة )', desc_en: 'Weight : 100 g
-Pieces  NO : 12', desc_ar: 'الوزن : 100 غم 
- العدد : 12', weight: '100 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709979939ارز ريزو.png' },
-        { id: '797', category_id: 'all', name_en: 'Minced Meat Spice', name_ar: 'بهارا ت لحم مثروم ( قيمة ) ( مملحة )', desc_en: 'Weight : 100 g
-Pieces  NO : 12', desc_ar: 'الوزن : 100 غم 
-العدد : 12', weight: '100 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709978037لحم مثروم قيمة.png' },
-        { id: '796', category_id: 'all', name_en: 'Black Pepper', name_ar: 'فلفل اسود ( مملحة )', desc_en: 'Weight : 100 g 
-Pieces  NO : 12', desc_ar: 'الوزن : 100 غم 
-العدد : 12', weight: '100 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709965965فلفل اسود.png' },
-        { id: '795', category_id: 'all', name_en: 'Brown Biryani Spice', name_ar: 'بهارات  برياني قهوائي ( مملحة )', desc_en: 'Weight : 100 g 
-Pieces  NO : 12', desc_ar: 'الوزن : 100 غم 
-العدد: 12', weight: '100 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709965122برياني قهوائي.png' },
-        { id: '794', category_id: 'all', name_en: 'Mint', name_ar: 'نعناع ( مملحة )', desc_en: 'Weight : 150 g
-Pieces  NO : 12', desc_ar: 'الوزن : 150 غم 
-العدد : 12', weight: '150 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_794/1709964215نعناع-2.png' },
-        { id: '793', category_id: 'all', name_en: 'Hamburger Spice', name_ar: 'بهارات  همبركر ( مملحة )', desc_en: 'Weight : 100 g
-Pieces  NO : 12', desc_ar: 'الوزن : 100 غم 
-العدد : 12', weight: '100 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_793/1709964569همبركر.png' },
-        { id: '792', category_id: 'all', name_en: 'Hot Turkish Pepper', name_ar: 'فلفل تركي حار ( علبة )', desc_en: 'Weight : 250 g
-Pieces  NO : 12', desc_ar: 'الوزن : 250 غم 
-العدد : 12', weight: '250 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709812230فلفل تركي حار.png' },
-        { id: '791', category_id: 'all', name_en: 'Crispy Chicken Mix', name_ar: 'خلطة الكريسبي ( علبة )', desc_en: 'Weight : 300 g
-Pieces  NO : 12', desc_ar: 'الوزن : 300 غم 
-العدد : 12', weight: '300 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709811073كرسبي.png' },
-        { id: '790', category_id: 'all', name_en: 'Hot Chilli Pepper', name_ar: 'فلفل احمر خشن تركي ( مملحة )', desc_en: 'Weight : 100 g
-Pieces  NO : 12', desc_ar: 'الوزن : 100 غم 
-العدد : 12', weight: '100 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709810338فلفل احمر خشن تركي.png' },
-        { id: '789', category_id: 'all', name_en: 'Sweet  Pepper Powder', name_ar: 'بهارات  فلفل احمر حلو ( مملحة )', desc_en: 'Weight : 100 g
-Pieces  NO : 12', desc_ar: 'الوزن : 100 غم 
-العدد : 12', weight: '100 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709810220فلفل احمر حلو.png' },
-        { id: '788', category_id: 'all', name_en: 'Meat Seasoning', name_ar: 'تتبيلة و بهارات اللحم ( علبة )', desc_en: 'Weight : 250 g
-Pieces  NO : 12', desc_ar: 'الوزن : 250 غم 
-العدد : 12', weight: '250 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709810021تتبيلة وبهارات لحم 400غم.png' },
-        { id: '787', category_id: 'all', name_en: 'Fish seasoning', name_ar: 'تتبيلة و بهارات سمك ( علبة )', desc_en: 'Weight : 250 g
-Pieces  NO : 12', desc_ar: 'الوزن : 250 غم 
-العدد : 12', weight: '250 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709809657مملحة سمك.png' },
-        { id: '786', category_id: 'all', name_en: 'Choco Balls + Cocoa Flakes', name_ar: 'رقائق  الذرة بالشوكولاتة + كرات الذرة بالشوكولاتة', desc_en: 'Weight : 125 g + 125 g
-Pieces  NO : 12', desc_ar: 'الوزن : 125 غم + 125 غم 
-العدد : 12', weight: '125 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709809067ChocoBalls-ChocoFlakes 3D.png' },
-        { id: '785', category_id: 'all', name_en: 'Choco balls + Colorful ring flakes', name_ar: 'حلقات الذرة الملونة + كرات الذرة بالشوكولاتة', desc_en: 'Weight : 125 g + 125 g
-Pieces  NO : 12', desc_ar: 'الوزن : 125 غم + 125 غم 
-العدد : 12', weight: '125 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709808862ChocoBalls-Colorful Ring Flakes 3D.png' },
-        { id: '784', category_id: 'all', name_en: 'Inegol kofta meatball batter', name_ar: 'اينة كول كفتة ( علبة )', desc_en: 'Weight : 300 g
-Pieces  NO : 12', desc_ar: 'الوزن : 300 غم 
-العدد : 12', weight: '300 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709808532اينه كول كفتة.png' },
-        { id: '783', category_id: 'all', name_en: 'Taco Seasoning', name_ar: 'تتبيلة  و بهارات تاكو ( علبة )', desc_en: 'Weight : 250 g
-Pieces  NO : 12', desc_ar: 'الوزن : 250 غم 
-العدد : 12', weight: '250 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709808320تتبيلة وبهارات تاكوو 400غم.png' },
-        { id: '782', category_id: 'all', name_en: 'Tekirdag Meatball Batter', name_ar: 'تكرداغ كفتة ( علبة )', desc_en: 'Weight : 300 g
-Pieces  NO : 12', desc_ar: 'الوزن : 300 غم 
-العدد : 12', weight: '300 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709807781تتبيلة وبهارات تكير داغ 400غم.png' },
-        { id: '781', category_id: 'all', name_en: 'Vegetable Mix', name_ar: 'تتبيلة و بهارات خضار ( علبة )', desc_en: 'Weight : 400 g
-Pieces  NO  : 12', desc_ar: 'الوزن : 400 غم 
-العدد : 12', weight: '400 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709807463تتبيلة وبهارات خضار 400غم.png' },
-        { id: '780', category_id: 'all', name_en: 'Fajitas Saesoning', name_ar: 'تتبيلة و بهارات فاهيتا ( علبة )', desc_en: 'Weight : 250g
-Pieces  NO : 12', desc_ar: 'الوزن : 250 غم 
-العدد : 12', weight: '250g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709807260تتبيلة وبهارات فاهيتا 400غم.png' },
-        { id: '779', category_id: 'all', name_en: 'Cajun Seasoning', name_ar: 'تتبيلة و بهارات كاجون ( علبة )', desc_en: 'Weight : 250 g
-Pieces  NO : 12', desc_ar: 'الوزن : 250 غم 
-العدد : 12', weight: '250 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709807086تتبيلة وبهارات كاجون 400غم.png' },
-        { id: '777', category_id: 'all', name_en: 'Pacha Spice', name_ar: 'بهارات باجة ( مملحة )', desc_en: 'Weight : 100 g
-Pieces  NO : 12', desc_ar: 'الوزن : 100 غم 
-العدد : 12', weight: '100 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709802700مملحة باجة.png' },
-        { id: '776', category_id: 'all', name_en: 'Garlic Powder', name_ar: 'ثوم ( مملحة )', desc_en: 'Weight : 125g
-Pieces  NO : 12', desc_ar: 'الوزن : 125 غم 
-العدد : 12', weight: '125g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709802246مملحة ثوم.png' },
-        { id: '775', category_id: 'all', name_en: 'Yellow biryani Spice', name_ar: 'بهارات  برياني اصفر ( مملحة )', desc_en: 'Weight : 100 g
-Pieces  NO : 12', desc_ar: 'الوزن : 100 غم 
-العدد : 12', weight: '100 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709802022مملحة برياني اصفر.png' },
-        { id: '774', category_id: 'all', name_en: 'Cinnamon', name_ar: 'دارسين ( مملحة )', desc_en: 'Weight : 100 g
-Pieces  NO : 12', desc_ar: 'الوزن : 100 غم 
-العدد : 12', weight: '100 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709800324مملحة دارسين.png' },
-        { id: '773', category_id: 'all', name_en: 'Stuffed chicken spice', name_ar: 'بهارات  دجاج محشي ( مملحة )', desc_en: 'Weight : 100 g
-Pieces  NO : 12', desc_ar: 'الوزن : 100 غم 
-العدد : 12', weight: '100 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709800118مملحة دجاج محشي.png' },
-        { id: '772', category_id: 'all', name_en: '', name_ar: 'مملحة سمك', desc_en: '', desc_ar: 'الوزن : 250 غم 
-العدد : 12', weight: '', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709799992مملحة سمك.png' },
-        { id: '771', category_id: 'all', name_en: 'Ground Dill weed', name_ar: 'شبنت مطحون  ( مملحة )', desc_en: 'Weight : 50 g
-Pieces  NO : 12', desc_ar: 'الوزن : 50 غم 
-العدد : 12', weight: '50 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709799738مملحة شبنت.png' },
-        { id: '770', category_id: 'all', name_en: 'Sheikh Mahshi Spice', name_ar: 'بهارات  شيخ محشي ( مملحة )', desc_en: 'Weight : 100 g
-Pieces  NO : 12', desc_ar: 'الوزن : 100 غم 
-العدد : 12', weight: '100 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709799432مملحة شيخ محشي.png' },
-        { id: '769', category_id: 'all', name_en: 'Kubba Spice', name_ar: 'بهارات  كبة ( مملحة )', desc_en: 'Weight : 100 g
-Pieces  NO : 12', desc_ar: 'الوزن : 100 غم 
-العدد : 12', weight: '100 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709798995مملحة كبة.png' },
-        { id: '768', category_id: 'all', name_en: 'Mixed Spice', name_ar: 'بهارات مشكل ( مملحة )', desc_en: 'Weight : 100 g
-Pieces  NO : 12', desc_ar: 'الوزن : 100 غم 
-العدد : 12', weight: '100 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709798498مملحة مشكل.png' },
-        { id: '767', category_id: 'all', name_en: 'Dolma Leaf Roll Spice', name_ar: 'بهارات دولمة ورق عنب ( مملحة )', desc_en: 'Weight  : 100g 
-Pieces  NO : 12', desc_ar: 'الوزن : 100 غم 
-العدد : 12', weight: '100g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709796154مملحة ورق عنب 2.png' },
-        { id: '763', category_id: 'all', name_en: 'Sweet Ketchup', name_ar: 'كتشاب بارد', desc_en: 'Weight : 5 kg
-Pieces  NO : 4', desc_ar: 'الوزن : 5 كغم 
-العدد : 4', weight: '5 kg', pieces_per_carton: '4', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_763/1709796433كاتشاب بارد 5كغم.png' },
-        { id: '762', category_id: 'all', name_en: 'Hot Ketchup', name_ar: 'كتشاب حار', desc_en: 'Weight : 5 kg
-Pieces  NO : 4', desc_ar: 'الوزن : 5 كغم 
-العدد : 4', weight: '5 kg', pieces_per_carton: '4', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_762/1709796781كاتشاب حار 5كغم.png' },
-        { id: '761', category_id: 'all', name_en: 'Black Vinegar', name_ar: 'خل اسود', desc_en: 'Weight : 2 L
-Pieces  NO : 6', desc_ar: 'الوزن : 2 لتر 
-العدد : 6', weight: '2 L', pieces_per_carton: '6', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_761/1709801356خل اسود 2لتر.png' },
-        { id: '760', category_id: 'all', name_en: 'Apple Vinegar', name_ar: 'خل تفاح', desc_en: 'Weight : 2 L
-Pieces  NO : 6', desc_ar: 'الوزن : 2 لتر 
-العدد : 6', weight: '2 L', pieces_per_carton: '6', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_760/1709801330خل تفاح 2لتر.png' },
-        { id: '759', category_id: 'all', name_en: 'Lemon  Sauce', name_ar: 'حامض الليمون', desc_en: 'Weight : 750 ml
-Pieces  NO : 12', desc_ar: 'الوزن : 750 مل 
-العدد : 12', weight: '750 ml', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_759/1709790549حامض ليمون 750مل.png' },
-        { id: '758', category_id: 'all', name_en: 'Chicken Rancid Remover', name_ar: 'مزيل زفرة ( زنخة ) الدجاج', desc_en: 'Weight : 1 L
-Pieces  NO : 12', desc_ar: 'الوزن : 1 لتر 
-العدد : 12', weight: '1 L', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_758/1769345307مزيل زفرة دجاج-500.png' },
-        { id: '757', category_id: 'all', name_en: 'Iodized salt', name_ar: 'ملح الطعام باليود', desc_en: 'Weight  : 500 g
-Pieces  NO : 12', desc_ar: 'الوزن : 500 غم 
-العدد : 12', weight: '500 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_757/1709797165ملح طعام 500غم.png' },
-        { id: '756', category_id: 'all', name_en: 'Lemon  Sauce', name_ar: 'حامض ليمون', desc_en: 'Weight : 5 kg 
-Pieces  NO : 4', desc_ar: 'الوزن : 5 لتر 
-العدد : 4', weight: '5 kg', pieces_per_carton: '4', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_756/1709796264حامض ليمون 5كغم.png' },
-        { id: '755', category_id: 'all', name_en: 'Classic Sauce', name_ar: 'صاص الطباخ', desc_en: 'Weight : 5 kg 
-Pieces  NO : 4', desc_ar: 'الوزن : 5 كغم 
-العدد : 4', weight: '5 kg', pieces_per_carton: '4', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_755/1709736207صاص 5كغم.png' },
-        { id: '754', category_id: 'all', name_en: 'Garlic Sauce', name_ar: 'صلصة الثوم زجاجي', desc_en: 'Weight : 250 g
-Pieces  NO : 12', desc_ar: 'الوزن : 250 غم 
-العدد : 12', weight: '250 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_754/1709729693صلصة ثوم زجاجية.png' },
-        { id: '753', category_id: 'all', name_en: 'Fish Sauce', name_ar: 'صلصة سمك زجاجي', desc_en: 'Weight : 275 g
-Pieces  NO : 12', desc_ar: 'الوزن : 275 غم 
-العدد : 12', weight: '275 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_753/1709729737صلصة سمك زجاجية.png' },
-        { id: '752', category_id: 'all', name_en: 'Fish Sauce', name_ar: 'صلصة سمك بلاستك', desc_en: 'Weight : --
-Pieces  NO : 12', desc_ar: 'الوزن : --
-العدد : 12', weight: '', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_752/1709737291صلصة سمك رفيعة بلاستك.png' },
-        { id: '751', category_id: 'all', name_en: 'Rizo Sauce', name_ar: 'صلصة ريزو زجاجي', desc_en: 'Weight : 275 g
-Pieces  NO : 12', desc_ar: 'الوزن : 275 غم 
-العدد : 12', weight: '275 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_751/1709737306صلصة ريزو زجاجية.png' },
-        { id: '750', category_id: 'all', name_en: 'Chicken Sauce', name_ar: 'صلصة الدجاج زجاجي', desc_en: 'Weight : 275 g 
-Pieces  NO : 12', desc_ar: 'الوزن : 275 غم 
-العدد : 12', weight: '275 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_750/1709737319صلصة دجاج رفيعة زجاجية.png' },
-        { id: '749', category_id: 'all', name_en: 'Classic Sas', name_ar: 'صاص  الطباخ ( بلاستك )', desc_en: 'Weight :--
-Pieces  NO : 12', desc_ar: 'الوزن : --
-العدد : 12', weight: '', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_749/1710138219صاص الطباخ رفيع بلاستك.png' },
-        { id: '748', category_id: 'all', name_en: 'Sumac Sauce', name_ar: 'صلصة سماق بلاستك', desc_en: 'Weight : --
-Pieces  NO : 12', desc_ar: 'الوزن : --
-العدد : 12', weight: '', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_748/1709737359صلصة سماق رفيعة بلاستك.png' },
-        { id: '747', category_id: 'all', name_en: 'Wings Sauce', name_ar: 'صلصة اجنحة بلاستك', desc_en: 'Weight : --
-Pieces  NO : 12', desc_ar: 'الوزن :--
-العدد : 12', weight: '', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_747/1709737372صلصة اجنحة رفيعة بلاستك.png' },
-        { id: '746', category_id: 'all', name_en: 'Garlic Sauce', name_ar: 'صلصة ثوم بلاستك', desc_en: 'Weight :--
-Pieces  NO : 12', desc_ar: 'الوزن : --
-العدد : 12', weight: '', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_746/1709737382صلصة ثوم رفيعة بلاستك.png' },
-        { id: '745', category_id: 'all', name_en: 'Hot Pepper Sauce', name_ar: 'صلصة الفلفل الحار زجاجي', desc_en: 'Weight : 275 g
-Pieces  NO : 12', desc_ar: 'الوزن : 275 غم 
-العدد : 12', weight: '275 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_745/1709729952صلصة فلفل حار زجاجية.png' },
-        { id: '744', category_id: 'all', name_en: 'Chili Pepper Sauce', name_ar: 'صلصة فلفل حار بلاستك', desc_en: 'Weight : --
-Pieces  NO : 12', desc_ar: 'الوزن : --
-العدد : 12', weight: '', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_744/1709737402صلصة فلفل حار رفيعة بلاستك.png' },
-        { id: '743', category_id: 'all', name_en: 'Chicken Sauce', name_ar: 'صلصة دجاج بلاستك', desc_en: 'Weight :--
-Pieces  NO : 12', desc_ar: 'الوزن : --
-العدد : 12', weight: '', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_743/1709737414صلصة دجاج رفيعة بلاستك.png' },
-        { id: '739', category_id: 'all', name_en: 'Dolma Spice', name_ar: 'بهارات دولمة ( علبة )', desc_en: 'Weight : 500 g
-Pieces  NO : 12', desc_ar: 'الوزن : 500 غم 
-
-العدد : 6', weight: '500 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709532365310 Dolma Pet_2.png' },
-        { id: '738', category_id: 'all', name_en: 'Citric acid', name_ar: 'ليمون دوزي ( علبة )', desc_en: 'Weight : 400 g
-Pieces  NO : 12', desc_ar: 'الوزن : 1000 غم 
-
-العدد : 6', weight: '400 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709532174ليمون دوزي 320.png' },
-        { id: '737', category_id: 'all', name_en: 'Biryani Spices', name_ar: 'بهارات برياني ( علبة )', desc_en: 'Weight : 500 g
-Pieces  NO : 12', desc_ar: 'الوزن : 500 غم 
-
-العدد : 12', weight: '500 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709532011بهارات برياني 318.png' },
-        { id: '736', category_id: 'all', name_en: 'Semsame', name_ar: 'سمسم أبيض ( علبة )', desc_en: 'Weight : 500 g
-Pieces  NO : 12', desc_ar: 'الوزن : 500 غم 
-
-العدد : 12', weight: '500 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709531896317 Sesame Pet_1.png' },
-        { id: '735', category_id: 'all', name_en: 'chicken tashreeb spice', name_ar: 'تشريب دجاج ( علبة )', desc_en: 'Weight : 500 g
-Pieces  NO : 12', desc_ar: 'الوزن : 500 غم 
-
-العدد : 12', weight: '500 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709531762تشريب دجاج 316.png' },
-        { id: '733', category_id: 'all', name_en: 'Turmeric Powder', name_ar: 'كركم مطحون ( علبة )', desc_en: 'Weight : 500 g
-Pieces  NO : 12', desc_ar: 'الوزن : 500 غم 
-
- العدد : 12', weight: '500 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_733/1709469634كركم مطحون 314.png' },
-        { id: '732', category_id: 'all', name_en: 'Black Pepper', name_ar: 'فلفل اسود ( علبة )', desc_en: 'Weight : 500 g
-Pieces  NO : 12', desc_ar: 'الوزن : 500 غم
-العدد : 12', weight: '500 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_732/1709469612313 Kara Biber_1.png' },
-        { id: '731', category_id: 'all', name_en: 'Mixed Spice', name_ar: 'بهارات مشكل ( علبة )', desc_en: 'Weight : 500 g
-Pieces  NO : 12', desc_ar: 'الوزن : 500 غم 
-
- العدد: 12', weight: '500 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_731/1709469595312 Karisik Baharat_1.png' },
-        { id: '730', category_id: 'all', name_en: 'Curry', name_ar: 'كاري ( علبة )', desc_en: 'Weight : 500 g
-Pieces  NO : 12', desc_ar: 'الوزن : 500 غم 
-
-العدد : 12', weight: '500 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_730/1709469561311 Köri Baharati_1.png' },
-        { id: '728', category_id: 'all', name_en: 'Ketchup', name_ar: 'كاتشاب', desc_en: 'Weight : 350 g
-Pieces  NO : 12', desc_ar: 'الوزن : 350 غم
-العدد : 12', weight: '350 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_728/17101450561465 كاتشاب.png' },
-        { id: '727', category_id: 'all', name_en: 'Fish Sauce', name_ar: 'صلصة السمك', desc_en: 'Weight : 350 g
-Pieces  NO : 12', desc_ar: 'الوزن : 350 غم
-العدد : 12', weight: '350 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_727/17101450651471 fish.png' },
-        { id: '726', category_id: 'all', name_en: 'Lemon Sauce', name_ar: 'حامض الليمون', desc_en: 'Weight : 750 ml
-Pieces  NO : 12', desc_ar: 'الوزن : 750 مل
-العدد : 12', weight: '750 ml', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_726/1709737538حامض ليمون 750مل.png' },
-        { id: '725', category_id: 'all', name_en: 'Fish Sauce', name_ar: 'صلصة السمك', desc_en: 'Weight : 570 g 
-Pieces  NO : 12', desc_ar: 'الوزن : 570 غم
-العدد : 12', weight: '570 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_725/17101407191487 صلصة سمك.png' },
-        { id: '724', category_id: 'all', name_en: 'BBQ Sauce', name_ar: 'صلصة باربكيو', desc_en: 'Weight : 570 g 
-Pieces  NO : 12', desc_ar: 'الوزن : 570 غم
-العدد : 12', weight: '570 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/17090404821483 صلصة باربكيو.png' },
-        { id: '723', category_id: 'all', name_en: 'Sweet Ketchup', name_ar: 'كاتشاب بارد', desc_en: 'Weight : 450 g 
-Pieces  NO : 12', desc_ar: 'الوزن : 450 غم
-العدد : 12', weight: '450 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_723/1710140949Ketçap Tatli 450g.png' },
-        { id: '722', category_id: 'all', name_en: 'Rice Flour', name_ar: 'دقيق الأرز ( طحين التمن )', desc_en: 'Weight : 450 g
-Pieces  NO : 12', desc_ar: 'الوزن : 450 غم
- العدد : 12', weight: '450 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709034382714.png' },
-        { id: '721', category_id: 'all', name_en: 'Sumac powder', name_ar: 'سماق مطحون - مملحة', desc_en: 'Weight : 60 g
-Pieces  NO : 24', desc_ar: 'الوزن : 60 غم
-العدد : 24', weight: '60 g', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709014981322 Sumak.png' },
-        { id: '720', category_id: 'all', name_en: 'Chicken Tashreeb Powder', name_ar: 'بهارات تشريب دجاج - مملحة', desc_en: 'Weight : 45 g 
-Pieces  NO : 24', desc_ar: 'الوزن : 45 غم
-العدد : 24', weight: '45 g', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709014117359 Tavuk Tirit.png' },
-        { id: '719', category_id: 'all', name_en: 'Sponge Cake Mix Strawberry', name_ar: 'خليط الكيك الجاهز الاسفنجي ( فراولة )', desc_en: 'Weight : 500 g
-Piecea NO : 12', desc_ar: 'الوزن : 500 غم
-العدد : 12', weight: '500 g', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1708955229715 sponge cake flour with strawberry.png' },
-        { id: '718', category_id: 'all', name_en: 'Corn Flour', name_ar: 'نشا ( دقيق الذرة )', desc_en: 'Weight : 450 g
-Pieces  NO : 12', desc_ar: 'الوزن : 450 غم
-العدد : 12', weight: '450 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1708937432703 corn starch 450.png' },
-        { id: '717', category_id: 'all', name_en: 'Citric Acid', name_ar: 'ليمون دوزي', desc_en: 'Weight : 200 g
-Pieces  NO : 12', desc_ar: 'الوزن : 200 غم
-العدد : 12', weight: '200 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1708934281602 Limon Tuzu.png' },
-        { id: '716', category_id: 'cat_57', name_en: 'Red Sumac Powder', name_ar: 'سماق احمر مطحون', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 50 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_716/1708929333099 Kırmızı Sumak (Yeni).png' },
-        { id: '715', category_id: 'cat_57', name_en: 'Meat Tashreeb Seasoning ( Dry Lemon )', name_ar: 'بهارات تشريب لحم ( بالومي بصرة )', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_715/1726571692تشريب لحم لومي بصرة2.png' },
-        { id: '714', category_id: 'cat_57', name_en: 'Chicken Tashreeb Seasoning ( Dry Lemon )', name_ar: 'بهارات تشريب دجاج ( باليمو بصرة )', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1708850844083.png' },
-        { id: '713', category_id: 'cat_57', name_en: 'Mint', name_ar: 'نعناع', desc_en: 'Weight : 35 g
-Pieces  NO : 60', desc_ar: 'الوزن : 35 غم
-العدد : 60', weight: '35 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1706526804040 Nane (Yeni).png' },
-        { id: '712', category_id: 'cat_57', name_en: 'Frankincense Gum', name_ar: 'علك البستج ( لبان الذكر )', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1706526708122 Buhur Sakızı (Yeni).png' },
-        { id: '711', category_id: 'cat_57', name_en: 'Cardamom Seeds', name_ar: 'بذور حبات الهيل', desc_en: 'Weight : 25 g
-Pieces  NO : 60', desc_ar: 'الوزن : 25 غم
-العدد : 60', weight: '25 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1706526186121 Kakule Tohumları (Yeni).png' },
-        { id: '710', category_id: 'cat_57', name_en: 'Chapli Kebab Seasoning', name_ar: 'بهارات كباب عروك ( شفتة )', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1706523902117 Chapli Kabab (Yeni).png' },
-        { id: '708', category_id: 'cat_57', name_en: 'Mandi Spices Chicken', name_ar: 'بهارات مندي الدجاج', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_708/1706520987116 Mandi Chicken (Yeni).png' },
-        { id: '707', category_id: 'cat_57', name_en: 'Mandi Spices Meat', name_ar: 'بهارات مندي اللحم', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_707/1706520974115 Mandi Meat (Yeni).png' },
-        { id: '706', category_id: 'cat_57', name_en: '7 kinds Spices Powder', name_ar: 'بهارات 7 حبات مطحونة', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_706/1708929233113 Dovulmuş Yedi Baharat (Yeni).png' },
-        { id: '705', category_id: 'cat_57', name_en: 'Beans' Curry', name_ar: 'بهارات كاري فاصوليا - يابسة', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_705/1706520883112 Fasulia Köri (Yeni).png' },
-        { id: '704', category_id: 'cat_57', name_en: 'Tumeric Roots', name_ar: 'كركم جذر', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1705517580111.png' },
-        { id: '703', category_id: 'cat_57', name_en: 'Red Pepper', name_ar: 'فلفل أحمر - حلو', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_703/1706520818110 Toz Tatlı Biber 40g (Yeni).png' },
-        { id: '702', category_id: 'cat_57', name_en: 'Yoghurt Spices', name_ar: 'بهارات الزبادي', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1705517480109.png' },
-        { id: '701', category_id: 'cat_57', name_en: 'Olive Spices', name_ar: 'بهارات الزيتون', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1705517431108.png' },
-        { id: '700', category_id: 'cat_57', name_en: 'Chicken Cutlets Spices', name_ar: 'بهارات كباب الدجاج', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_700/17659583270 بهارات كباب دجاج.png' },
-        { id: '699', category_id: 'cat_57', name_en: 'Alkiyma Broth Spices', name_ar: 'بهارات القيمة النجفية', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_699/1706520516105 Kiyma Çorbası 40g (Yeni).png' },
-        { id: '698', category_id: 'cat_57', name_en: 'Red Pickle Spices', name_ar: 'بهارات الطرشي الأحمر', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_698/1706517913104 Kırmızı Turşu (Yeni).png' },
-        { id: '697', category_id: 'cat_57', name_en: 'Yellow Pickle Spices', name_ar: 'بهارات الطرشي الأصفر', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_697/1706517901103 Sarı Turşu (Yeni).png' },
-        { id: '696', category_id: 'cat_57', name_en: 'Chicken Hamburger Spices', name_ar: 'بهارات همبركر الدجاج', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_696/1706520443102 Tavuk Hamburger (Yeni).png' },
-        { id: '695', category_id: 'cat_57', name_en: 'Dill', name_ar: 'أوراق الشبنت', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_695/1706520387101 Dere Otu (Yeni).png' },
-        { id: '694', category_id: 'cat_57', name_en: 'Magic Dolma Spices', name_ar: 'بهارات الدولمة السحرية', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 50 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1705516432100.png' },
-        { id: '693', category_id: 'cat_57', name_en: 'White Pepper', name_ar: 'فلفل أبيض', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_693/1706518787098 Beyaz Biber (Yeni).png' },
-        { id: '692', category_id: 'cat_57', name_en: 'Fish Rice Spices', name_ar: 'بهارات أرز السمك', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_692/1706518760097 Balıklı Pilav Harci (Yeni).png' },
-        { id: '691', category_id: 'cat_57', name_en: 'Harmal', name_ar: 'حرمل', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1705516242096.png' },
-        { id: '690', category_id: 'cat_57', name_en: 'Dry Lemon Powder', name_ar: 'لومي بصرة مطحون', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_690/1726573961لومي بصرة مطحون.png' },
-        { id: '689', category_id: 'cat_57', name_en: 'Yellow Rice Spices', name_ar: 'بهارات أرز أصفر', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_689/1706518709094 Sarı Pirinç Pilavı (Yeni).png' },
-        { id: '688', category_id: 'cat_57', name_en: '7 kinds Spices', name_ar: 'بهارات سبع حبات غير مطحونة', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_688/1708929206093 Yedi Baharat (Yeni).png' },
-        { id: '687', category_id: 'cat_57', name_en: 'White Pepper Powder- Crispy', name_ar: 'فلفل حار مطحون - بنكهة الكرسبي', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1705515364092.png' },
-        { id: '686', category_id: 'cat_57', name_en: 'Liver Spices', name_ar: 'بهارات و تتبيلة معلاق أسود', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1705515201091.png' },
-        { id: '685', category_id: 'cat_57', name_en: 'Onion Powder', name_ar: 'بصل جاف مطحون', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_685/1706518660090 Toz Soğan (Yeni).png' },
-        { id: '684', category_id: 'cat_57', name_en: 'Red Chickpea Spices', name_ar: 'بهارات حمص أحمر', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1705515121089.png' },
-        { id: '683', category_id: 'cat_57', name_en: 'Grilled Fish Spices', name_ar: 'بهارات سمك مشوي - مسكوف', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_683/1726572082بهارات سمك مشوي2.png' },
-        { id: '682', category_id: 'cat_57', name_en: 'Chicken Broth', name_ar: 'مرق الدجاج', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 75 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1705515037086.png' },
-        { id: '681', category_id: 'cat_57', name_en: 'Meat Broth', name_ar: 'مرق اللحم', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 75 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1705515007085.png' },
-        { id: '680', category_id: 'cat_57', name_en: 'Chicken impregnating Spices', name_ar: 'بهارات تشريب دجاج', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_680/1706520783106 Tavuk Tirit (Yeni).png' },
-        { id: '679', category_id: 'cat_57', name_en: 'Wild Mint', name_ar: 'بطنج - النعناع البري', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_679/17659582740 بطنج نعناع بري.png' },
-        { id: '678', category_id: 'cat_57', name_en: 'Meat Tikka Spices', name_ar: 'بهارات تكة اللحم', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1705514814080.png' },
-        { id: '677', category_id: 'cat_57', name_en: 'Yellow Bulgar Spices', name_ar: 'بهارات برغل أصفر', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1705514308078.png' },
-        { id: '676', category_id: 'cat_57', name_en: 'Red Bulgar Spices', name_ar: 'بهارات برغل أحمر', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1705514271077.png' },
-        { id: '674', category_id: 'cat_57', name_en: 'Chicken Shawarma Spices', name_ar: 'بهارات كص - شاورما دجاج', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_674/1706518595075 Tavuk döner (Yeni).png' },
-        { id: '673', category_id: 'cat_57', name_en: 'Piteta Chap Spices', name_ar: 'بهارات بتيته جاب', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1705513957074.png' },
-        { id: '672', category_id: 'cat_57', name_en: 'Kozi Al-Sham Spices', name_ar: 'بهارات قوزي الشام', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_672/1706518575073 Kuzi Şam (Yeni).png' },
-        { id: '671', category_id: 'cat_57', name_en: 'Round Kubba Spices', name_ar: 'بهارات كبة مدورة', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_671/1726571790بهارات كبة مدورة2.png' },
-        { id: '670', category_id: 'cat_57', name_en: 'Cariander Grains', name_ar: 'كزبرة حب غير مطحون', desc_en: 'Weight : 50 g
-Pieces  NO : 60', desc_ar: 'الوزن : 50 غم
-العدد : 60', weight: '50 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_670/1706518557071 Tane Kişniş (Yeni).png' },
-        { id: '669', category_id: 'cat_57', name_en: 'Cariander Powder', name_ar: 'كزبرة مطحونة', desc_en: 'Weight : 50 g
-Pieces  NO : 60', desc_ar: 'الوزن : 50 غم
-العدد : 60', weight: '50 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_669/1706518544070 Toz Kişniş (Yeni).png' },
-        { id: '668', category_id: 'cat_57', name_en: 'Cloves Seeds', name_ar: 'قرنفل مسمار غير مطحون', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_668/1706518527068 Karanfil Tane (Yeni).png' },
-        { id: '667', category_id: 'cat_57', name_en: 'Cloves Powder', name_ar: 'قرنفل مطحون', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_667/1706518512067 Toz Karanfil (Yeni).png' },
-        { id: '666', category_id: 'cat_57', name_en: 'Ginger Root', name_ar: 'زنجبيل جذر', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1705513275066.png' },
-        { id: '665', category_id: 'cat_57', name_en: 'Ginger Powder', name_ar: 'زنجبيل مطحون', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_665/1706518495065 Toz Zencefil (Yeni).png' },
-        { id: '663', category_id: 'cat_57', name_en: 'Tepsi Spices', name_ar: 'بهارات تبسي', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1705510677063.png' },
-        { id: '662', category_id: 'cat_57', name_en: 'Mahlap Grains', name_ar: 'محلب حب', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1705510639062.png' },
-        { id: '479', category_id: 'cat_57', name_en: 'Yensun Grains', name_ar: 'ينسون غير مطحون', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1705269671061.png' },
-        { id: '478', category_id: 'cat_57', name_en: 'Cumin Grains', name_ar: 'كمون حب', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1705269614060.png' },
-        { id: '477', category_id: 'cat_57', name_en: 'Fennel Grains', name_ar: 'حبة حلوة غير مطحون', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1705269584059.png' },
-        { id: '476', category_id: 'cat_57', name_en: 'Fennel Powder', name_ar: 'حبة حلوة مطحونة', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_476/1706518430058 Toz Rezene 50g (Yeni).png' },
-        { id: '475', category_id: 'cat_57', name_en: 'Green Biryani Spices', name_ar: 'بهارات برياني أخضر', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_475/1706518407055 Green Biryani (Yeni).png' },
-        { id: '474', category_id: 'cat_57', name_en: 'Sumac Powder', name_ar: 'سماق مطحون', desc_en: 'Weight : 50 g
-Pieces  NO : 60', desc_ar: 'الوزن : 50 غم
-العدد : 60', weight: '50 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_474/1706518386054 Toz Sumak (Yeni).png' },
-        { id: '473', category_id: 'cat_57', name_en: 'Sheikh Mashi Spices', name_ar: 'بهارات شيخ محشي', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_473/1706518351052 Karniyarik (Yeni).png' },
-        { id: '472', category_id: 'cat_57', name_en: 'Jlefrai Spices', name_ar: 'بهارات جلفراي', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1705269275051.png' },
-        { id: '470', category_id: 'cat_57', name_en: 'Laurel leaves', name_ar: 'ورق غار', desc_en: 'Weight : 12 g
-Pieces  NO : 60', desc_ar: 'الوزن : 12 غم
-العدد : 60', weight: '12 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_470/1706518334049 Defne Yaprağı 20g (Yeni).png' },
-        { id: '469', category_id: 'cat_57', name_en: 'Thyme', name_ar: 'زعتر', desc_en: 'Weight : 35 g
-Pieces  NO : 60', desc_ar: 'الوزن :35 غم
-العدد : 60', weight: '35 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_469/1706518315048 Yaprak Kekik (Yeni).png' },
-        { id: '468', category_id: 'cat_57', name_en: 'Black Pepper Grains', name_ar: 'فلفل أسود حب', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_468/1706518303047 Tane Karabiber (Yeni).png' },
-        { id: '467', category_id: 'cat_57', name_en: 'Pan Kebab Spices', name_ar: 'بهارات كباب طاوة', desc_en: 'Weight : 60 g
-Pieces  NO : 60', desc_ar: 'الوزن : 60 غم
-العدد : 60', weight: '60 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1705269090046.png' },
-        { id: '466', category_id: 'cat_57', name_en: 'Chicken Tikka Spices', name_ar: 'بهارات تكة الدجاج', desc_en: 'Weight : 45 g
-Pieces  NO : 60', desc_ar: 'الوزن : 45 غم
-العدد : 60', weight: '45 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1705269042045.png' },
-        { id: '465', category_id: 'cat_57', name_en: 'Turkish Kebab Spices', name_ar: 'بهارات كباب تركي', desc_en: 'Weight : 60 g
-Pieces  NO : 60', desc_ar: 'الوزن : 60 غم
-العدد : 60', weight: '60 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1705268990044.png' },
-        { id: '464', category_id: 'cat_57', name_en: 'Kentucky Spices', name_ar: 'بهارات كنتاكي', desc_en: 'Weight : 95 g
-Pieces  NO : 60', desc_ar: 'الوزن : 95 غم
-العدد : 60', weight: '95 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_464/1706518287043 Citir Pane (Yeni).png' },
-        { id: '463', category_id: 'cat_57', name_en: 'Turkish Stuffed Kebab Spices', name_ar: 'بهارات كباب تركي محشي', desc_en: 'Weight : 60 g
-Pieces  NO : 60', desc_ar: 'الوزن : 60 غم
-العدد : 60', weight: '60 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1705268919042.png' },
-        { id: '462', category_id: 'cat_57', name_en: 'Anbe Spices', name_ar: 'بهارات عنبة', desc_en: 'Weight : 60 g
-Pieces  NO : 60', desc_ar: 'الوزن : 60 غم
-العدد : 60', weight: '60 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1705268876041.png' },
-        { id: '460', category_id: 'cat_57', name_en: 'Turkish Pepper', name_ar: 'فلفل تركي', desc_en: 'Weight : 45 g
-Pieces  NO : 60', desc_ar: 'الوزن : 45 غم
-العدد : 60', weight: '45 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_460/1728106520فلفل تركي.png' },
-        { id: '459', category_id: 'cat_57', name_en: 'Soda', name_ar: 'صودا', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1705268776038.png' },
-        { id: '458', category_id: 'cat_57', name_en: 'Macaroni Spices', name_ar: 'بهارات معكرونة', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_458/1726571554بهارات معكرونة2.png' },
-        { id: '457', category_id: 'cat_57', name_en: 'Red Pepper Hot', name_ar: 'فلفل أحمر حار', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_457/1706518184036 Kırmızı Biber (Acı) (Yeni).png' },
-        { id: '456', category_id: 'cat_57', name_en: 'Veal Roast', name_ar: 'بهارات روست', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1705268673035.png' },
-        { id: '455', category_id: 'cat_57', name_en: 'Lentil Spices', name_ar: 'بهارات العدس', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_455/1706518149034 Mercimek 40g (Yeni).png' },
-        { id: '454', category_id: 'cat_57', name_en: 'Chickpea Spices', name_ar: 'بهارات حمص أصفر', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1705268590033.png' },
-        { id: '453', category_id: 'cat_57', name_en: 'Potatoes Spices', name_ar: 'بهارات البطاطا المقلية', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1705268549032.png' },
-        { id: '452', category_id: 'cat_57', name_en: 'Dolma Spices - Grape Leaves', name_ar: 'بهارات دولمة  ورق عنب', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_452/1706518131031 Sarma Yogurtlu Seasoning (Yeni).png' },
-        { id: '451', category_id: 'cat_57', name_en: 'Stuffed Chicken Spices', name_ar: 'بهارات الدجاج المحشي', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_451/1706518102030 Karışık Pilavlı Tavuk (Yeni).png' },
-        { id: '450', category_id: 'cat_57', name_en: 'Cinnamon Powder', name_ar: 'دارسين مطحون', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_450/1706518074028 Tarcin tozu (Yeni).png' },
-        { id: '449', category_id: 'cat_57', name_en: 'Pacha Spices', name_ar: 'بهارات باجة', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_449/1706518027027 Pacha Seasoning (Yeni).png' },
-        { id: '448', category_id: 'cat_57', name_en: 'Cardamom Big Grains', name_ar: 'هيل خشن', desc_en: 'Weight : 25 g
-Pieces  NO : 60', desc_ar: 'الوزن : 25 غم
-العدد : 60', weight: '25 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_448/1706518002025 Tane Kakule (Yeni).png' },
-        { id: '447', category_id: 'cat_57', name_en: 'Cardamom Powder', name_ar: 'هيل مطحون', desc_en: 'Weight : 25 g
-Pieces  NO : 60', desc_ar: 'الوزن : 25غم
-العدد : 60', weight: '25 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_447/1706517987022 Toz Kakule (Yeni).png' },
-        { id: '446', category_id: 'cat_57', name_en: 'Cumin Powder', name_ar: 'كمون مطحون', desc_en: 'Weight : 40 g 
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_446/1706517934021 Toz Kimyon (Yeni).png' },
-        { id: '445', category_id: 'cat_57', name_en: 'Pastrami Spcies', name_ar: 'بهارات الباسطرمة', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1705268149019.png' },
-        { id: '444', category_id: 'cat_57', name_en: 'Stuffed Pickle Spices', name_ar: 'بهارات طرشي محشي', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_444/1706517886018 Stuffed Pickles Seasoning (Yeni).png' },
-        { id: '443', category_id: 'cat_57', name_en: 'Fish Spices', name_ar: 'بهارات السمك', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_443/1706517664017 Fish Seasoning (Yeni).png' },
-        { id: '442', category_id: 'cat_57', name_en: 'Meat Tashreeb Spices', name_ar: 'بهارات تشريب لحم', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_442/1706517647016 Tirit (Yeni).png' },
-        { id: '441', category_id: 'cat_57', name_en: 'Meat shawarma Spices', name_ar: 'بهارات كص - شاوما اللحم', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_441/1706517617015 Et Doner (Yeni).png' },
-        { id: '440', category_id: 'cat_57', name_en: 'Kebab Spices', name_ar: 'بهارات كباب', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_440/1706517597013 Adana Kebab Seasoning (Yeni).png' },
-        { id: '439', category_id: 'cat_57', name_en: 'Lahm bjin Spices', name_ar: 'بهارات لحم بعجين', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_439/1706517542012 Lahmacun (Yeni).png' },
-        { id: '438', category_id: 'cat_57', name_en: 'Meat Hamburger Spices', name_ar: 'بهارات همبركر اللحم', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_438/1706517456011 Beef Burger (Yeni).png' },
-        { id: '436', category_id: 'cat_57', name_en: 'Black Pepper', name_ar: 'فلفل أسود مطحون', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_436/1708776307002 Toz Karabiber (Yeni).png' },
-        { id: '435', category_id: 'all', name_en: 'Yellow Biryani Spices', name_ar: 'بهارات برياني أصفر - مملحة', desc_en: 'Weight : 45 g
-Pieces  NO : 24', desc_ar: 'الوزن : 45 غم 
-
- العدد : 24', weight: '45 g', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704305443yellow-biryani.png' },
-        { id: '434', category_id: 'all', name_en: 'Meat Tashreeb Spices', name_ar: 'بهارات تشريب اللحم - مملحة', desc_en: 'Weight : 45 g
-Pieces  NO : 24', desc_ar: 'الوزن : 45 غم 
-
-العدد : 24', weight: '45 g', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704305413tashreeb-spices.png' },
-        { id: '433', category_id: 'all', name_en: 'Red Sumac powder', name_ar: 'سماق أحمر مطحون - مملحة', desc_en: 'Weight : 60 g
-Pieces  NO : 24', desc_ar: 'الوزن : 60 غم
-العدد : 24', weight: '60 g', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704305367red-sumac.png' },
-        { id: '432', category_id: 'all', name_en: 'Red Pepper Sweet', name_ar: 'فلفل أحمر حلو - مملحة', desc_en: 'Weight : 45 g
-Pieces  NO : 24', desc_ar: 'الوزن : 45 غم 
-
- العدد : 24', weight: '45 g', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704305333red-pepper-sweet.png' },
-        { id: '431', category_id: 'all', name_en: 'Red Pepper Hot', name_ar: 'فلفل أحمر حار - مملحة', desc_en: 'Weight : 45
-Pieces  NO : 24', desc_ar: 'الوزن : 45 غم 
-
-العدد : 24', weight: '', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704305300redpepper.png' },
-        { id: '430', category_id: 'all', name_en: 'Paste Ornament', name_ar: 'زينة الكيك - مملحة', desc_en: 'Weight : 50 g 
-Pieces  NO : 24', desc_ar: 'الوزن : 50 غم 
-
-العدد : 24', weight: '50 g', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704305272paste-ornament.png' },
-        { id: '429', category_id: 'all', name_en: 'Mixed Spices', name_ar: 'بهارات مشكل - مملحة', desc_en: 'Weight : 55 g
-Pieces  NO : 24', desc_ar: 'الوزن : 55 غم 
-
-العدد : 24', weight: '55 g', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704305219mixed-spices.png' },
-        { id: '428', category_id: 'cat_57', name_en: 'Mixed Curry', name_ar: 'كاري مشكل', desc_en: 'Weight : 125 g
-Pieces  NO : 24', desc_ar: 'الوزن : 125 غم
-العدد : 24', weight: '125 g', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704303987mixed-curry.png' },
-        { id: '427', category_id: 'all', name_en: 'Mint', name_ar: 'نعناع - مملحة', desc_en: 'Weight : 35 g
-Pieces  NO : 24', desc_ar: 'الوزن : 35 غم 
-
-العدد : 24', weight: '35 g', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704303954mint.png' },
-        { id: '426', category_id: 'all', name_en: 'Meat Bouillon Powder', name_ar: 'مرق اللحم - مملحة', desc_en: 'Weight : 90 g
-Pieces  NO : 24', desc_ar: 'الوزن : 90 غم 
-
-العدد :24', weight: '90 g', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704303926meat-powder.png' },
-        { id: '425', category_id: 'all', name_en: 'Kubba Spices', name_ar: 'بهارات الكبة - مملحة', desc_en: 'Weight : 45 g
-Pieces  NO : 24', desc_ar: 'الوزن : 45 غم 
-
-العدد : 24', weight: '45 g', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704303888kubba.png' },
-        { id: '424', category_id: 'all', name_en: 'Halab Kubba Spices', name_ar: 'بهارات كبة حلب - مملحة', desc_en: 'Weight : 45 g 
-Pieces  NO : 24', desc_ar: 'الوزن : 45 غم
-العدد : 24', weight: '45 g', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704303603halab-kubba.png' },
-        { id: '423', category_id: 'all', name_en: 'Garlic Powder', name_ar: 'ثوم مطحون - مملحة', desc_en: 'Weight : 45 g
-Pieces  NO : 24', desc_ar: 'الوزن : 45 غم 
-
-العدد :24', weight: '45 g', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704303567garlic-powder.png' },
-        { id: '422', category_id: 'all', name_en: 'Fish Spices', name_ar: 'بهارات السمك - مملحة', desc_en: 'Weight : 50 g
-Pieces  NO : 24', desc_ar: 'الوزن : 50 غم 
-
-العدد : 24', weight: '50 g', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704303538fish-spices.png' },
-        { id: '421', category_id: 'all', name_en: 'Dolma Spices', name_ar: 'بهارات الدولمة - مملحة', desc_en: 'Weight : 45 g
-Pieces  NO : 24', desc_ar: 'الوزن : 45 غم 
-
-العدد : 24', weight: '45 g', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704303511dolma-spices.png' },
-        { id: '420', category_id: 'all', name_en: 'Curry', name_ar: 'كاري - مملحة', desc_en: 'Weight : 70 g
-Pieces  NO : 24', desc_ar: 'الوزن : 70 غم 
-
-العدد : 24', weight: '70 g', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704303474curry.png' },
-        { id: '419', category_id: 'all', name_en: 'Curcuma Powder', name_ar: 'كركم مطحون - مملحة', desc_en: 'Weight : 50 g
-Pieces  NO : 24', desc_ar: 'الوزن : 50 غم 
-
-العدد :24', weight: '50 g', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704303451curcuma.png' },
-        { id: '418', category_id: 'all', name_en: 'Cumin Powder', name_ar: 'كمون مطحون - مملحة', desc_en: 'Weight : 45 g
-Pieces  NO : 24', desc_ar: 'الوزن : 45 غم 
-
-العدد : 24', weight: '45 g', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704303412cumin.png' },
-        { id: '417', category_id: 'all', name_en: 'Cinnamon Powder', name_ar: 'دارسين مطحون - مملحة', desc_en: 'Weight : 45 g
-Pieces  NO : 24', desc_ar: 'الوزن : 45 غم 
-
- العدد : 24', weight: '45 g', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704303378cinammon-powder.png' },
-        { id: '416', category_id: 'all', name_en: 'Chicken Bouillon Powder', name_ar: 'مرق الدجاج - مملحة', desc_en: 'Weight : 90 g 
-Pieces  NO : 24', desc_ar: 'الوزن : 90 غم 
-
-العدد : 24', weight: '90 g', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704303220chicken-powder.png' },
-        { id: '415', category_id: 'all', name_en: 'Biryani Spices', name_ar: 'بهارات البرياني قهوائي - مملحة', desc_en: 'Weight : 45 g
-Pieces  NO : 24', desc_ar: 'الوزن : 45 غم 
-
-العدد : 24', weight: '45 g', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704303091byriani-spices.png' },
-        { id: '414', category_id: 'all', name_en: 'Black Pepper', name_ar: 'فلفل أسود - مملحة', desc_en: 'Weight : 65 g
-Pieces  NO : 24', desc_ar: 'الوزن : 65 غم 
-
- العدد :24', weight: '65 g', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704302936blackpepper.png' },
-        { id: '413', category_id: 'all', name_en: 'Wings Sauce', name_ar: 'صوص الأجنحة', desc_en: 'Weight : 350 g 
-Pieces  NO : 12', desc_ar: 'الوزن : 350 غم
-العدد : 12', weight: '350 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_413/17101450961478 wings.png' },
-        { id: '412', category_id: 'all', name_en: 'Wings Sauce', name_ar: 'صلصة الأجنحة', desc_en: 'Weight : 570 g 
-Pieces  NO : 12', desc_ar: 'الوزن : 570 غم
-العدد : 12', weight: '570 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_412/17101407081488 صلصة اجنحة.png' },
-        { id: '411', category_id: 'all', name_en: 'White Vinegar', name_ar: 'خل أبيض', desc_en: 'Weight : 500 ml
-Pieces  NO : 12', desc_ar: 'الوزن : 500 مل
-العدد : 12', weight: '500 ml', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_411/1710149454خل ابيض.png' },
-        { id: '409', category_id: 'all', name_en: 'Pure Tamarind Syrup', name_ar: 'دبس تمر هندي', desc_en: 'Weight : 350 ml
-Pieces  NO : 12', desc_ar: 'الوزن : 350 مل 
-العدد : 12', weight: '350 ml', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_409/1710149192تمر هندي.png' },
-        { id: '407', category_id: 'all', name_en: 'Pomengrante Sauce', name_ar: 'دبس الرمان', desc_en: 'Weight : 345 ml
-Pieces  NO : 12', desc_ar: 'الوزن : 345 مل
-العدد : 12', weight: '345 ml', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_407/1710149304شراب رمان.png' },
-        { id: '406', category_id: 'all', name_en: 'Pizza Sauce', name_ar: 'صلصة البيتزا', desc_en: 'Weight : 350 g 
-Pieces  NO : 12', desc_ar: 'الوزن : 350 غم
-العدد : 12', weight: '350 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_406/17101450871477 Pizza.png' },
-        { id: '405', category_id: 'all', name_en: 'Napoleon Sauce', name_ar: 'صلصة نابليون', desc_en: 'Weight : 570 g
-Pieces  NO : 12', desc_ar: 'الوزن : 570 غم
-العدد : 12', weight: '570 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_405/17101407401486 صلصة نابليون.png' },
-        { id: '404', category_id: 'all', name_en: 'Lemon Syrup', name_ar: 'حامض الليمون', desc_en: 'Weight : 1 L
-Pieces  NO : 12', desc_ar: 'الوزن : 1 لتر
-العدد : 12', weight: '1 L', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_404/1710151818حامض ليمون  11.png' },
-        { id: '403', category_id: 'all', name_en: 'Lemon Sauce', name_ar: 'حامض الليمون', desc_en: 'Weight : 500 ml
-Pieces  NO : 12', desc_ar: 'الوزن : 500 مل
-العدد : 12', weight: '500 ml', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_403/1710151686حامض ليمون.png' },
-        { id: '402', category_id: 'all', name_en: 'Hot Ketchup', name_ar: 'كاتشاب حار', desc_en: 'Weight : 450 g 
-Pieces  NO : 12', desc_ar: 'الوزن : 450 غم
-العدد : 12', weight: '450 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_402/1710141002Ketçap Aci 450g.png' },
-        { id: '401', category_id: 'all', name_en: 'Hot Pepper Sauce', name_ar: 'صلصة الفلفل الحار', desc_en: 'Weight : 350 g 
-Pieces  NO : 12', desc_ar: 'الوزن : 350 غم
-العدد : 12', weight: '350 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_401/17101451051479 chili.png' },
-        { id: '400', category_id: 'all', name_en: 'Grape Vinegar', name_ar: 'خل العنب', desc_en: 'Weight :--
-Pieces  NO :--', desc_ar: 'الوزن :--
-العدد :--', weight: '', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704218761grape-vinger.png' },
-        { id: '398', category_id: 'all', name_en: 'Curry Sauce', name_ar: 'صلصة الكاري', desc_en: 'Weight : 350 g 
-Pieces  NO : 12', desc_ar: 'الوزن : 350 غم
-العدد : 12', weight: '350 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_398/17101451121480 curry.png' },
-        { id: '397', category_id: 'all', name_en: 'Classic Sauce', name_ar: 'الصاص العراقي', desc_en: 'Weight : 500 g 
-Pieces  NO : 12', desc_ar: 'الوزن : 500 غم
-العدد : 12', weight: '500 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_397/17101406651484 صاص.png' },
-        { id: '396', category_id: 'all', name_en: 'Classic Sauce', name_ar: 'الصاص العراقي', desc_en: 'Weight : 350 g
-Pieces  NO : 12', desc_ar: 'الوزن : 350 غم
-العدد : 12', weight: '350 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_396/17101450211457 صاص.png' },
-        { id: '395', category_id: 'all', name_en: 'Classic Anba', name_ar: 'العنبة العراقية', desc_en: 'Weight : 570 g
-Pieces  NO : 12', desc_ar: 'الوزن : 570 غم
-العدد : 12', weight: '570 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_395/17101410501485 صلصة عنبة.png' },
-        { id: '393', category_id: 'all', name_en: 'Barbecue Sauce', name_ar: 'صلصة الباربكيو', desc_en: 'Weight : 350 g 
-Pieces  NO : 12', desc_ar: 'الوزن : 350 غم
-العدد : 12', weight: '350 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_393/17101450751476 bbq.png' },
-        { id: '392', category_id: 'all', name_en: 'Apple Vinegar', name_ar: 'خل التفاح', desc_en: 'Weight : 500 ml
-Pieces  NO :--', desc_ar: 'الوزن : 500 مل
-العدد :--', weight: '500 ml', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704218487apple-vineger-500ml.png' },
-        { id: '391', category_id: 'all', name_en: 'Apple Vinegar', name_ar: 'خل التفاح - بلاستك', desc_en: 'Weight : 500 ml
-Pieces  NO : 24', desc_ar: 'الوزن : 500 مل
-العدد : 12', weight: '500 ml', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_391/1710148351خل تفاح.png' },
-        { id: '390', category_id: 'all', name_en: 'Anba Sauce', name_ar: 'العنبة العراقية', desc_en: 'Weight : 350 g
-Pieces  NO : 12', desc_ar: 'الوزن : 350 غم
-العدد : 12', weight: '350 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_390/17101450391458 عنبة.png' },
-        { id: '389', category_id: 'all', name_en: 'Sugar Powder', name_ar: 'سكر مطحون ( معدني )', desc_en: 'Weight : 300 g
-Pieces  NO : 12', desc_ar: 'الوزن : 300 غم
-العدد : 12', weight: '300 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704213011sugarpowder.png' },
-        { id: '388', category_id: 'all', name_en: 'Soda', name_ar: 'صودا', desc_en: 'Weight : 75 g
-Pieces  NO : 24', desc_ar: 'الوزن : 75 غم
-العدد : 24', weight: '75 g', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704212964soda.png' },
-        { id: '387', category_id: 'all', name_en: 'Table Iodized Salt', name_ar: 'ملح المائدة باليود - مملحة', desc_en: 'Weight : 230 g 
-Pieces  NO : 24', desc_ar: 'الوزن :230 غم
- العدد : 24', weight: '230 g', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704212920salt1.png' },
-        { id: '386', category_id: 'all', name_en: 'Iodized  Salt', name_ar: 'ملح الطعام باليود', desc_en: 'Weight :--
-Pieces  NO :--', desc_ar: 'الوزن :--
-العدد :--', weight: '', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704212864iodezed-salt.png' },
-        { id: '385', category_id: 'all', name_en: 'Citric Acid', name_ar: 'ليمون دوزي', desc_en: 'Weight : 185 g 
-Pieces  NO : 24', desc_ar: 'الوزن : 185 غم
-العدد : 24', weight: '185 g', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704212819crticacid1.png' },
-        { id: '384', category_id: 'all', name_en: 'Tamarind Juice', name_ar: 'عصير ( شربت )  تمر هندي طبيعي', desc_en: 'Weight : 1200 ml
-Pieces  NO : 6', desc_ar: 'الوزن : 1200 مل
-العدد : 6', weight: '1200 ml', pieces_per_carton: '6', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704212731tomarnd-juice.png' },
-        { id: '383', category_id: 'all', name_en: 'Vanilla Custard Powder', name_ar: 'الكاسترد ( فانيلا )  معدني', desc_en: 'Weight : 250 g
-Pieces  NO : 12', desc_ar: 'الوزن : 250 غم
-العدد : 12', weight: '250 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704212684vanilla-custard-powder.png' },
-        { id: '382', category_id: 'all', name_en: 'Custard Powder Strawberry', name_ar: 'الكاسترد ( فراولة )  معدني', desc_en: 'Weight : 250 g
-Pieces  NO : 12', desc_ar: 'الوزن : 250 غم
-العدد : 12', weight: '250 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704212650strawberry-custard-powder.png' },
+        { id: '989', category_id: 'all', name_en: 'ALQUIK', name_ar: 'الكويك', desc_en: 'Weight : 100 g', desc_ar: 'الوزن : 100 غم \nالعدد :--', weight: '100 g', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_989/171084484311.png' },
+        { id: '988', category_id: 'all', name_en: 'ALQUIK', name_ar: 'الكويك', desc_en: 'Weight : 14 g\nPieces  NO : 24', desc_ar: 'الوزن : 14 غم \nالعدد : 24', weight: '14 g', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_988/171084062016.png' },
+        { id: '837', category_id: 'all', name_en: 'Meat bouillon', name_ar: 'مرق لحم  ( علبة )', desc_en: 'Weight : 400 g \nPieces  NO : 12', desc_ar: 'الوزن : 400 غم \nالعدد : 12', weight: '400 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_837/1710318220مرق لحم علبة.png' },
+        { id: '836', category_id: 'all', name_en: '', name_ar: 'شراب لومي بصرة', desc_en: '', desc_ar: 'الوزن : \nالعدد : 6', weight: '', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1710228916شراب لومي بصرة 2.png' },
+        { id: '835', category_id: 'all', name_en: 'Grape Juice', name_ar: 'عصير (شربت ) زبيب', desc_en: 'Weight : 550 ml\nPieces   NO : 6', desc_ar: 'الوزن : 550 مل\nالعدد : 6', weight: '550 ml', pieces_per_carton: '6', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1710228873شراب زبيب 2.png' },
+        { id: '834', category_id: 'all', name_en: 'Tamarind Juice', name_ar: 'عصر ( شربت )  تمر هند', desc_en: 'Weight : 550 ml\nPieces   NO : 6', desc_ar: 'الوزن : 550 مل \nالعدد : 6', weight: '550 ml', pieces_per_carton: '6', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1710228821شراب تمر هند 2.png' },
+        { id: '833', category_id: 'all', name_en: 'Orange Juice', name_ar: 'عصير ( شربت )  برتقال', desc_en: 'Weight : 550 ml\nPieces   NO : 24', desc_ar: 'الوزن : 550 مل \nالعدد : 6', weight: '550 ml', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1710228762شراب برتقال 2.png' },
+        { id: '832', category_id: 'all', name_en: 'Tamarind Juice', name_ar: 'عصير ( شربت )  تمر هند', desc_en: 'Weight : 1050 ml\nPieces  NO : 24', desc_ar: 'الوزن : 1050 مل \nالعدد : 6', weight: '1050 ml', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1710228560شراب تمر هند.png' },
+        { id: '831', category_id: 'all', name_en: 'Dried Lemon Juice', name_ar: 'عصير ( شربت ) لومي بصرة', desc_en: 'Weight : 1050 ml \nPieces  NO : 24', desc_ar: 'الوزن : 1050 مل\nالعدد : 6', weight: '1050 ml', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1710228482شراب لومي بصرة.png' },
+        { id: '830', category_id: 'all', name_en: 'Orange Juice', name_ar: 'عصير ( شربت )  برتقال', desc_en: 'Weight : 1050 ml \nPieces  NO : 24', desc_ar: 'الوزن : 1050 مل\nالعدد : 6', weight: '1050 ml', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1710228388شراب برتقال.png' },
+        { id: '829', category_id: 'all', name_en: 'Grape Juice', name_ar: 'عصير ( شربت )  زبيب', desc_en: 'Weight : 1050 ml \nPieces NO : 24', desc_ar: 'الوزن : 1050 مل\nالعدد : 6', weight: '1050 ml', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1710228267شراب زبيب 1050غم.png' },
+        { id: '828', category_id: 'all', name_en: 'INSTANT  COCOA', name_ar: 'كاكاو جاهز', desc_en: 'Weight : 18 g\n\nPieces  NO : 24', desc_ar: 'الوزن : 18 غم \nالعدد : 24', weight: '18 g', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1710155968كاكو جاهز.png' },
+        { id: '827', category_id: 'all', name_en: '', name_ar: 'شاي أسود - تنكة', desc_en: 'Weight : 1.142 g\nPure Weight : 800 g\nPieces  NO :--', desc_ar: 'الوزن الكلي : 1.142 كغم\nالوزن الصافي : 800  غم\nالعدد :--', weight: '1.142 g', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1710155170شاي اسود -تنكة  ( 800 ) غم.png' },
+        { id: '826', category_id: 'all', name_en: 'Custard Vanila Flavoured', name_ar: 'كاستر بالفانيلا ( سطل )', desc_en: 'Weight : 500 g\nPieces  NO :--', desc_ar: 'الوزن : 500 غم \nالعدد :--', weight: '500 g', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_826/17108405925.png' },
+        { id: '825', category_id: 'all', name_en: 'Carrot Jam', name_ar: 'مربي الجزر', desc_en: 'Weight : 380 g\nPieces  NO :--', desc_ar: 'الوزن : 380 غم \nالعدد :--', weight: '380 g', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_825/171084498312.png' },
+        { id: '824', category_id: 'all', name_en: 'Strawberry Jam', name_ar: 'مربي الفراولة', desc_en: 'Weight : 380 g\nPieces  NO : --', desc_ar: 'الوزن : 380 غم \nالعدد :--', weight: '380 g', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_824/171084510613.png' },
+        { id: '823', category_id: 'all', name_en: 'Tahini', name_ar: 'راشي التمر - تنكة', desc_en: 'Weight : 5 kg \nPieces  NO : 1', desc_ar: 'الوزن : 5 كغم\nالعدد : 1', weight: '5 kg', pieces_per_carton: '1', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1710152325راشي.png' },
+        { id: '820', category_id: 'all', name_en: 'COCO BALLS', name_ar: 'كرات الذرة بالكاكاو', desc_en: 'Weight : 250 g\nPieces  NO : 12', desc_ar: 'الوزن : 250 غم \nالعدد : 12', weight: '250 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/17101435431335 Coco Balls.png' },
+        { id: '819', category_id: 'all', name_en: 'Vegetable Bouillon', name_ar: 'مرق خضار ( علبة )', desc_en: 'Weight : 400 g\nPieces  NO : 12', desc_ar: 'الوزن : 400 غم \nالعدد : 12', weight: '400 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1710137078مرق خضار 400غم.png' },
+        { id: '818', category_id: 'all', name_en: 'Chicken Bouillen', name_ar: 'مرق دجاج ( علبة )', desc_en: 'Weight : 400 g\nPieces  NO : 12', desc_ar: 'الوزن : 400 غم \nالعدد : 12', weight: '400 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1710136974مرق دجاج 400غم.png' },
+        { id: '817', category_id: 'all', name_en: '', name_ar: 'فلفل احمر حار ( مملحة )', desc_en: 'Weight : 100 g\nPieces  NO : 12', desc_ar: 'الوزن : 100 غم \nالعدد : 12', weight: '100 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1710136874فلفل احمر حار100 غم مملحة جديد 1في 12.png' },
+        { id: '816', category_id: 'all', name_en: '', name_ar: 'بصل ( مملحة )', desc_en: 'Weight : 125 g\nPieces  NO : 12', desc_ar: 'الوزن : 125 غم \nالعدد : 12', weight: '125 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1710136732بصل م 125غم مملحة جديد 1في12.png' },
+        { id: '815', category_id: 'all', name_en: '', name_ar: 'تتبيلة و بهارات دجاج ( علبة )', desc_en: 'Weight : 300 g\nPieces  NO : 12', desc_ar: 'الوزن : 300 غم \nالعدد : 12', weight: '300 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1710136670تتبيلة وبهارات دجاج300غم علبة1في 12.png' },
+        { id: '814', category_id: 'all', name_en: 'Adana kebab Seasoning', name_ar: 'كباب ادنا حار ( علبة )', desc_en: 'Weight : 250 g\nPieces  NO : 12', desc_ar: 'الوزن : 250 غم \nالعدد : 12', weight: '250 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_814/1710137244كباب ادانا حار.png' },
+        { id: '813', category_id: 'all', name_en: '', name_ar: 'تتبيلة و بهارات بيتزا ايطالية ( علبة )', desc_en: 'Weight : 250 g\nPieces  NO : 12', desc_ar: 'الوزن : 250 غم \nالعدد : 12', weight: '250 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1710136472تتبيلة وبهارات بيتزا ايطالية 250غم علبة1في12.png' },
+        { id: '812', category_id: 'all', name_en: '', name_ar: 'تتبيلة و بهارات بطاطا ( علبة )', desc_en: 'Weight : 250 g\nPieces  NO : 12', desc_ar: 'الوزن : 250 غم \nالعدد : 12', weight: '250 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1710136356تتبيلة وبهارات بطاطا 250غم علبة1في 12.png' },
+        { id: '811', category_id: 'all', name_en: 'Chicken Tashreeb Spice', name_ar: 'بهارات تشريب دجاج ( مملحة )', desc_en: 'Weight : 100 g\nPieces NO : 12', desc_ar: 'الوزن : 100 غم \nالعدد : 12', weight: '100 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709982749تشريب دجاج.png' },
+        { id: '810', category_id: 'all', name_en: 'Mandi Spice ( Meat )', name_ar: 'بهارات مندي لحم ( مملحة )', desc_en: 'Weight : 100 g\nPieces NO : 12', desc_ar: 'الوزن : 100 غم \nالعدد : 12', weight: '100 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709982367مندي لحم.png' },
+        { id: '809', category_id: 'all', name_en: 'Lahmacun Spice', name_ar: 'بهارات  لحم بعجين ( مملحة )', desc_en: 'Weight : 100 g\nPieces  NO : 12', desc_ar: 'الوزن : 100 غم \nالعدد : 12', weight: '100 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709982246لحم بعجين.png' },
+        { id: '808', category_id: 'all', name_en: 'Cumin', name_ar: 'بهارات  كمون ( مملحة )', desc_en: 'Weight : 100 g\nPieces  NO : 12', desc_ar: 'الوزن : 100 غم \nالعدد : 12', weight: '100 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709982095كمون.png' },
+        { id: '807', category_id: 'all', name_en: 'Meat Shawarma Spice', name_ar: 'بهارات  كص لحم ( مملحة )', desc_en: 'Weight : 100 g\nPieces  NO : 12', desc_ar: 'الوزن : 100 غم \nالعدد : 12', weight: '100 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709981977كص لحم.png' },
+        { id: '806', category_id: 'all', name_en: 'Turmeric', name_ar: 'كركم ( مملحة )', desc_en: 'Weight : 100 g\nPieces  NO : 12', desc_ar: 'الوزن : 100 غم \nالعدد : 12', weight: '100 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709981772كركم.png' },
+        { id: '805', category_id: 'all', name_en: 'Curry', name_ar: 'كاري ( مملحة )', desc_en: 'Weight : 100 g\nPieces  NO : 12', desc_ar: 'الوزن : 100 غم \nالعدد : 12', weight: '100 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709981536كاري.png' },
+        { id: '804', category_id: 'all', name_en: 'Falafel Spice', name_ar: 'بهارات  فلافل ( مملحة )', desc_en: 'Weight : 100 g\nPieces  NO : 12', desc_ar: 'الوزن : 100 غم \nالعدد : 12', weight: '100 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709981368فلافل.png' },
+        { id: '803', category_id: 'all', name_en: 'Thyme', name_ar: 'زعتر ( مملحة )', desc_en: 'Weight : 25 g\nPieces  NO : 12', desc_ar: 'الوزن : 25 غم \nالعدد : 12', weight: '25 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709981287زعتر.png' },
+        { id: '802', category_id: 'all', name_en: 'Dolma Spice', name_ar: 'بهارات  دولمة ( مملحة )', desc_en: 'Weight : 100 g\nPieces  NO : 12', desc_ar: 'الوزن : 100 غم \nالعدد : 12', weight: '100 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709981173دولمة.png' },
+        { id: '801', category_id: 'all', name_en: 'Chicken Spice', name_ar: 'بهارات دجاج ( مملحة )', desc_en: 'Weight : 100 g \nPieces  NO : 12', desc_ar: 'الوزن : 100 غم \nالعدد : 12', weight: '100 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709980408دجاج.png' },
+        { id: '800', category_id: 'all', name_en: '7 Kind Spice', name_ar: 'بهارات 7 حبات ( مملحة )', desc_en: 'Weight : 100 g\nPieces  NO : 12', desc_ar: 'الوزن : 100 غم \nالعدد : 12', weight: '100 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709980202حبات 7.png' },
+        { id: '799', category_id: 'all', name_en: 'Meat Tirit Spice', name_ar: 'بهارات تشريب لحم ( مملحة )', desc_en: 'Weight : 100g \nPieces  NO : 12', desc_ar: 'الوزن : 100 غم \nالعدد : 12', weight: '100g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709980015تشريب لحم.png' },
+        { id: '798', category_id: 'all', name_en: 'Rizo Rice Spice', name_ar: 'بهارات  ارز ريزو ( مملحة )', desc_en: 'Weight : 100 g\nPieces  NO : 12', desc_ar: 'الوزن : 100 غم \n العدد : 12', weight: '100 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709979939ارز ريزو.png' },
+        { id: '797', category_id: 'all', name_en: 'Minced Meat Spice', name_ar: 'بهارا ت لحم مثروم ( قيمة ) ( مملحة )', desc_en: 'Weight : 100 g\nPieces  NO : 12', desc_ar: 'الوزن : 100 غم \nالعدد : 12', weight: '100 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709978037لحم مثروم قيمة.png' },
+        { id: '796', category_id: 'all', name_en: 'Black Pepper', name_ar: 'فلفل اسود ( مملحة )', desc_en: 'Weight : 100 g \nPieces  NO : 12', desc_ar: 'الوزن : 100 غم \nالعدد : 12', weight: '100 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709965965فلفل اسود.png' },
+        { id: '795', category_id: 'all', name_en: 'Brown Biryani Spice', name_ar: 'بهارات  برياني قهوائي ( مملحة )', desc_en: 'Weight : 100 g \nPieces  NO : 12', desc_ar: 'الوزن : 100 غم \nالعدد: 12', weight: '100 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709965122برياني قهوائي.png' },
+        { id: '794', category_id: 'all', name_en: 'Mint', name_ar: 'نعناع ( مملحة )', desc_en: 'Weight : 150 g\nPieces  NO : 12', desc_ar: 'الوزن : 150 غم \nالعدد : 12', weight: '150 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_794/1709964215نعناع-2.png' },
+        { id: '793', category_id: 'all', name_en: 'Hamburger Spice', name_ar: 'بهارات  همبركر ( مملحة )', desc_en: 'Weight : 100 g\nPieces  NO : 12', desc_ar: 'الوزن : 100 غم \nالعدد : 12', weight: '100 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_793/1709964569همبركر.png' },
+        { id: '792', category_id: 'all', name_en: 'Hot Turkish Pepper', name_ar: 'فلفل تركي حار ( علبة )', desc_en: 'Weight : 250 g\nPieces  NO : 12', desc_ar: 'الوزن : 250 غم \nالعدد : 12', weight: '250 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709812230فلفل تركي حار.png' },
+        { id: '791', category_id: 'all', name_en: 'Crispy Chicken Mix', name_ar: 'خلطة الكريسبي ( علبة )', desc_en: 'Weight : 300 g\nPieces  NO : 12', desc_ar: 'الوزن : 300 غم \nالعدد : 12', weight: '300 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709811073كرسبي.png' },
+        { id: '790', category_id: 'all', name_en: 'Hot Chilli Pepper', name_ar: 'فلفل احمر خشن تركي ( مملحة )', desc_en: 'Weight : 100 g\nPieces  NO : 12', desc_ar: 'الوزن : 100 غم \nالعدد : 12', weight: '100 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709810338فلفل احمر خشن تركي.png' },
+        { id: '789', category_id: 'all', name_en: 'Sweet  Pepper Powder', name_ar: 'بهارات  فلفل احمر حلو ( مملحة )', desc_en: 'Weight : 100 g\nPieces  NO : 12', desc_ar: 'الوزن : 100 غم \nالعدد : 12', weight: '100 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709810220فلفل احمر حلو.png' },
+        { id: '788', category_id: 'all', name_en: 'Meat Seasoning', name_ar: 'تتبيلة و بهارات اللحم ( علبة )', desc_en: 'Weight : 250 g\nPieces  NO : 12', desc_ar: 'الوزن : 250 غم \nالعدد : 12', weight: '250 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709810021تتبيلة وبهارات لحم 400غم.png' },
+        { id: '787', category_id: 'all', name_en: 'Fish seasoning', name_ar: 'تتبيلة و بهارات سمك ( علبة )', desc_en: 'Weight : 250 g\nPieces  NO : 12', desc_ar: 'الوزن : 250 غم \nالعدد : 12', weight: '250 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709809657مملحة سمك.png' },
+        { id: '786', category_id: 'all', name_en: 'Choco Balls + Cocoa Flakes', name_ar: 'رقائق  الذرة بالشوكولاتة + كرات الذرة بالشوكولاتة', desc_en: 'Weight : 125 g + 125 g\nPieces  NO : 12', desc_ar: 'الوزن : 125 غم + 125 غم \nالعدد : 12', weight: '125 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709809067ChocoBalls-ChocoFlakes 3D.png' },
+        { id: '785', category_id: 'all', name_en: 'Choco balls + Colorful ring flakes', name_ar: 'حلقات الذرة الملونة + كرات الذرة بالشوكولاتة', desc_en: 'Weight : 125 g + 125 g\nPieces  NO : 12', desc_ar: 'الوزن : 125 غم + 125 غم \nالعدد : 12', weight: '125 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709808862ChocoBalls-Colorful Ring Flakes 3D.png' },
+        { id: '784', category_id: 'all', name_en: 'Inegol kofta meatball batter', name_ar: 'اينة كول كفتة ( علبة )', desc_en: 'Weight : 300 g\nPieces  NO : 12', desc_ar: 'الوزن : 300 غم \nالعدد : 12', weight: '300 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709808532اينه كول كفتة.png' },
+        { id: '783', category_id: 'all', name_en: 'Taco Seasoning', name_ar: 'تتبيلة  و بهارات تاكو ( علبة )', desc_en: 'Weight : 250 g\nPieces  NO : 12', desc_ar: 'الوزن : 250 غم \nالعدد : 12', weight: '250 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709808320تتبيلة وبهارات تاكوو 400غم.png' },
+        { id: '782', category_id: 'all', name_en: 'Tekirdag Meatball Batter', name_ar: 'تكرداغ كفتة ( علبة )', desc_en: 'Weight : 300 g\nPieces  NO : 12', desc_ar: 'الوزن : 300 غم \nالعدد : 12', weight: '300 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709807781تتبيلة وبهارات تكير داغ 400غم.png' },
+        { id: '781', category_id: 'all', name_en: 'Vegetable Mix', name_ar: 'تتبيلة و بهارات خضار ( علبة )', desc_en: 'Weight : 400 g\nPieces  NO  : 12', desc_ar: 'الوزن : 400 غم \nالعدد : 12', weight: '400 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709807463تتبيلة وبهارات خضار 400غم.png' },
+        { id: '780', category_id: 'all', name_en: 'Fajitas Saesoning', name_ar: 'تتبيلة و بهارات فاهيتا ( علبة )', desc_en: 'Weight : 250g\nPieces  NO : 12', desc_ar: 'الوزن : 250 غم \nالعدد : 12', weight: '250g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709807260تتبيلة وبهارات فاهيتا 400غم.png' },
+        { id: '779', category_id: 'all', name_en: 'Cajun Seasoning', name_ar: 'تتبيلة و بهارات كاجون ( علبة )', desc_en: 'Weight : 250 g\nPieces  NO : 12', desc_ar: 'الوزن : 250 غم \nالعدد : 12', weight: '250 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709807086تتبيلة وبهارات كاجون 400غم.png' },
+        { id: '777', category_id: 'all', name_en: 'Pacha Spice', name_ar: 'بهارات باجة ( مملحة )', desc_en: 'Weight : 100 g\nPieces  NO : 12', desc_ar: 'الوزن : 100 غم \nالعدد : 12', weight: '100 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709802700مملحة باجة.png' },
+        { id: '776', category_id: 'all', name_en: 'Garlic Powder', name_ar: 'ثوم ( مملحة )', desc_en: 'Weight : 125g\nPieces  NO : 12', desc_ar: 'الوزن : 125 غم \nالعدد : 12', weight: '125g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709802246مملحة ثوم.png' },
+        { id: '775', category_id: 'all', name_en: 'Yellow biryani Spice', name_ar: 'بهارات  برياني اصفر ( مملحة )', desc_en: 'Weight : 100 g\nPieces  NO : 12', desc_ar: 'الوزن : 100 غم \nالعدد : 12', weight: '100 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709802022مملحة برياني اصفر.png' },
+        { id: '774', category_id: 'all', name_en: 'Cinnamon', name_ar: 'دارسين ( مملحة )', desc_en: 'Weight : 100 g\nPieces  NO : 12', desc_ar: 'الوزن : 100 غم \nالعدد : 12', weight: '100 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709800324مملحة دارسين.png' },
+        { id: '773', category_id: 'all', name_en: 'Stuffed chicken spice', name_ar: 'بهارات  دجاج محشي ( مملحة )', desc_en: 'Weight : 100 g\nPieces  NO : 12', desc_ar: 'الوزن : 100 غم \nالعدد : 12', weight: '100 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709800118مملحة دجاج محشي.png' },
+        { id: '772', category_id: 'all', name_en: '', name_ar: 'مملحة سمك', desc_en: '', desc_ar: 'الوزن : 250 غم \nالعدد : 12', weight: '', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709799992مملحة سمك.png' },
+        { id: '771', category_id: 'all', name_en: 'Ground Dill weed', name_ar: 'شبنت مطحون  ( مملحة )', desc_en: 'Weight : 50 g\nPieces  NO : 12', desc_ar: 'الوزن : 50 غم \nالعدد : 12', weight: '50 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709799738مملحة شبنت.png' },
+        { id: '770', category_id: 'all', name_en: 'Sheikh Mahshi Spice', name_ar: 'بهارات  شيخ محشي ( مملحة )', desc_en: 'Weight : 100 g\nPieces  NO : 12', desc_ar: 'الوزن : 100 غم \nالعدد : 12', weight: '100 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709799432مملحة شيخ محشي.png' },
+        { id: '769', category_id: 'all', name_en: 'Kubba Spice', name_ar: 'بهارات  كبة ( مملحة )', desc_en: 'Weight : 100 g\nPieces  NO : 12', desc_ar: 'الوزن : 100 غم \nالعدد : 12', weight: '100 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709798995مملحة كبة.png' },
+        { id: '768', category_id: 'all', name_en: 'Mixed Spice', name_ar: 'بهارات مشكل ( مملحة )', desc_en: 'Weight : 100 g\nPieces  NO : 12', desc_ar: 'الوزن : 100 غم \nالعدد : 12', weight: '100 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709798498مملحة مشكل.png' },
+        { id: '767', category_id: 'all', name_en: 'Dolma Leaf Roll Spice', name_ar: 'بهارات دولمة ورق عنب ( مملحة )', desc_en: 'Weight  : 100g \nPieces  NO : 12', desc_ar: 'الوزن : 100 غم \nالعدد : 12', weight: '100g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709796154مملحة ورق عنب 2.png' },
+        { id: '763', category_id: 'all', name_en: 'Sweet Ketchup', name_ar: 'كتشاب بارد', desc_en: 'Weight : 5 kg\nPieces  NO : 4', desc_ar: 'الوزن : 5 كغم \nالعدد : 4', weight: '5 kg', pieces_per_carton: '4', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_763/1709796433كاتشاب بارد 5كغم.png' },
+        { id: '762', category_id: 'all', name_en: 'Hot Ketchup', name_ar: 'كتشاب حار', desc_en: 'Weight : 5 kg\nPieces  NO : 4', desc_ar: 'الوزن : 5 كغم \nالعدد : 4', weight: '5 kg', pieces_per_carton: '4', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_762/1709796781كاتشاب حار 5كغم.png' },
+        { id: '761', category_id: 'all', name_en: 'Black Vinegar', name_ar: 'خل اسود', desc_en: 'Weight : 2 L\nPieces  NO : 6', desc_ar: 'الوزن : 2 لتر \nالعدد : 6', weight: '2 L', pieces_per_carton: '6', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_761/1709801356خل اسود 2لتر.png' },
+        { id: '760', category_id: 'all', name_en: 'Apple Vinegar', name_ar: 'خل تفاح', desc_en: 'Weight : 2 L\nPieces  NO : 6', desc_ar: 'الوزن : 2 لتر \nالعدد : 6', weight: '2 L', pieces_per_carton: '6', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_760/1709801330خل تفاح 2لتر.png' },
+        { id: '759', category_id: 'all', name_en: 'Lemon  Sauce', name_ar: 'حامض الليمون', desc_en: 'Weight : 750 ml\nPieces  NO : 12', desc_ar: 'الوزن : 750 مل \nالعدد : 12', weight: '750 ml', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_759/1709790549حامض ليمون 750مل.png' },
+        { id: '758', category_id: 'all', name_en: 'Chicken Rancid Remover', name_ar: 'مزيل زفرة ( زنخة ) الدجاج', desc_en: 'Weight : 1 L\nPieces  NO : 12', desc_ar: 'الوزن : 1 لتر \nالعدد : 12', weight: '1 L', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_758/1769345307مزيل زفرة دجاج-500.png' },
+        { id: '757', category_id: 'all', name_en: 'Iodized salt', name_ar: 'ملح الطعام باليود', desc_en: 'Weight  : 500 g\nPieces  NO : 12', desc_ar: 'الوزن : 500 غم \nالعدد : 12', weight: '500 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_757/1709797165ملح طعام 500غم.png' },
+        { id: '756', category_id: 'all', name_en: 'Lemon  Sauce', name_ar: 'حامض ليمون', desc_en: 'Weight : 5 kg \nPieces  NO : 4', desc_ar: 'الوزن : 5 لتر \nالعدد : 4', weight: '5 kg', pieces_per_carton: '4', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_756/1709796264حامض ليمون 5كغم.png' },
+        { id: '755', category_id: 'all', name_en: 'Classic Sauce', name_ar: 'صاص الطباخ', desc_en: 'Weight : 5 kg \nPieces  NO : 4', desc_ar: 'الوزن : 5 كغم \nالعدد : 4', weight: '5 kg', pieces_per_carton: '4', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_755/1709736207صاص 5كغم.png' },
+        { id: '754', category_id: 'all', name_en: 'Garlic Sauce', name_ar: 'صلصة الثوم زجاجي', desc_en: 'Weight : 250 g\nPieces  NO : 12', desc_ar: 'الوزن : 250 غم \nالعدد : 12', weight: '250 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_754/1709729693صلصة ثوم زجاجية.png' },
+        { id: '753', category_id: 'all', name_en: 'Fish Sauce', name_ar: 'صلصة سمك زجاجي', desc_en: 'Weight : 275 g\nPieces  NO : 12', desc_ar: 'الوزن : 275 غم \nالعدد : 12', weight: '275 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_753/1709729737صلصة سمك زجاجية.png' },
+        { id: '752', category_id: 'all', name_en: 'Fish Sauce', name_ar: 'صلصة سمك بلاستك', desc_en: 'Weight : --\nPieces  NO : 12', desc_ar: 'الوزن : --\nالعدد : 12', weight: '', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_752/1709737291صلصة سمك رفيعة بلاستك.png' },
+        { id: '751', category_id: 'all', name_en: 'Rizo Sauce', name_ar: 'صلصة ريزو زجاجي', desc_en: 'Weight : 275 g\nPieces  NO : 12', desc_ar: 'الوزن : 275 غم \nالعدد : 12', weight: '275 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_751/1709737306صلصة ريزو زجاجية.png' },
+        { id: '750', category_id: 'all', name_en: 'Chicken Sauce', name_ar: 'صلصة الدجاج زجاجي', desc_en: 'Weight : 275 g \nPieces  NO : 12', desc_ar: 'الوزن : 275 غم \nالعدد : 12', weight: '275 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_750/1709737319صلصة دجاج رفيعة زجاجية.png' },
+        { id: '749', category_id: 'all', name_en: 'Classic Sas', name_ar: 'صاص  الطباخ ( بلاستك )', desc_en: 'Weight :--\nPieces  NO : 12', desc_ar: 'الوزن : --\nالعدد : 12', weight: '', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_749/1710138219صاص الطباخ رفيع بلاستك.png' },
+        { id: '748', category_id: 'all', name_en: 'Sumac Sauce', name_ar: 'صلصة سماق بلاستك', desc_en: 'Weight : --\nPieces  NO : 12', desc_ar: 'الوزن : --\nالعدد : 12', weight: '', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_748/1709737359صلصة سماق رفيعة بلاستك.png' },
+        { id: '747', category_id: 'all', name_en: 'Wings Sauce', name_ar: 'صلصة اجنحة بلاستك', desc_en: 'Weight : --\nPieces  NO : 12', desc_ar: 'الوزن :--\nالعدد : 12', weight: '', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_747/1709737372صلصة اجنحة رفيعة بلاستك.png' },
+        { id: '746', category_id: 'all', name_en: 'Garlic Sauce', name_ar: 'صلصة ثوم بلاستك', desc_en: 'Weight :--\nPieces  NO : 12', desc_ar: 'الوزن : --\nالعدد : 12', weight: '', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_746/1709737382صلصة ثوم رفيعة بلاستك.png' },
+        { id: '745', category_id: 'all', name_en: 'Hot Pepper Sauce', name_ar: 'صلصة الفلفل الحار زجاجي', desc_en: 'Weight : 275 g\nPieces  NO : 12', desc_ar: 'الوزن : 275 غم \nالعدد : 12', weight: '275 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_745/1709729952صلصة فلفل حار زجاجية.png' },
+        { id: '744', category_id: 'all', name_en: 'Chili Pepper Sauce', name_ar: 'صلصة فلفل حار بلاستك', desc_en: 'Weight : --\nPieces  NO : 12', desc_ar: 'الوزن : --\nالعدد : 12', weight: '', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_744/1709737402صلصة فلفل حار رفيعة بلاستك.png' },
+        { id: '743', category_id: 'all', name_en: 'Chicken Sauce', name_ar: 'صلصة دجاج بلاستك', desc_en: 'Weight :--\nPieces  NO : 12', desc_ar: 'الوزن : --\nالعدد : 12', weight: '', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_743/1709737414صلصة دجاج رفيعة بلاستك.png' },
+        { id: '739', category_id: 'all', name_en: 'Dolma Spice', name_ar: 'بهارات دولمة ( علبة )', desc_en: 'Weight : 500 g\nPieces  NO : 12', desc_ar: 'الوزن : 500 غم \n\nالعدد : 6', weight: '500 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709532365310 Dolma Pet_2.png' },
+        { id: '738', category_id: 'all', name_en: 'Citric acid', name_ar: 'ليمون دوزي ( علبة )', desc_en: 'Weight : 400 g\nPieces  NO : 12', desc_ar: 'الوزن : 1000 غم \n\nالعدد : 6', weight: '400 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709532174ليمون دوزي 320.png' },
+        { id: '737', category_id: 'all', name_en: 'Biryani Spices', name_ar: 'بهارات برياني ( علبة )', desc_en: 'Weight : 500 g\nPieces  NO : 12', desc_ar: 'الوزن : 500 غم \n\nالعدد : 12', weight: '500 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709532011بهارات برياني 318.png' },
+        { id: '736', category_id: 'all', name_en: 'Semsame', name_ar: 'سمسم أبيض ( علبة )', desc_en: 'Weight : 500 g\nPieces  NO : 12', desc_ar: 'الوزن : 500 غم \n\nالعدد : 12', weight: '500 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709531896317 Sesame Pet_1.png' },
+        { id: '735', category_id: 'all', name_en: 'chicken tashreeb spice', name_ar: 'تشريب دجاج ( علبة )', desc_en: 'Weight : 500 g\nPieces  NO : 12', desc_ar: 'الوزن : 500 غم \n\nالعدد : 12', weight: '500 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709531762تشريب دجاج 316.png' },
+        { id: '733', category_id: 'all', name_en: 'Turmeric Powder', name_ar: 'كركم مطحون ( علبة )', desc_en: 'Weight : 500 g\nPieces  NO : 12', desc_ar: 'الوزن : 500 غم \n\n العدد : 12', weight: '500 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_733/1709469634كركم مطحون 314.png' },
+        { id: '732', category_id: 'all', name_en: 'Black Pepper', name_ar: 'فلفل اسود ( علبة )', desc_en: 'Weight : 500 g\nPieces  NO : 12', desc_ar: 'الوزن : 500 غم\nالعدد : 12', weight: '500 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_732/1709469612313 Kara Biber_1.png' },
+        { id: '731', category_id: 'all', name_en: 'Mixed Spice', name_ar: 'بهارات مشكل ( علبة )', desc_en: 'Weight : 500 g\nPieces  NO : 12', desc_ar: 'الوزن : 500 غم \n\n العدد: 12', weight: '500 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_731/1709469595312 Karisik Baharat_1.png' },
+        { id: '730', category_id: 'all', name_en: 'Curry', name_ar: 'كاري ( علبة )', desc_en: 'Weight : 500 g\nPieces  NO : 12', desc_ar: 'الوزن : 500 غم \n\nالعدد : 12', weight: '500 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_730/1709469561311 Köri Baharati_1.png' },
+        { id: '728', category_id: 'all', name_en: 'Ketchup', name_ar: 'كاتشاب', desc_en: 'Weight : 350 g\nPieces  NO : 12', desc_ar: 'الوزن : 350 غم\nالعدد : 12', weight: '350 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_728/17101450561465 كاتشاب.png' },
+        { id: '727', category_id: 'all', name_en: 'Fish Sauce', name_ar: 'صلصة السمك', desc_en: 'Weight : 350 g\nPieces  NO : 12', desc_ar: 'الوزن : 350 غم\nالعدد : 12', weight: '350 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_727/17101450651471 fish.png' },
+        { id: '726', category_id: 'all', name_en: 'Lemon Sauce', name_ar: 'حامض الليمون', desc_en: 'Weight : 750 ml\nPieces  NO : 12', desc_ar: 'الوزن : 750 مل\nالعدد : 12', weight: '750 ml', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_726/1709737538حامض ليمون 750مل.png' },
+        { id: '725', category_id: 'all', name_en: 'Fish Sauce', name_ar: 'صلصة السمك', desc_en: 'Weight : 570 g \nPieces  NO : 12', desc_ar: 'الوزن : 570 غم\nالعدد : 12', weight: '570 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_725/17101407191487 صلصة سمك.png' },
+        { id: '724', category_id: 'all', name_en: 'BBQ Sauce', name_ar: 'صلصة باربكيو', desc_en: 'Weight : 570 g \nPieces  NO : 12', desc_ar: 'الوزن : 570 غم\nالعدد : 12', weight: '570 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/17090404821483 صلصة باربكيو.png' },
+        { id: '723', category_id: 'all', name_en: 'Sweet Ketchup', name_ar: 'كاتشاب بارد', desc_en: 'Weight : 450 g \nPieces  NO : 12', desc_ar: 'الوزن : 450 غم\nالعدد : 12', weight: '450 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_723/1710140949Ketçap Tatli 450g.png' },
+        { id: '722', category_id: 'all', name_en: 'Rice Flour', name_ar: 'دقيق الأرز ( طحين التمن )', desc_en: 'Weight : 450 g\nPieces  NO : 12', desc_ar: 'الوزن : 450 غم\n العدد : 12', weight: '450 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709034382714.png' },
+        { id: '721', category_id: 'all', name_en: 'Sumac powder', name_ar: 'سماق مطحون - مملحة', desc_en: 'Weight : 60 g\nPieces  NO : 24', desc_ar: 'الوزن : 60 غم\nالعدد : 24', weight: '60 g', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709014981322 Sumak.png' },
+        { id: '720', category_id: 'all', name_en: 'Chicken Tashreeb Powder', name_ar: 'بهارات تشريب دجاج - مملحة', desc_en: 'Weight : 45 g \nPieces  NO : 24', desc_ar: 'الوزن : 45 غم\nالعدد : 24', weight: '45 g', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1709014117359 Tavuk Tirit.png' },
+        { id: '719', category_id: 'all', name_en: 'Sponge Cake Mix Strawberry', name_ar: 'خليط الكيك الجاهز الاسفنجي ( فراولة )', desc_en: 'Weight : 500 g\nPiecea NO : 12', desc_ar: 'الوزن : 500 غم\nالعدد : 12', weight: '500 g', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1708955229715 sponge cake flour with strawberry.png' },
+        { id: '718', category_id: 'all', name_en: 'Corn Flour', name_ar: 'نشا ( دقيق الذرة )', desc_en: 'Weight : 450 g\nPieces  NO : 12', desc_ar: 'الوزن : 450 غم\nالعدد : 12', weight: '450 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1708937432703 corn starch 450.png' },
+        { id: '717', category_id: 'all', name_en: 'Citric Acid', name_ar: 'ليمون دوزي', desc_en: 'Weight : 200 g\nPieces  NO : 12', desc_ar: 'الوزن : 200 غم\nالعدد : 12', weight: '200 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1708934281602 Limon Tuzu.png' },
+        { id: '716', category_id: 'all', name_en: 'Red Sumac Powder', name_ar: 'سماق احمر مطحون', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 50 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_716/1708929333099 Kırmızı Sumak (Yeni).png' },
+        { id: '715', category_id: 'all', name_en: 'Meat Tashreeb Seasoning ( Dry Lemon )', name_ar: 'بهارات تشريب لحم ( بالومي بصرة )', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_715/1726571692تشريب لحم لومي بصرة2.png' },
+        { id: '714', category_id: 'all', name_en: 'Chicken Tashreeb Seasoning ( Dry Lemon )', name_ar: 'بهارات تشريب دجاج ( باليمو بصرة )', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1708850844083.png' },
+        { id: '713', category_id: 'all', name_en: 'Mint', name_ar: 'نعناع', desc_en: 'Weight : 35 g\nPieces  NO : 60', desc_ar: 'الوزن : 35 غم\nالعدد : 60', weight: '35 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1706526804040 Nane (Yeni).png' },
+        { id: '712', category_id: 'all', name_en: 'Frankincense Gum', name_ar: 'علك البستج ( لبان الذكر )', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1706526708122 Buhur Sakızı (Yeni).png' },
+        { id: '711', category_id: 'all', name_en: 'Cardamom Seeds', name_ar: 'بذور حبات الهيل', desc_en: 'Weight : 25 g\nPieces  NO : 60', desc_ar: 'الوزن : 25 غم\nالعدد : 60', weight: '25 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1706526186121 Kakule Tohumları (Yeni).png' },
+        { id: '710', category_id: 'all', name_en: 'Chapli Kebab Seasoning', name_ar: 'بهارات كباب عروك ( شفتة )', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1706523902117 Chapli Kabab (Yeni).png' },
+        { id: '708', category_id: 'all', name_en: 'Mandi Spices Chicken', name_ar: 'بهارات مندي الدجاج', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_708/1706520987116 Mandi Chicken (Yeni).png' },
+        { id: '707', category_id: 'all', name_en: 'Mandi Spices Meat', name_ar: 'بهارات مندي اللحم', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_707/1706520974115 Mandi Meat (Yeni).png' },
+        { id: '706', category_id: 'all', name_en: '7 kinds Spices Powder', name_ar: 'بهارات 7 حبات مطحونة', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_706/1708929233113 Dovulmuş Yedi Baharat (Yeni).png' },
+        { id: '705', category_id: 'all', name_en: 'Beans\' Curry', name_ar: 'بهارات كاري فاصوليا - يابسة', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_705/1706520883112 Fasulia Köri (Yeni).png' },
+        { id: '704', category_id: 'all', name_en: 'Tumeric Roots', name_ar: 'كركم جذر', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1705517580111.png' },
+        { id: '703', category_id: 'all', name_en: 'Red Pepper', name_ar: 'فلفل أحمر - حلو', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_703/1706520818110 Toz Tatlı Biber 40g (Yeni).png' },
+        { id: '702', category_id: 'all', name_en: 'Yoghurt Spices', name_ar: 'بهارات الزبادي', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1705517480109.png' },
+        { id: '701', category_id: 'all', name_en: 'Olive Spices', name_ar: 'بهارات الزيتون', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1705517431108.png' },
+        { id: '700', category_id: 'all', name_en: 'Chicken Cutlets Spices', name_ar: 'بهارات كباب الدجاج', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_700/17659583270 بهارات كباب دجاج.png' },
+        { id: '699', category_id: 'all', name_en: 'Alkiyma Broth Spices', name_ar: 'بهارات القيمة النجفية', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_699/1706520516105 Kiyma Çorbası 40g (Yeni).png' },
+        { id: '698', category_id: 'all', name_en: 'Red Pickle Spices', name_ar: 'بهارات الطرشي الأحمر', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_698/1706517913104 Kırmızı Turşu (Yeni).png' },
+        { id: '697', category_id: 'all', name_en: 'Yellow Pickle Spices', name_ar: 'بهارات الطرشي الأصفر', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_697/1706517901103 Sarı Turşu (Yeni).png' },
+        { id: '696', category_id: 'all', name_en: 'Chicken Hamburger Spices', name_ar: 'بهارات همبركر الدجاج', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_696/1706520443102 Tavuk Hamburger (Yeni).png' },
+        { id: '695', category_id: 'all', name_en: 'Dill', name_ar: 'أوراق الشبنت', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_695/1706520387101 Dere Otu (Yeni).png' },
+        { id: '694', category_id: 'all', name_en: 'Magic Dolma Spices', name_ar: 'بهارات الدولمة السحرية', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 50 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1705516432100.png' },
+        { id: '693', category_id: 'all', name_en: 'White Pepper', name_ar: 'فلفل أبيض', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_693/1706518787098 Beyaz Biber (Yeni).png' },
+        { id: '692', category_id: 'all', name_en: 'Fish Rice Spices', name_ar: 'بهارات أرز السمك', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_692/1706518760097 Balıklı Pilav Harci (Yeni).png' },
+        { id: '691', category_id: 'all', name_en: 'Harmal', name_ar: 'حرمل', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1705516242096.png' },
+        { id: '690', category_id: 'all', name_en: 'Dry Lemon Powder', name_ar: 'لومي بصرة مطحون', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_690/1726573961لومي بصرة مطحون.png' },
+        { id: '689', category_id: 'all', name_en: 'Yellow Rice Spices', name_ar: 'بهارات أرز أصفر', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_689/1706518709094 Sarı Pirinç Pilavı (Yeni).png' },
+        { id: '688', category_id: 'all', name_en: '7 kinds Spices', name_ar: 'بهارات سبع حبات غير مطحونة', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_688/1708929206093 Yedi Baharat (Yeni).png' },
+        { id: '687', category_id: 'all', name_en: 'White Pepper Powder- Crispy', name_ar: 'فلفل حار مطحون - بنكهة الكرسبي', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1705515364092.png' },
+        { id: '686', category_id: 'all', name_en: 'Liver Spices', name_ar: 'بهارات و تتبيلة معلاق أسود', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1705515201091.png' },
+        { id: '685', category_id: 'all', name_en: 'Onion Powder', name_ar: 'بصل جاف مطحون', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_685/1706518660090 Toz Soğan (Yeni).png' },
+        { id: '684', category_id: 'all', name_en: 'Red Chickpea Spices', name_ar: 'بهارات حمص أحمر', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1705515121089.png' },
+        { id: '683', category_id: 'all', name_en: 'Grilled Fish Spices', name_ar: 'بهارات سمك مشوي - مسكوف', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_683/1726572082بهارات سمك مشوي2.png' },
+        { id: '682', category_id: 'all', name_en: 'Chicken Broth', name_ar: 'مرق الدجاج', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 75 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1705515037086.png' },
+        { id: '681', category_id: 'all', name_en: 'Meat Broth', name_ar: 'مرق اللحم', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 75 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1705515007085.png' },
+        { id: '680', category_id: 'all', name_en: 'Chicken impregnating Spices', name_ar: 'بهارات تشريب دجاج', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_680/1706520783106 Tavuk Tirit (Yeni).png' },
+        { id: '679', category_id: 'all', name_en: 'Wild Mint', name_ar: 'بطنج - النعناع البري', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_679/17659582740 بطنج نعناع بري.png' },
+        { id: '678', category_id: 'all', name_en: 'Meat Tikka Spices', name_ar: 'بهارات تكة اللحم', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1705514814080.png' },
+        { id: '677', category_id: 'all', name_en: 'Yellow Bulgar Spices', name_ar: 'بهارات برغل أصفر', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1705514308078.png' },
+        { id: '676', category_id: 'all', name_en: 'Red Bulgar Spices', name_ar: 'بهارات برغل أحمر', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1705514271077.png' },
+        { id: '674', category_id: 'all', name_en: 'Chicken Shawarma Spices', name_ar: 'بهارات كص - شاورما دجاج', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_674/1706518595075 Tavuk döner (Yeni).png' },
+        { id: '673', category_id: 'all', name_en: 'Piteta Chap Spices', name_ar: 'بهارات بتيته جاب', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1705513957074.png' },
+        { id: '672', category_id: 'all', name_en: 'Kozi Al-Sham Spices', name_ar: 'بهارات قوزي الشام', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_672/1706518575073 Kuzi Şam (Yeni).png' },
+        { id: '671', category_id: 'all', name_en: 'Round Kubba Spices', name_ar: 'بهارات كبة مدورة', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_671/1726571790بهارات كبة مدورة2.png' },
+        { id: '670', category_id: 'all', name_en: 'Cariander Grains', name_ar: 'كزبرة حب غير مطحون', desc_en: 'Weight : 50 g\nPieces  NO : 60', desc_ar: 'الوزن : 50 غم\nالعدد : 60', weight: '50 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_670/1706518557071 Tane Kişniş (Yeni).png' },
+        { id: '669', category_id: 'all', name_en: 'Cariander Powder', name_ar: 'كزبرة مطحونة', desc_en: 'Weight : 50 g\nPieces  NO : 60', desc_ar: 'الوزن : 50 غم\nالعدد : 60', weight: '50 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_669/1706518544070 Toz Kişniş (Yeni).png' },
+        { id: '668', category_id: 'all', name_en: 'Cloves Seeds', name_ar: 'قرنفل مسمار غير مطحون', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_668/1706518527068 Karanfil Tane (Yeni).png' },
+        { id: '667', category_id: 'all', name_en: 'Cloves Powder', name_ar: 'قرنفل مطحون', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_667/1706518512067 Toz Karanfil (Yeni).png' },
+        { id: '666', category_id: 'all', name_en: 'Ginger Root', name_ar: 'زنجبيل جذر', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1705513275066.png' },
+        { id: '665', category_id: 'all', name_en: 'Ginger Powder', name_ar: 'زنجبيل مطحون', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_665/1706518495065 Toz Zencefil (Yeni).png' },
+        { id: '663', category_id: 'all', name_en: 'Tepsi Spices', name_ar: 'بهارات تبسي', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1705510677063.png' },
+        { id: '662', category_id: 'all', name_en: 'Mahlap Grains', name_ar: 'محلب حب', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1705510639062.png' },
+        { id: '479', category_id: 'all', name_en: 'Yensun Grains', name_ar: 'ينسون غير مطحون', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1705269671061.png' },
+        { id: '478', category_id: 'all', name_en: 'Cumin Grains', name_ar: 'كمون حب', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1705269614060.png' },
+        { id: '477', category_id: 'all', name_en: 'Fennel Grains', name_ar: 'حبة حلوة غير مطحون', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1705269584059.png' },
+        { id: '476', category_id: 'all', name_en: 'Fennel Powder', name_ar: 'حبة حلوة مطحونة', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_476/1706518430058 Toz Rezene 50g (Yeni).png' },
+        { id: '475', category_id: 'all', name_en: 'Green Biryani Spices', name_ar: 'بهارات برياني أخضر', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_475/1706518407055 Green Biryani (Yeni).png' },
+        { id: '474', category_id: 'all', name_en: 'Sumac Powder', name_ar: 'سماق مطحون', desc_en: 'Weight : 50 g\nPieces  NO : 60', desc_ar: 'الوزن : 50 غم\nالعدد : 60', weight: '50 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_474/1706518386054 Toz Sumak (Yeni).png' },
+        { id: '473', category_id: 'all', name_en: 'Sheikh Mashi Spices', name_ar: 'بهارات شيخ محشي', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_473/1706518351052 Karniyarik (Yeni).png' },
+        { id: '472', category_id: 'all', name_en: 'Jlefrai Spices', name_ar: 'بهارات جلفراي', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1705269275051.png' },
+        { id: '470', category_id: 'all', name_en: 'Laurel leaves', name_ar: 'ورق غار', desc_en: 'Weight : 12 g\nPieces  NO : 60', desc_ar: 'الوزن : 12 غم\nالعدد : 60', weight: '12 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_470/1706518334049 Defne Yaprağı 20g (Yeni).png' },
+        { id: '469', category_id: 'all', name_en: 'Thyme', name_ar: 'زعتر', desc_en: 'Weight : 35 g\nPieces  NO : 60', desc_ar: 'الوزن :35 غم\nالعدد : 60', weight: '35 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_469/1706518315048 Yaprak Kekik (Yeni).png' },
+        { id: '468', category_id: 'all', name_en: 'Black Pepper Grains', name_ar: 'فلفل أسود حب', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_468/1706518303047 Tane Karabiber (Yeni).png' },
+        { id: '467', category_id: 'all', name_en: 'Pan Kebab Spices', name_ar: 'بهارات كباب طاوة', desc_en: 'Weight : 60 g\nPieces  NO : 60', desc_ar: 'الوزن : 60 غم\nالعدد : 60', weight: '60 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1705269090046.png' },
+        { id: '466', category_id: 'all', name_en: 'Chicken Tikka Spices', name_ar: 'بهارات تكة الدجاج', desc_en: 'Weight : 45 g\nPieces  NO : 60', desc_ar: 'الوزن : 45 غم\nالعدد : 60', weight: '45 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1705269042045.png' },
+        { id: '465', category_id: 'all', name_en: 'Turkish Kebab Spices', name_ar: 'بهارات كباب تركي', desc_en: 'Weight : 60 g\nPieces  NO : 60', desc_ar: 'الوزن : 60 غم\nالعدد : 60', weight: '60 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1705268990044.png' },
+        { id: '464', category_id: 'all', name_en: 'Kentucky Spices', name_ar: 'بهارات كنتاكي', desc_en: 'Weight : 95 g\nPieces  NO : 60', desc_ar: 'الوزن : 95 غم\nالعدد : 60', weight: '95 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_464/1706518287043 Citir Pane (Yeni).png' },
+        { id: '463', category_id: 'all', name_en: 'Turkish Stuffed Kebab Spices', name_ar: 'بهارات كباب تركي محشي', desc_en: 'Weight : 60 g\nPieces  NO : 60', desc_ar: 'الوزن : 60 غم\nالعدد : 60', weight: '60 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1705268919042.png' },
+        { id: '462', category_id: 'all', name_en: 'Anbe Spices', name_ar: 'بهارات عنبة', desc_en: 'Weight : 60 g\nPieces  NO : 60', desc_ar: 'الوزن : 60 غم\nالعدد : 60', weight: '60 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1705268876041.png' },
+        { id: '460', category_id: 'all', name_en: 'Turkish Pepper', name_ar: 'فلفل تركي', desc_en: 'Weight : 45 g\nPieces  NO : 60', desc_ar: 'الوزن : 45 غم\nالعدد : 60', weight: '45 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_460/1728106520فلفل تركي.png' },
+        { id: '459', category_id: 'all', name_en: 'Soda', name_ar: 'صودا', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1705268776038.png' },
+        { id: '458', category_id: 'all', name_en: 'Macaroni Spices', name_ar: 'بهارات معكرونة', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_458/1726571554بهارات معكرونة2.png' },
+        { id: '457', category_id: 'all', name_en: 'Red Pepper Hot', name_ar: 'فلفل أحمر حار', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_457/1706518184036 Kırmızı Biber (Acı) (Yeni).png' },
+        { id: '456', category_id: 'all', name_en: 'Veal Roast', name_ar: 'بهارات روست', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1705268673035.png' },
+        { id: '455', category_id: 'all', name_en: 'Lentil Spices', name_ar: 'بهارات العدس', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_455/1706518149034 Mercimek 40g (Yeni).png' },
+        { id: '454', category_id: 'all', name_en: 'Chickpea Spices', name_ar: 'بهارات حمص أصفر', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1705268590033.png' },
+        { id: '453', category_id: 'all', name_en: 'Potatoes Spices', name_ar: 'بهارات البطاطا المقلية', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1705268549032.png' },
+        { id: '452', category_id: 'all', name_en: 'Dolma Spices - Grape Leaves', name_ar: 'بهارات دولمة  ورق عنب', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_452/1706518131031 Sarma Yogurtlu Seasoning (Yeni).png' },
+        { id: '451', category_id: 'all', name_en: 'Stuffed Chicken Spices', name_ar: 'بهارات الدجاج المحشي', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_451/1706518102030 Karışık Pilavlı Tavuk (Yeni).png' },
+        { id: '450', category_id: 'all', name_en: 'Cinnamon Powder', name_ar: 'دارسين مطحون', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_450/1706518074028 Tarcin tozu (Yeni).png' },
+        { id: '449', category_id: 'all', name_en: 'Pacha Spices', name_ar: 'بهارات باجة', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_449/1706518027027 Pacha Seasoning (Yeni).png' },
+        { id: '448', category_id: 'all', name_en: 'Cardamom Big Grains', name_ar: 'هيل خشن', desc_en: 'Weight : 25 g\nPieces  NO : 60', desc_ar: 'الوزن : 25 غم\nالعدد : 60', weight: '25 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_448/1706518002025 Tane Kakule (Yeni).png' },
+        { id: '447', category_id: 'all', name_en: 'Cardamom Powder', name_ar: 'هيل مطحون', desc_en: 'Weight : 25 g\nPieces  NO : 60', desc_ar: 'الوزن : 25غم\nالعدد : 60', weight: '25 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_447/1706517987022 Toz Kakule (Yeni).png' },
+        { id: '446', category_id: 'all', name_en: 'Cumin Powder', name_ar: 'كمون مطحون', desc_en: 'Weight : 40 g \nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_446/1706517934021 Toz Kimyon (Yeni).png' },
+        { id: '445', category_id: 'all', name_en: 'Pastrami Spcies', name_ar: 'بهارات الباسطرمة', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1705268149019.png' },
+        { id: '444', category_id: 'all', name_en: 'Stuffed Pickle Spices', name_ar: 'بهارات طرشي محشي', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_444/1706517886018 Stuffed Pickles Seasoning (Yeni).png' },
+        { id: '443', category_id: 'all', name_en: 'Fish Spices', name_ar: 'بهارات السمك', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_443/1706517664017 Fish Seasoning (Yeni).png' },
+        { id: '442', category_id: 'all', name_en: 'Meat Tashreeb Spices', name_ar: 'بهارات تشريب لحم', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_442/1706517647016 Tirit (Yeni).png' },
+        { id: '441', category_id: 'all', name_en: 'Meat shawarma Spices', name_ar: 'بهارات كص - شاوما اللحم', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_441/1706517617015 Et Doner (Yeni).png' },
+        { id: '440', category_id: 'all', name_en: 'Kebab Spices', name_ar: 'بهارات كباب', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_440/1706517597013 Adana Kebab Seasoning (Yeni).png' },
+        { id: '439', category_id: 'all', name_en: 'Lahm bjin Spices', name_ar: 'بهارات لحم بعجين', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_439/1706517542012 Lahmacun (Yeni).png' },
+        { id: '438', category_id: 'all', name_en: 'Meat Hamburger Spices', name_ar: 'بهارات همبركر اللحم', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_438/1706517456011 Beef Burger (Yeni).png' },
+        { id: '436', category_id: 'all', name_en: 'Black Pepper', name_ar: 'فلفل أسود مطحون', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_436/1708776307002 Toz Karabiber (Yeni).png' },
+        { id: '435', category_id: 'all', name_en: 'Yellow Biryani Spices', name_ar: 'بهارات برياني أصفر - مملحة', desc_en: 'Weight : 45 g\nPieces  NO : 24', desc_ar: 'الوزن : 45 غم \n\n العدد : 24', weight: '45 g', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704305443yellow-biryani.png' },
+        { id: '434', category_id: 'all', name_en: 'Meat Tashreeb Spices', name_ar: 'بهارات تشريب اللحم - مملحة', desc_en: 'Weight : 45 g\nPieces  NO : 24', desc_ar: 'الوزن : 45 غم \n\nالعدد : 24', weight: '45 g', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704305413tashreeb-spices.png' },
+        { id: '433', category_id: 'all', name_en: 'Red Sumac powder', name_ar: 'سماق أحمر مطحون - مملحة', desc_en: 'Weight : 60 g\nPieces  NO : 24', desc_ar: 'الوزن : 60 غم\nالعدد : 24', weight: '60 g', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704305367red-sumac.png' },
+        { id: '432', category_id: 'all', name_en: 'Red Pepper Sweet', name_ar: 'فلفل أحمر حلو - مملحة', desc_en: 'Weight : 45 g\nPieces  NO : 24', desc_ar: 'الوزن : 45 غم \n\n العدد : 24', weight: '45 g', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704305333red-pepper-sweet.png' },
+        { id: '431', category_id: 'all', name_en: 'Red Pepper Hot', name_ar: 'فلفل أحمر حار - مملحة', desc_en: 'Weight : 45\nPieces  NO : 24', desc_ar: 'الوزن : 45 غم \n\nالعدد : 24', weight: '', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704305300redpepper.png' },
+        { id: '430', category_id: 'all', name_en: 'Paste Ornament', name_ar: 'زينة الكيك - مملحة', desc_en: 'Weight : 50 g \nPieces  NO : 24', desc_ar: 'الوزن : 50 غم \n\nالعدد : 24', weight: '50 g', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704305272paste-ornament.png' },
+        { id: '429', category_id: 'all', name_en: 'Mixed Spices', name_ar: 'بهارات مشكل - مملحة', desc_en: 'Weight : 55 g\nPieces  NO : 24', desc_ar: 'الوزن : 55 غم \n\nالعدد : 24', weight: '55 g', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704305219mixed-spices.png' },
+        { id: '428', category_id: 'all', name_en: 'Mixed Curry', name_ar: 'كاري مشكل', desc_en: 'Weight : 125 g\nPieces  NO : 24', desc_ar: 'الوزن : 125 غم\nالعدد : 24', weight: '125 g', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704303987mixed-curry.png' },
+        { id: '427', category_id: 'all', name_en: 'Mint', name_ar: 'نعناع - مملحة', desc_en: 'Weight : 35 g\nPieces  NO : 24', desc_ar: 'الوزن : 35 غم \n\nالعدد : 24', weight: '35 g', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704303954mint.png' },
+        { id: '426', category_id: 'all', name_en: 'Meat Bouillon Powder', name_ar: 'مرق اللحم - مملحة', desc_en: 'Weight : 90 g\nPieces  NO : 24', desc_ar: 'الوزن : 90 غم \n\nالعدد :24', weight: '90 g', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704303926meat-powder.png' },
+        { id: '425', category_id: 'all', name_en: 'Kubba Spices', name_ar: 'بهارات الكبة - مملحة', desc_en: 'Weight : 45 g\nPieces  NO : 24', desc_ar: 'الوزن : 45 غم \n\nالعدد : 24', weight: '45 g', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704303888kubba.png' },
+        { id: '424', category_id: 'all', name_en: 'Halab Kubba Spices', name_ar: 'بهارات كبة حلب - مملحة', desc_en: 'Weight : 45 g \nPieces  NO : 24', desc_ar: 'الوزن : 45 غم\nالعدد : 24', weight: '45 g', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704303603halab-kubba.png' },
+        { id: '423', category_id: 'all', name_en: 'Garlic Powder', name_ar: 'ثوم مطحون - مملحة', desc_en: 'Weight : 45 g\nPieces  NO : 24', desc_ar: 'الوزن : 45 غم \n\nالعدد :24', weight: '45 g', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704303567garlic-powder.png' },
+        { id: '422', category_id: 'all', name_en: 'Fish Spices', name_ar: 'بهارات السمك - مملحة', desc_en: 'Weight : 50 g\nPieces  NO : 24', desc_ar: 'الوزن : 50 غم \n\nالعدد : 24', weight: '50 g', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704303538fish-spices.png' },
+        { id: '421', category_id: 'all', name_en: 'Dolma Spices', name_ar: 'بهارات الدولمة - مملحة', desc_en: 'Weight : 45 g\nPieces  NO : 24', desc_ar: 'الوزن : 45 غم \n\nالعدد : 24', weight: '45 g', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704303511dolma-spices.png' },
+        { id: '420', category_id: 'all', name_en: 'Curry', name_ar: 'كاري - مملحة', desc_en: 'Weight : 70 g\nPieces  NO : 24', desc_ar: 'الوزن : 70 غم \n\nالعدد : 24', weight: '70 g', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704303474curry.png' },
+        { id: '419', category_id: 'all', name_en: 'Curcuma Powder', name_ar: 'كركم مطحون - مملحة', desc_en: 'Weight : 50 g\nPieces  NO : 24', desc_ar: 'الوزن : 50 غم \n\nالعدد :24', weight: '50 g', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704303451curcuma.png' },
+        { id: '418', category_id: 'all', name_en: 'Cumin Powder', name_ar: 'كمون مطحون - مملحة', desc_en: 'Weight : 45 g\nPieces  NO : 24', desc_ar: 'الوزن : 45 غم \n\nالعدد : 24', weight: '45 g', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704303412cumin.png' },
+        { id: '417', category_id: 'all', name_en: 'Cinnamon Powder', name_ar: 'دارسين مطحون - مملحة', desc_en: 'Weight : 45 g\nPieces  NO : 24', desc_ar: 'الوزن : 45 غم \n\n العدد : 24', weight: '45 g', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704303378cinammon-powder.png' },
+        { id: '416', category_id: 'all', name_en: 'Chicken Bouillon Powder', name_ar: 'مرق الدجاج - مملحة', desc_en: 'Weight : 90 g \nPieces  NO : 24', desc_ar: 'الوزن : 90 غم \n\nالعدد : 24', weight: '90 g', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704303220chicken-powder.png' },
+        { id: '415', category_id: 'all', name_en: 'Biryani Spices', name_ar: 'بهارات البرياني قهوائي - مملحة', desc_en: 'Weight : 45 g\nPieces  NO : 24', desc_ar: 'الوزن : 45 غم \n\nالعدد : 24', weight: '45 g', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704303091byriani-spices.png' },
+        { id: '414', category_id: 'all', name_en: 'Black Pepper', name_ar: 'فلفل أسود - مملحة', desc_en: 'Weight : 65 g\nPieces  NO : 24', desc_ar: 'الوزن : 65 غم \n\n العدد :24', weight: '65 g', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704302936blackpepper.png' },
+        { id: '413', category_id: 'all', name_en: 'Wings Sauce', name_ar: 'صوص الأجنحة', desc_en: 'Weight : 350 g \nPieces  NO : 12', desc_ar: 'الوزن : 350 غم\nالعدد : 12', weight: '350 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_413/17101450961478 wings.png' },
+        { id: '412', category_id: 'all', name_en: 'Wings Sauce', name_ar: 'صلصة الأجنحة', desc_en: 'Weight : 570 g \nPieces  NO : 12', desc_ar: 'الوزن : 570 غم\nالعدد : 12', weight: '570 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_412/17101407081488 صلصة اجنحة.png' },
+        { id: '411', category_id: 'all', name_en: 'White Vinegar', name_ar: 'خل أبيض', desc_en: 'Weight : 500 ml\nPieces  NO : 12', desc_ar: 'الوزن : 500 مل\nالعدد : 12', weight: '500 ml', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_411/1710149454خل ابيض.png' },
+        { id: '409', category_id: 'all', name_en: 'Pure Tamarind Syrup', name_ar: 'دبس تمر هندي', desc_en: 'Weight : 350 ml\nPieces  NO : 12', desc_ar: 'الوزن : 350 مل \nالعدد : 12', weight: '350 ml', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_409/1710149192تمر هندي.png' },
+        { id: '407', category_id: 'all', name_en: 'Pomengrante Sauce', name_ar: 'دبس الرمان', desc_en: 'Weight : 345 ml\nPieces  NO : 12', desc_ar: 'الوزن : 345 مل\nالعدد : 12', weight: '345 ml', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_407/1710149304شراب رمان.png' },
+        { id: '406', category_id: 'all', name_en: 'Pizza Sauce', name_ar: 'صلصة البيتزا', desc_en: 'Weight : 350 g \nPieces  NO : 12', desc_ar: 'الوزن : 350 غم\nالعدد : 12', weight: '350 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_406/17101450871477 Pizza.png' },
+        { id: '405', category_id: 'all', name_en: 'Napoleon Sauce', name_ar: 'صلصة نابليون', desc_en: 'Weight : 570 g\nPieces  NO : 12', desc_ar: 'الوزن : 570 غم\nالعدد : 12', weight: '570 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_405/17101407401486 صلصة نابليون.png' },
+        { id: '404', category_id: 'all', name_en: 'Lemon Syrup', name_ar: 'حامض الليمون', desc_en: 'Weight : 1 L\nPieces  NO : 12', desc_ar: 'الوزن : 1 لتر\nالعدد : 12', weight: '1 L', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_404/1710151818حامض ليمون  11.png' },
+        { id: '403', category_id: 'all', name_en: 'Lemon Sauce', name_ar: 'حامض الليمون', desc_en: 'Weight : 500 ml\nPieces  NO : 12', desc_ar: 'الوزن : 500 مل\nالعدد : 12', weight: '500 ml', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_403/1710151686حامض ليمون.png' },
+        { id: '402', category_id: 'all', name_en: 'Hot Ketchup', name_ar: 'كاتشاب حار', desc_en: 'Weight : 450 g \nPieces  NO : 12', desc_ar: 'الوزن : 450 غم\nالعدد : 12', weight: '450 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_402/1710141002Ketçap Aci 450g.png' },
+        { id: '401', category_id: 'all', name_en: 'Hot Pepper Sauce', name_ar: 'صلصة الفلفل الحار', desc_en: 'Weight : 350 g \nPieces  NO : 12', desc_ar: 'الوزن : 350 غم\nالعدد : 12', weight: '350 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_401/17101451051479 chili.png' },
+        { id: '400', category_id: 'all', name_en: 'Grape Vinegar', name_ar: 'خل العنب', desc_en: 'Weight :--\nPieces  NO :--', desc_ar: 'الوزن :--\nالعدد :--', weight: '', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704218761grape-vinger.png' },
+        { id: '398', category_id: 'all', name_en: 'Curry Sauce', name_ar: 'صلصة الكاري', desc_en: 'Weight : 350 g \nPieces  NO : 12', desc_ar: 'الوزن : 350 غم\nالعدد : 12', weight: '350 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_398/17101451121480 curry.png' },
+        { id: '397', category_id: 'all', name_en: 'Classic Sauce', name_ar: 'الصاص العراقي', desc_en: 'Weight : 500 g \nPieces  NO : 12', desc_ar: 'الوزن : 500 غم\nالعدد : 12', weight: '500 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_397/17101406651484 صاص.png' },
+        { id: '396', category_id: 'all', name_en: 'Classic Sauce', name_ar: 'الصاص العراقي', desc_en: 'Weight : 350 g\nPieces  NO : 12', desc_ar: 'الوزن : 350 غم\nالعدد : 12', weight: '350 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_396/17101450211457 صاص.png' },
+        { id: '395', category_id: 'all', name_en: 'Classic Anba', name_ar: 'العنبة العراقية', desc_en: 'Weight : 570 g\nPieces  NO : 12', desc_ar: 'الوزن : 570 غم\nالعدد : 12', weight: '570 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_395/17101410501485 صلصة عنبة.png' },
+        { id: '393', category_id: 'all', name_en: 'Barbecue Sauce', name_ar: 'صلصة الباربكيو', desc_en: 'Weight : 350 g \nPieces  NO : 12', desc_ar: 'الوزن : 350 غم\nالعدد : 12', weight: '350 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_393/17101450751476 bbq.png' },
+        { id: '392', category_id: 'all', name_en: 'Apple Vinegar', name_ar: 'خل التفاح', desc_en: 'Weight : 500 ml\nPieces  NO :--', desc_ar: 'الوزن : 500 مل\nالعدد :--', weight: '500 ml', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704218487apple-vineger-500ml.png' },
+        { id: '391', category_id: 'all', name_en: 'Apple Vinegar', name_ar: 'خل التفاح - بلاستك', desc_en: 'Weight : 500 ml\nPieces  NO : 24', desc_ar: 'الوزن : 500 مل\nالعدد : 12', weight: '500 ml', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_391/1710148351خل تفاح.png' },
+        { id: '390', category_id: 'all', name_en: 'Anba Sauce', name_ar: 'العنبة العراقية', desc_en: 'Weight : 350 g\nPieces  NO : 12', desc_ar: 'الوزن : 350 غم\nالعدد : 12', weight: '350 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_390/17101450391458 عنبة.png' },
+        { id: '389', category_id: 'all', name_en: 'Sugar Powder', name_ar: 'سكر مطحون ( معدني )', desc_en: 'Weight : 300 g\nPieces  NO : 12', desc_ar: 'الوزن : 300 غم\nالعدد : 12', weight: '300 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704213011sugarpowder.png' },
+        { id: '388', category_id: 'all', name_en: 'Soda', name_ar: 'صودا', desc_en: 'Weight : 75 g\nPieces  NO : 24', desc_ar: 'الوزن : 75 غم\nالعدد : 24', weight: '75 g', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704212964soda.png' },
+        { id: '387', category_id: 'all', name_en: 'Table Iodized Salt', name_ar: 'ملح المائدة باليود - مملحة', desc_en: 'Weight : 230 g \nPieces  NO : 24', desc_ar: 'الوزن :230 غم\n العدد : 24', weight: '230 g', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704212920salt1.png' },
+        { id: '386', category_id: 'all', name_en: 'Iodized  Salt', name_ar: 'ملح الطعام باليود', desc_en: 'Weight :--\nPieces  NO :--', desc_ar: 'الوزن :--\nالعدد :--', weight: '', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704212864iodezed-salt.png' },
+        { id: '385', category_id: 'all', name_en: 'Citric Acid', name_ar: 'ليمون دوزي', desc_en: 'Weight : 185 g \nPieces  NO : 24', desc_ar: 'الوزن : 185 غم\nالعدد : 24', weight: '185 g', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704212819crticacid1.png' },
+        { id: '384', category_id: 'all', name_en: 'Tamarind Juice', name_ar: 'عصير ( شربت )  تمر هندي طبيعي', desc_en: 'Weight : 1200 ml\nPieces  NO : 6', desc_ar: 'الوزن : 1200 مل\nالعدد : 6', weight: '1200 ml', pieces_per_carton: '6', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704212731tomarnd-juice.png' },
+        { id: '383', category_id: 'all', name_en: 'Vanilla Custard Powder', name_ar: 'الكاسترد ( فانيلا )  معدني', desc_en: 'Weight : 250 g\nPieces  NO : 12', desc_ar: 'الوزن : 250 غم\nالعدد : 12', weight: '250 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704212684vanilla-custard-powder.png' },
+        { id: '382', category_id: 'all', name_en: 'Custard Powder Strawberry', name_ar: 'الكاسترد ( فراولة )  معدني', desc_en: 'Weight : 250 g\nPieces  NO : 12', desc_ar: 'الوزن : 250 غم\nالعدد : 12', weight: '250 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704212650strawberry-custard-powder.png' },
         { id: '381', category_id: 'all', name_en: 'Quick Cocoa Custard( Pudding )', name_ar: 'كاسترد  بنكهة الكاكاو ( سريع التحضير )', desc_en: '', desc_ar: '', weight: '', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704212612quick-cocoa-custard.png' },
-        { id: '380', category_id: 'all', name_en: 'Pomegranate natural juice', name_ar: 'عصير ( شربت )  رمان طبيعي', desc_en: 'Weight : 1200 ml
-Pieces  NO : 6', desc_ar: 'الوزن : 1200 مل
- 
-العدد :  6', weight: '1200 ml', pieces_per_carton: '6', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704212536pomegranate-juice.png' },
-        { id: '379', category_id: 'all', name_en: 'Orange Juice Concentrated', name_ar: 'عصير ( شربت )  برتقال مركز', desc_en: 'Weight : 1200 ml
-Pieces   NO : 12', desc_ar: 'الوزن  :  1200 مل
-  العدد  :  6', weight: '1200 ml', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704212467orange-juice.png' },
-        { id: '378', category_id: 'all', name_en: 'Custard Orange Powder', name_ar: 'الكاسترد ( برتقال ) معدني', desc_en: 'Weight : 250 g
-Pieces  NO : 12', desc_ar: 'الوزن : 250 غم
-العدد : 12', weight: '250 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704212405orange-custard-powder.png' },
-        { id: '377', category_id: 'all', name_en: 'Grape Juice', name_ar: 'عصير ( شربت ) زبيب مركز', desc_en: 'Weight : 1200 ml
-Pieces  NO : 6', desc_ar: 'الوزن : 1200 مل
- العدد : 6', weight: '1200 ml', pieces_per_carton: '6', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704212353grape-juice.png' },
-        { id: '376', category_id: 'all', name_en: 'Dried Loumi Juice', name_ar: 'عصير ( شربت ) لومي بصرة', desc_en: 'Weight : 1200 ml
-Pieces  NO : 6', desc_ar: 'الوزن : 1200 مل
- العدد : 6', weight: '1200 ml', pieces_per_carton: '6', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704212313dried-lemon-juice.png' },
-        { id: '375', category_id: 'all', name_en: 'Custard Cocoa powder', name_ar: 'كاسترد ( كاكاو ) معدني', desc_en: 'Weight : 250 g
-Pieces  NO : 12', desc_ar: 'الوزن : 250 غم
-العدد : 12', weight: '250 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704212246cocoa-custard-powder.png' },
-        { id: '374', category_id: 'all', name_en: 'Jelly cherry', name_ar: 'جيلي الكرز', desc_en: 'Weight : 85 g
-Pieces   NO : 24', desc_ar: 'الوزن : 85 غم
-
-العدد : 24', weight: '85 g', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_374/1729599967Jelly Jole Kiraz 1.png' },
-        { id: '373', category_id: 'all', name_en: 'Jelly Orange', name_ar: 'جيلي البرتقال', desc_en: 'Weight : 85 g 
-Pieces  NO : 24', desc_ar: 'الوزن : 85 غم
-
-العدد : 24', weight: '85 g', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_373/1729599753Jelly Jole Portkal 1.png' },
-        { id: '370', category_id: 'all', name_en: 'Jelly Strawberry', name_ar: 'جيلي الفراولة', desc_en: 'Weight : 85 g
-Pieces  NO : 24', desc_ar: 'الوزن : 85 غم
-
-العدد : 24', weight: '85 g', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_370/1729600165Jelly Jole Cilek 1.png' },
-        { id: '369', category_id: 'all', name_en: 'white oats', name_ar: 'شوفان أبيض - معدني', desc_en: 'Weight : 300 g
-Pieces  NO : 12', desc_ar: 'الوزن : 300 غم
-العدد : 12', weight: '300 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704211959whiteoats.png' },
-        { id: '368', category_id: 'all', name_en: 'Strawberry Jam', name_ar: 'مربى الفراولة', desc_en: 'Weight : 380 g
-Pieces  NO :--', desc_ar: 'الوزن : 380 غم 
-العدد:--', weight: '380 g', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704211920strawberry-jam.png' },
+        { id: '380', category_id: 'all', name_en: 'Pomegranate natural juice', name_ar: 'عصير ( شربت )  رمان طبيعي', desc_en: 'Weight : 1200 ml\nPieces  NO : 6', desc_ar: 'الوزن : 1200 مل\n \nالعدد :  6', weight: '1200 ml', pieces_per_carton: '6', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704212536pomegranate-juice.png' },
+        { id: '379', category_id: 'all', name_en: 'Orange Juice Concentrated', name_ar: 'عصير ( شربت )  برتقال مركز', desc_en: 'Weight : 1200 ml\nPieces   NO : 12', desc_ar: 'الوزن  :  1200 مل\n  العدد  :  6', weight: '1200 ml', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704212467orange-juice.png' },
+        { id: '378', category_id: 'all', name_en: 'Custard Orange Powder', name_ar: 'الكاسترد ( برتقال ) معدني', desc_en: 'Weight : 250 g\nPieces  NO : 12', desc_ar: 'الوزن : 250 غم\nالعدد : 12', weight: '250 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704212405orange-custard-powder.png' },
+        { id: '377', category_id: 'all', name_en: 'Grape Juice', name_ar: 'عصير ( شربت ) زبيب مركز', desc_en: 'Weight : 1200 ml\nPieces  NO : 6', desc_ar: 'الوزن : 1200 مل\n العدد : 6', weight: '1200 ml', pieces_per_carton: '6', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704212353grape-juice.png' },
+        { id: '376', category_id: 'all', name_en: 'Dried Loumi Juice', name_ar: 'عصير ( شربت ) لومي بصرة', desc_en: 'Weight : 1200 ml\nPieces  NO : 6', desc_ar: 'الوزن : 1200 مل\n العدد : 6', weight: '1200 ml', pieces_per_carton: '6', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704212313dried-lemon-juice.png' },
+        { id: '375', category_id: 'all', name_en: 'Custard Cocoa powder', name_ar: 'كاسترد ( كاكاو ) معدني', desc_en: 'Weight : 250 g\nPieces  NO : 12', desc_ar: 'الوزن : 250 غم\nالعدد : 12', weight: '250 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704212246cocoa-custard-powder.png' },
+        { id: '374', category_id: 'all', name_en: 'Jelly cherry', name_ar: 'جيلي الكرز', desc_en: 'Weight : 85 g\nPieces   NO : 24', desc_ar: 'الوزن : 85 غم\n\nالعدد : 24', weight: '85 g', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_374/1729599967Jelly Jole Kiraz 1.png' },
+        { id: '373', category_id: 'all', name_en: 'Jelly Orange', name_ar: 'جيلي البرتقال', desc_en: 'Weight : 85 g \nPieces  NO : 24', desc_ar: 'الوزن : 85 غم\n\nالعدد : 24', weight: '85 g', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_373/1729599753Jelly Jole Portkal 1.png' },
+        { id: '370', category_id: 'all', name_en: 'Jelly Strawberry', name_ar: 'جيلي الفراولة', desc_en: 'Weight : 85 g\nPieces  NO : 24', desc_ar: 'الوزن : 85 غم\n\nالعدد : 24', weight: '85 g', pieces_per_carton: '24', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_370/1729600165Jelly Jole Cilek 1.png' },
+        { id: '369', category_id: 'all', name_en: 'white oats', name_ar: 'شوفان أبيض - معدني', desc_en: 'Weight : 300 g\nPieces  NO : 12', desc_ar: 'الوزن : 300 غم\nالعدد : 12', weight: '300 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704211959whiteoats.png' },
+        { id: '368', category_id: 'all', name_en: 'Strawberry Jam', name_ar: 'مربى الفراولة', desc_en: 'Weight : 380 g\nPieces  NO :--', desc_ar: 'الوزن : 380 غم \nالعدد:--', weight: '380 g', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704211920strawberry-jam.png' },
         { id: '367', category_id: 'all', name_en: 'Roasting Bags', name_ar: 'أكياس شوي بالفرن', desc_en: '', desc_ar: '', weight: '', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704211882roasting-bags.png' },
         { id: '366', category_id: 'all', name_en: 'Rashi Small', name_ar: 'راشي صغير', desc_en: '', desc_ar: '', weight: '', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704211835rashisamll.png' },
         { id: '365', category_id: 'all', name_en: 'Rashi', name_ar: 'راشي وسط', desc_en: '', desc_ar: '', weight: '', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704211786rashibig.png' },
         { id: '364', category_id: 'all', name_en: 'Rashi 1 Kilo', name_ar: 'راشي واحد كيلو', desc_en: '', desc_ar: '', weight: '', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704211734rashi-1-kilo.png' },
-        { id: '359', category_id: 'all', name_en: 'Mayotchup', name_ar: 'مايوتشاب ( مايونيز + كاتشاب )', desc_en: 'Weight : 570 g 
-Pieces  NO : 12', desc_ar: 'الوزن : 570 غم
-العدد : 12', weight: '570 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_359/17101410191601 صلصة مايوتشاب.png' },
-        { id: '358', category_id: 'all', name_en: 'Mayonnaise', name_ar: 'مايونيز', desc_en: 'Weight : 500 g 
-Pieces  NO : 12', desc_ar: 'الوزن : 500 غم
-العدد : 12', weight: '500 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_358/17101410591600 صلصة مايونيز.png' },
+        { id: '359', category_id: 'all', name_en: 'Mayotchup', name_ar: 'مايوتشاب ( مايونيز + كاتشاب )', desc_en: 'Weight : 570 g \nPieces  NO : 12', desc_ar: 'الوزن : 570 غم\nالعدد : 12', weight: '570 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_359/17101410191601 صلصة مايوتشاب.png' },
+        { id: '358', category_id: 'all', name_en: 'Mayonnaise', name_ar: 'مايونيز', desc_en: 'Weight : 500 g \nPieces  NO : 12', desc_ar: 'الوزن : 500 غم\nالعدد : 12', weight: '500 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_358/17101410591600 صلصة مايونيز.png' },
         { id: '356', category_id: 'all', name_en: 'Dried Fig Jam', name_ar: 'مربى التين المجفف', desc_en: '', desc_ar: '', weight: '', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704211327dried-fig-jam.png' },
         { id: '355', category_id: 'all', name_en: 'Date Molasses big', name_ar: 'دبس التمر حجم كبير مرطبان', desc_en: '', desc_ar: '', weight: '', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704211272datesyrupbig.png' },
         { id: '354', category_id: 'all', name_en: 'Date Syrup', name_ar: 'دبس التمر مرطبان', desc_en: '', desc_ar: '', weight: '', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704211237date-syrup.png' },
-        { id: '353', category_id: 'all', name_en: 'Date Syrup', name_ar: 'دبس التمر - تنكة', desc_en: 'Weight : 5 kg
-Pieces  NO : 1', desc_ar: 'الوزن : 5 كغم
-العدد : 1', weight: '5 kg', pieces_per_carton: '1', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704211190datesyrup.png' },
+        { id: '353', category_id: 'all', name_en: 'Date Syrup', name_ar: 'دبس التمر - تنكة', desc_en: 'Weight : 5 kg\nPieces  NO : 1', desc_ar: 'الوزن : 5 كغم\nالعدد : 1', weight: '5 kg', pieces_per_carton: '1', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704211190datesyrup.png' },
         { id: '352', category_id: 'all', name_en: 'Date Molasses', name_ar: 'دبس التمر  ( علبة )', desc_en: '', desc_ar: '', weight: '', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704211150DATA-Molasses-big.png' },
         { id: '351', category_id: 'all', name_en: 'Date Molasses', name_ar: 'دبس التمر', desc_en: '', desc_ar: '', weight: '', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704211084DATA-Molasses.png' },
-        { id: '350', category_id: 'all', name_en: 'Corn Strach', name_ar: 'نشأ الذرة - معدني', desc_en: 'Weight : 300 g
-Pieces  NO : 12', desc_ar: 'الوزن : 300 غم
-العدد : 12', weight: '300 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704211022corn-starch.png' },
-        { id: '349', category_id: 'all', name_en: 'Cocoa Powder', name_ar: 'مسحوق الكاكاو ( معدني )', desc_en: 'Weight : --
-Pieces  NO : 12', desc_ar: 'الوزن :  غم
-العدد : 12', weight: '', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704210953cocoa-powder.png' },
-        { id: '348', category_id: 'all', name_en: 'Chicken Boillon Powder', name_ar: 'مسحوق مرق الدجاج', desc_en: 'Weight : -- g
-Pieces  NO :--', desc_ar: 'الوزن : -- غم
-العدد : --', weight: '', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704210822chicken-boillon-powder.png' },
+        { id: '350', category_id: 'all', name_en: 'Corn Strach', name_ar: 'نشأ الذرة - معدني', desc_en: 'Weight : 300 g\nPieces  NO : 12', desc_ar: 'الوزن : 300 غم\nالعدد : 12', weight: '300 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704211022corn-starch.png' },
+        { id: '349', category_id: 'all', name_en: 'Cocoa Powder', name_ar: 'مسحوق الكاكاو ( معدني )', desc_en: 'Weight : --\nPieces  NO : 12', desc_ar: 'الوزن :  غم\nالعدد : 12', weight: '', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704210953cocoa-powder.png' },
+        { id: '348', category_id: 'all', name_en: 'Chicken Boillon Powder', name_ar: 'مسحوق مرق الدجاج', desc_en: 'Weight : -- g\nPieces  NO :--', desc_ar: 'الوزن : -- غم\nالعدد : --', weight: '', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704210822chicken-boillon-powder.png' },
         { id: '346', category_id: 'all', name_en: 'Carrot Jam', name_ar: 'مربى الجزر', desc_en: 'Weight : 380 g', desc_ar: 'الوزن : 380 غم', weight: '380 g', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704210730carrot-jam.png' },
         { id: '345', category_id: 'all', name_en: 'Apricot Jam', name_ar: 'مربى المشمش', desc_en: '', desc_ar: '', weight: '', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704210695apricot-jam.png' },
-        { id: '344', category_id: 'all', name_en: 'Sugared Vanilla', name_ar: 'فانيليا بالسكر', desc_en: 'Weight : 5 g
-Pieces  NO :--', desc_ar: 'الوزن : 5 غم
-العدد :--', weight: '5 g', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704210615vanilla-sugar-powder.png' },
-        { id: '343', category_id: 'all', name_en: 'Baking Powder Strawberry', name_ar: 'مسحوق بيكنج باودر ( فراولة ) - ملون', desc_en: 'Weight : 15 g
-Pieces  NO : 12', desc_ar: 'الوزن : 15 غم
-العدد :--', weight: '15 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704210536strawberry-baking-powder.png' },
-        { id: '342', category_id: 'all', name_en: 'Baking Powder Orange', name_ar: 'مسحوق بيكنج باودر ( برتقال ) - ملون', desc_en: 'Weight : 15 g', desc_ar: 'الوزن : 15 غم
-العدد :--', weight: '15 g', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704210499orange-baking-powder.png' },
-        { id: '341', category_id: 'all', name_en: 'Baking Powder Lemon', name_ar: 'مسحوق بيكنج باودر ( ليمون ) - ملون', desc_en: 'Weight : 15 g
-Pieces  NO :--', desc_ar: 'الوزن : 15 غم
-العدد :', weight: '15 g', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704210465lemon-baking-powder.png' },
-        { id: '340', category_id: 'all', name_en: 'Instant Yeast', name_ar: 'خميرة فورية', desc_en: 'Weight : 10 g
-Pieces  NO :--', desc_ar: 'الوزن : 10 غم
-العدد :--', weight: '10 g', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704210423instant-yeast.png' },
-        { id: '339', category_id: 'all', name_en: 'Baking Powder Banana', name_ar: 'مسحوق بيكنج باودر ( موز ) - ملون', desc_en: 'Weight : 15 g', desc_ar: 'الوزن : 15 غم
-العدد :--', weight: '15 g', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704210379banana-baking-powder.png' },
-        { id: '338', category_id: 'cat_57', name_en: 'Rizo Rice Spices', name_ar: 'بهارات أرز ريزو', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704209992rizo.png' },
-        { id: '337', category_id: 'cat_57', name_en: 'Curry Chili', name_ar: 'كاري حار', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704209940acılı köri.png' },
-        { id: '336', category_id: 'cat_57', name_en: 'Grilled Paprika Hot', name_ar: 'بابريكا مدخنة حارة', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704209892124 Grilled Paprika (Hot) (Yeni).png' },
-        { id: '335', category_id: 'cat_57', name_en: 'Grilled Paprika Sweet', name_ar: 'بابريكا مدخنة باردة', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704209826123 Grilled Paprika (Sweet) (Yeni).png' },
-        { id: '334', category_id: 'cat_57', name_en: 'Hot Paprika', name_ar: 'بابريكا حار', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704209787118 Hot Paprika (Yeni).png' },
-        { id: '333', category_id: 'cat_57', name_en: 'Sweet Paprika', name_ar: 'بابريكا بارد', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704209753114 Sweet Paprika (Yeni).png' },
-        { id: '332', category_id: 'cat_57', name_en: 'Black Seed', name_ar: 'حبة السوداء', desc_en: 'Weight : 50 g
-Pieces  NO : 60', desc_ar: 'الوزن : 50 غم
-العدد : 60', weight: '50 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704209694079 Çörek Otu (Yeni).png' },
-        { id: '331', category_id: 'cat_57', name_en: 'Dry Garlic Ajami', name_ar: 'ثوم يابس عجم', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704209660076 Acem Sarimsağı (Yeni).png' },
-        { id: '330', category_id: 'cat_57', name_en: 'Garlic Powder', name_ar: 'ثوم مطحون', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704209618069 Toz Sarımsak (Yeni).png' },
-        { id: '329', category_id: 'cat_57', name_en: 'Cinnamon Sticks', name_ar: 'دارسين عود', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704209583064 Çubuk Tarçın (Yeni).png' },
-        { id: '328', category_id: 'cat_57', name_en: 'Orange Biryani Seasoning', name_ar: 'بهارات البرياني البرتقالي', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704209538057 Orange Biryani (Yeni).png' },
-        { id: '327', category_id: 'cat_57', name_en: 'Red Biryani Seasoning', name_ar: 'بهارات البرياني الأحمر', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704209424056 Red Biryani (Yeni).png' },
-        { id: '326', category_id: 'cat_57', name_en: 'yellow Biryani Seasoning', name_ar: 'بهارات البرياني الأصفر', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704209381053 Yellow Biryani (Yeni).png' },
-        { id: '325', category_id: 'cat_57', name_en: 'Stew Seasoning', name_ar: 'بهارات جدر', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704209323050 Pot (Yeni).png' },
-        { id: '324', category_id: 'cat_57', name_en: 'Klejeh Odor for Stuffing', name_ar: 'ريحة كليجة للحشو', desc_en: 'Weight : 35 g
-Pieces  NO : 60', desc_ar: 'الوزن : 35 غم
-العدد : 60', weight: '35 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704209276029 Kuru Pasta İci Kokusu (Yeni).png' },
-        { id: '323', category_id: 'cat_57', name_en: 'Mixed Spices', name_ar: 'بهارات مشكل', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704209232026 Karışık (Yeni).png' },
-        { id: '322', category_id: 'cat_57', name_en: 'Curry', name_ar: 'كاري', desc_en: 'Weight : 50 g
-Pieces  NO : 60', desc_ar: 'الوزن : 50 غم
-العدد : 60', weight: '50 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704209193024 Kori (Yeni).png' },
-        { id: '321', category_id: 'cat_57', name_en: 'Allspice Powder', name_ar: 'كبابية مطحونة', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704209141023 Allspice (Yeni).png' },
-        { id: '320', category_id: 'cat_57', name_en: 'Kabsa Seasoning', name_ar: 'بهارات كبسة', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_320/17659541550 بهارات كبسة.png' },
-        { id: '319', category_id: 'cat_57', name_en: 'Aleppo Kubba Seasoning', name_ar: 'بهارات كبة حلب', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704209048014 Halep Kofte (Yeni).png' },
-        { id: '318', category_id: 'cat_57', name_en: 'Pizza Seasoning', name_ar: 'بهارات البيتزا', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704208958010 Pizza (Yeni).png' },
-        { id: '317', category_id: 'cat_57', name_en: 'Klejeh Odor for Dough', name_ar: 'ريحة كليجة للعجين', desc_en: 'Weight : 35 g
-Pieces  NO : 60', desc_ar: 'الوزن : 35 غم
-العدد : 60', weight: '35 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704208919009 Kuru Pasta Hamur Kokusu (Yeni).png' },
-        { id: '316', category_id: 'cat_57', name_en: 'Falafel Seasoning', name_ar: 'بهارات الفلافل', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704208875008 Felafil (Yeni).png' },
-        { id: '315', category_id: 'cat_57', name_en: 'Kubba Seasoning', name_ar: 'بهارات الكبة', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704208839007 İcli Kofte (Yeni).png' },
-        { id: '314', category_id: 'cat_57', name_en: 'Minced Meat Seasoning', name_ar: 'بهارات القيمة ( لحم مثروم )', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704208798006 kiyma (Yeni).png' },
-        { id: '313', category_id: 'cat_57', name_en: 'Dolma Seasoning', name_ar: 'بهارات الدولمة', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704208752005 Sarma Dolma Yogurtsuz (Yeni).png' },
-        { id: '312', category_id: 'cat_57', name_en: 'Brown Biryani Seasoning', name_ar: 'بهارات البرياني القهوائي', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704208714004 Brown Biryani (Yeni).png' },
-        { id: '311', category_id: 'cat_57', name_en: 'Turmeric Powder', name_ar: 'كركم مطحون', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704208646003 Zerdecal (Yeni).png' },
-        { id: '310', category_id: 'cat_57', name_en: 'Chicken Seasoning Spices', name_ar: 'بهارات الدجاج', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_310/1708847560001 Tavuk (Yeni).png' },
-        { id: '309', category_id: 'all', name_en: 'Cake Mix Lemon', name_ar: 'خليط الكيك الجاهز ( ليمون ) - ملون', desc_en: 'Weight : 500 g
-Pieces  NO : 12', desc_ar: 'الوزن : 500 غم
-العدد : 12', weight: '500 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704033666c457 CAKE Mix LİMON.png' },
-        { id: '308', category_id: 'all', name_en: 'Cake Mix Cocoa', name_ar: 'خليط الكيك الجاهز ( كاكاو ) - ملون', desc_en: 'Weight : 500 g
-Pieces  NO : 12', desc_ar: 'الوزن : 500 غم
-العدد : 12', weight: '500 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704033622c458 Cake Mix KAKAO.png' },
-        { id: '307', category_id: 'all', name_en: 'Cake Mix Orange', name_ar: 'خليط الكيك الجاهز ( برتقال ) - ملون', desc_en: 'Weight : 500 g
-Pieces  NO : 12', desc_ar: 'الوزن : 500 غم
-العدد : 12', weight: '500 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704033594c456 Cake Mix PORTAKAL.png' },
-        { id: '306', category_id: 'all', name_en: 'Cake Mix Banana', name_ar: 'خليط الكيك الجاهز ( موز ) - ملون', desc_en: 'Weight : 500 g
-Pieces  NO : 12', desc_ar: 'الوزن : 500 غم
-العدد : 12', weight: '500 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704033551c455 CAKE Mix MUZ.png' },
-        { id: '305', category_id: 'all', name_en: 'Cake Mix Strawberry', name_ar: 'خليط الكيك الجاهز ( فراولة ) - ملون', desc_en: 'Weight : 500 g
-Pieces  NO : 12', desc_ar: 'الوزن : 500 غم
-العدد : 12', weight: '500 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704033413c454 Cake Mix ÇİLEK.png' },
-        { id: '304', category_id: 'all', name_en: 'Cream Shanti Coconut', name_ar: 'كريم شانتي جوز الهند', desc_en: 'Weight : 140 g
-Pieces  NO : 12', desc_ar: 'الوزن: 140 غم
- العدد: 12', weight: '140 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704033366c065 COCONUT.png' },
-        { id: '303', category_id: 'all', name_en: 'Cream Shanti Pineapple', name_ar: 'كريم شانتي أناناس', desc_en: 'Weight : 140 g
-Pieces  NO : 12', desc_ar: 'الوزن: 140 غم
-العدد: 12', weight: '140 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704033267c064 ANANAS.png' },
-        { id: '302', category_id: 'all', name_en: 'Corn Flakes', name_ar: 'رقائق الذرة', desc_en: 'Weight : 250 g
-Pieces  NO : 12', desc_ar: 'الوزن : 250 غم
-العدد : 12', weight: '250 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/17040331851337 Corn Flakes.png' },
-        { id: '301', category_id: 'all', name_en: 'Coco Flakes', name_ar: 'رقائق الذرة بالكاكاو', desc_en: 'Weight : 250 g
-Pieces  NO : 12', desc_ar: 'الوزن : 250 غم
-العدد : 12', weight: '250 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/17040331561336 Coco Flakes.png' },
-        { id: '299', category_id: 'all', name_en: 'Cocoa', name_ar: 'كاكاو ( مكيس )', desc_en: 'Weight : 25 g
-Pieces  NO : 144', desc_ar: 'الوزن : 25 غم
-العدد : 144', weight: '25 g', pieces_per_carton: '144', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/17040330621294 Cocoa 25g.png' },
-        { id: '298', category_id: 'all', name_en: 'Ready Kleje Powder', name_ar: 'مسحوق كليجة جاهزة', desc_en: 'Weight : 1900 g
-Pieces  NO : 12', desc_ar: 'الوزن : 1900 غم
-العدد : 12', weight: '1900 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704033036904 Pasta 1900g.png' },
-        { id: '297', category_id: 'all', name_en: 'White Flour', name_ar: 'طحين أبيض ( صفر )', desc_en: 'Weight : 900 g
-Pieces  NO : 12', desc_ar: 'الوزن : 900 غم
-العدد : 12', weight: '900 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704032972903.png' },
-        { id: '292', category_id: 'all', name_en: 'Green Food Dye', name_ar: 'صبغ لوزينا أخضر', desc_en: 'Weight : 15 g
-Pieces  NO : 12', desc_ar: 'الوزن : 15 غم
-العدد : 12', weight: '15 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704032558809.png' },
-        { id: '291', category_id: 'all', name_en: 'Red Food Dye', name_ar: 'صبغ لوزينا أحمر', desc_en: 'Weight : 15 g
-Pieces  NO : 12', desc_ar: 'الوزن : 15 غم
-العدد : 12', weight: '15 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704032519808.png' },
-        { id: '290', category_id: 'all', name_en: 'Yellow Food Dye', name_ar: 'صبغ لوزينا أصفر', desc_en: 'Weight : 15 g
-Pieces  NO : 12', desc_ar: 'الوزن : 15 غم
-العدد : 12', weight: '15 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704032045807.png' },
-        { id: '289', category_id: 'all', name_en: 'Orange Food Dye', name_ar: 'صبغ لوزينا برتقالي', desc_en: 'Weight : 15 g
-Pieces  NO : 12', desc_ar: 'الوزن : 15 غم
-العدد : 12', weight: '15 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704032010806.png' },
-        { id: '288', category_id: 'all', name_en: 'Paste Ornament', name_ar: 'زينة الكيك', desc_en: 'Weight : 50 g
-Pieces  NO : 12', desc_ar: 'الوزن : 50 غم
-العدد : 12', weight: '50 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704031880801 pasta susu.png' },
-        { id: '287', category_id: 'all', name_en: 'Dry Lemon White', name_ar: 'لومي بصرة أبيض', desc_en: 'Weight : 140 g
-Pieces  NO : 12', desc_ar: 'الوزن : 140 غم
-العدد : 12', weight: '140 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704031827755 Beyaz Kuru Limon.png' },
-        { id: '286', category_id: 'all', name_en: 'Dry Lemon Black', name_ar: 'لومي بصرة أسود', desc_en: 'Weight : 140 g
-Pieces  NO : 12', desc_ar: 'الوزن : 140 غم
-العدد : 12', weight: '140 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704031791754 Siyah Kuru Limon.png' },
-        { id: '285', category_id: 'all', name_en: 'Coconuts Dry', name_ar: 'جوز الهند ( ناشف )', desc_en: 'Weight : 175 g
-Pieces  NO : 12', desc_ar: 'الوزن : 175 غم
-العدد : 12', weight: '175 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704031750753.png' },
-        { id: '284', category_id: 'all', name_en: 'Coconuts Oily', name_ar: 'جوز الهند ( دهني )', desc_en: 'Weight : 175 g
-Pieces  NO : 12', desc_ar: 'الوزن : 175 غم
-العدد : 12', weight: '175 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704031682752.png' },
-        { id: '283', category_id: 'all', name_en: 'Flour Sweetness', name_ar: 'حلاوة الطحين', desc_en: 'Weight : 325 g
-Pieces  NO : 12', desc_ar: 'الوزن : 325 غم
-العدد : 12', weight: '325 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704031629724 flour sweetness.png' },
-        { id: '282', category_id: 'all', name_en: 'Flour Sweetness of Chocolate', name_ar: 'حلاوة الجكليت', desc_en: 'Weight : 375 g
-Pieces  NO : 12', desc_ar: 'الوزن : 375 غم
-العدد : 12', weight: '375 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704031588723 chocolate sweetness.png' },
-        { id: '281', category_id: 'all', name_en: 'Super Pizza Mix', name_ar: 'خليط عجينة سوبر البيتزا', desc_en: 'Weight : 500 g
-Pieces  NO : 12', desc_ar: 'الوزن : 500 غم
-العدد : 12', weight: '500 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704031502721 super pizza unu.png' },
-        { id: '280', category_id: 'all', name_en: 'Dumplings Coconut', name_ar: 'لقمة قاضي ( جوز الهند )', desc_en: 'Weight : 669 g
-Pieces  NO : 12', desc_ar: 'الوزن : 669 غم
-العدد : 12', weight: '669 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704031451720 hcvz saray lokma.png' },
-        { id: '279', category_id: 'all', name_en: 'Dumplings Vanilla', name_ar: 'لقمة قاضي ( فانيلا )', desc_en: 'Weight : 669 g
-Pieces  NO : 12', desc_ar: 'الوزن : 669 غم
-العدد : 12', weight: '669 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704031406719 vanyl saray lokma.png' },
-        { id: '278', category_id: 'all', name_en: 'Cake Mix Orange', name_ar: 'خليط الكيك الجاهز ( برتقال )', desc_en: 'Weight : 500 g
-Pieces  NO : 12', desc_ar: 'الوزن : 500 غم
-العدد : 12', weight: '500 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704031171718 Portakalli Kek Unu.png' },
-        { id: '277', category_id: 'all', name_en: 'Cake Mix Strawberry', name_ar: 'خليط الكيك الجاهز ( فراولة )', desc_en: 'Weight : 500 g
-Pieces  NO : 12', desc_ar: 'الوزن : 500 غم
-العدد : 12', weight: '500 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704031136717 Cilekli Kek Unu.png' },
-        { id: '276', category_id: 'all', name_en: 'Sponge Cake Mix Orange', name_ar: 'خليط الكيك الجاهز الاسفنجي ( برتقال )', desc_en: 'Weight : 500 g
-Pieces  NO : 12', desc_ar: 'الوزن : 500 غم
-العدد : 12', weight: '500 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704031078716 Portakal Pandispanya.png' },
-        { id: '274', category_id: 'all', name_en: 'Sponge Klejeh', name_ar: 'كليجة اسفنجية', desc_en: 'Weight : 1 kg
-Pieces  NO : 12', desc_ar: 'الوزن : 1 كغم
-العدد : 12', weight: '1 kg', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704030749713 pandispanya klejeh.png' },
-        { id: '273', category_id: 'all', name_en: 'Pizza Mix', name_ar: 'خليط عجينة البيتزا', desc_en: 'Weight : 500 g
-Pieces  NO : 12', desc_ar: 'الوزن : 500 غم
-العدد : 12', weight: '500 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704030694712 pizza unu.png' },
-        { id: '272', category_id: 'all', name_en: 'Cake Mix Coconut', name_ar: 'خليط الكيك الجاهز  ( جوز الهند )', desc_en: 'Weight : 500 g
-Pieces  NO : 12', desc_ar: 'الوزن : 500 غم
-العدد : 12', weight: '500 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704030621711 Hindistan Cevizli Kek Unu.png' },
-        { id: '271', category_id: 'all', name_en: 'Cake Mix Cocoa', name_ar: 'خليط الكيك الجاهز ( كاكاو )', desc_en: 'Weight : 500 g
-Pieces  NO : 12', desc_ar: 'الوزن : 500 غم
-العدد : 12', weight: '500 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704030417710 Kakao Kek Unu.png' },
-        { id: '270', category_id: 'all', name_en: 'Cake Mix Vanilla', name_ar: 'خليط الكيك الجاهز ( فانيلا )', desc_en: 'Weight : 500 g
-Pieces  NO : 12', desc_ar: 'الوزن : 500 غم
-العدد : 12', weight: '500 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704030378709 Vanilyali Kek Unu.png' },
-        { id: '269', category_id: 'all', name_en: 'Cake Mix Sade', name_ar: 'خليط الكيك الجاهز ( سادة )', desc_en: 'Weight : 500 g
-Pieces  NO : 12', desc_ar: 'الوزن : 500 غم
-العدد : 12', weight: '500 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704030236708 Sade Kek Unu.png' },
-        { id: '268', category_id: 'all', name_en: 'Sponge Cake Mix Coconut', name_ar: 'خليط الكيك الجاهز الاسفنجي ( جوز الهند )', desc_en: 'Weight : 500 g
-Pieces  NO : 12', desc_ar: 'الوزن : 500 غم
-العدد : 12', weight: '500 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704030139707 Hindistan cevizi pandispanya.png' },
-        { id: '267', category_id: 'all', name_en: 'Sahlep with Mix Cocoa', name_ar: 'خليط الكيك الاسفنجي الجاهز ( كاكاو )', desc_en: 'Weight : 500 g
-Pieces  NO : 12', desc_ar: 'الوزن : 500 غم
-العدد : 12', weight: '500 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704030078706 Kakaolu pandispanya.png' },
-        { id: '266', category_id: 'all', name_en: 'Sponge Cake Mix Vanilla', name_ar: 'خليط الكيك الاسفنجي الجاهز ( فانيلا )', desc_en: 'Weight : 500 g
-Pieces  NO : 12', desc_ar: 'الوزن : 500 غم
-العدد : 12', weight: '500 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703969074705 sponge cake flour with vanilla.png' },
-        { id: '265', category_id: 'all', name_en: 'Sponge Cake Mix (Sade)', name_ar: 'خليط الكيك الاسفنجي الجاهز ( سادة )', desc_en: 'Weight : 500 g
-Pieces  NO : 12', desc_ar: 'الوزن : 500 غم
-العدد : 12', weight: '500 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703969038704 Sade Pandispanya.png' },
-        { id: '264', category_id: 'all', name_en: 'Semolina', name_ar: 'سميد إرميك', desc_en: 'Weight : 150 g
-Pieces  NO : 12', desc_ar: 'الوزن : 500 غم
-العدد : 12', weight: '150 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703968955702 İrmik.png' },
-        { id: '263', category_id: 'all', name_en: 'Crystal Sugar', name_ar: 'سكر كريستال', desc_en: 'Weight : 700 g 
-Pieces  NO : 12', desc_ar: 'الوزن : 700 غم
-العدد : 12', weight: '700 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703968871700 cristal sugar.png' },
-        { id: '262', category_id: 'all', name_en: 'Cake Cream(Cocoa)', name_ar: 'كريم الكيك ( كاكاو )', desc_en: 'Weight : 150 g
-Pieces  NO : 12', desc_ar: 'الوزن : 150 غم
-العدد : 12', weight: '150 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703967815666 Kakao Pasta Kremasi.png' },
-        { id: '261', category_id: 'all', name_en: 'Cake Cream', name_ar: 'كريم الكيك ( فانيلا )', desc_en: 'Weight : 150 g
-Pieces  NO : 12', desc_ar: 'الوزن : 150 غم
-العدد : 12', weight: '150 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703967547665 Vanilla Pasta Kremasi.png' },
-        { id: '260', category_id: 'all', name_en: 'White Chocolate Sauce', name_ar: 'صوص الشوكولاتة الأبيض', desc_en: 'Weight : 128 g
-Pieces  NO : 12', desc_ar: 'الوزن : 128 غم
-العدد : 12', weight: '128 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703967422664 Beyaz Cikolatali Sos.png' },
-        { id: '259', category_id: 'all', name_en: 'Chocolate Sauce', name_ar: 'صوص الشوكولاتة', desc_en: 'Weight : 128 g
-Pieces  NO : 12', desc_ar: 'الوزن : 128 غم
-العدد : 12', weight: '128 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703967357663 Cikolatali Sos.png' },
-        { id: '258', category_id: 'all', name_en: 'Corn Flour', name_ar: 'دقيق الذرة', desc_en: 'Weight : 175 g
-Pieces  NO : 12', desc_ar: 'الوزن :  175 غم 
- 
-العدد : 12', weight: '175 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703967174661 Corn Flour.png' },
-        { id: '257', category_id: 'all', name_en: 'Custard Cocoa Flavoured', name_ar: 'كاسترد بنكهة كاكاو', desc_en: 'Weight : 75 g
-Pieces  NO : 12', desc_ar: 'الوزن :75 غم
- العدد: 12', weight: '75 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703967072660 Cocoa.png' },
-        { id: '256', category_id: 'all', name_en: 'Sahlep with Milk', name_ar: 'سحلب بالحليب', desc_en: 'Weight : 150 g
-Pieces  NO : 12', desc_ar: 'الوزن : 150 غم
-العدد : 12', weight: '150 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703966956659 SALEP 150g.png' },
-        { id: '255', category_id: 'all', name_en: 'Rice Flour with Milk', name_ar: 'دقيق الأرز بالحليب ( طحين التمن )', desc_en: 'Weight : 200 g
-Pieces  NO : 12', desc_ar: 'الوزن : 200 غم 
-العدد : 12', weight: '200 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703966602658 Pirinc Unu Sutlu.png' },
-        { id: '254', category_id: 'all', name_en: 'Blancmange Milk', name_ar: 'مهلبية بالحليب', desc_en: 'Weight : 375 g
-Pieces  NO : 12', desc_ar: 'الوزن : 375 غم 
- العدد : 12', weight: '375 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703966496657 Beyaz Muhallebi.png' },
-        { id: '253', category_id: 'all', name_en: 'Grated Coconut(Cocoa)', name_ar: 'جوز الهند المبشور ( كاكاو )', desc_en: 'Weight : 65 g
-Pieces  NO : 12', desc_ar: 'الوزن : 65 غم
-العدد : 12', weight: '65 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703966386656.png' },
-        { id: '252', category_id: 'all', name_en: 'Grated Coconut(Strawberry)', name_ar: 'جوز الهند المبشور ( فراولة )', desc_en: 'Weight : 65 g
-Pieces  NO : 12', desc_ar: 'الوزن : 65 غم
-العدد : 12', weight: '65 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703966339655.png' },
-        { id: '251', category_id: 'all', name_en: 'Grated Coconut(Orange)', name_ar: 'جوز الهند المبشور ( برتقال )', desc_en: 'Weight : 65 g
-Pieces  NO : 12', desc_ar: 'الوزن : 65 غم
-العدد : 12', weight: '65 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703966209654.png' },
-        { id: '250', category_id: 'all', name_en: 'Grated Coconut(Lemon)', name_ar: 'جوز الهند المبشور ( ليمون )', desc_en: 'Weight : 65 g
-Pieces  NO : 12', desc_ar: 'الوزن : 65 غم
-العدد : 12', weight: '65 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703965923653.png' },
-        { id: '249', category_id: 'all', name_en: 'Grated Coconut(Banana)', name_ar: 'جوز الهند المبشور ( موز )', desc_en: 'Weight : 65 g
-Pieces  NO : 12', desc_ar: 'الوزن : 65 غم
-العدد : 12', weight: '65 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703965816652.png' },
-        { id: '248', category_id: 'all', name_en: 'Grated Coconut(oily)', name_ar: 'جوز الهند المبشور ( دهني )', desc_en: 'Weight : 75 g
-Pieces  NO : 12', desc_ar: 'الوزن : 75 غم
-العدد : 12', weight: '75 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703965759649.png' },
-        { id: '247', category_id: 'all', name_en: 'Grated Coconut', name_ar: 'جوز الهند المبشور ( ناشف )', desc_en: 'Weight : 75 g
-Pieces  NO : 12', desc_ar: 'الوزن : 75 غم
-العدد : 12', weight: '75 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703965705648.png' },
-        { id: '246', category_id: 'all', name_en: 'Cocoa powder', name_ar: 'كاكاو باودر', desc_en: 'Weight : 75 g
-Pieces  NO : 12', desc_ar: 'الوزن : 75 غم
-العدد : 12', weight: '75 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703965565647 kakao.png' },
-        { id: '245', category_id: 'all', name_en: 'Spiced and Dried Bread Flour', name_ar: 'بقسماط بالبهارات', desc_en: 'Weight : 175 g
-Pieces  NO : 12', desc_ar: 'الوزن : 175 غم
-العدد : 12', weight: '175 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703965487645 dried bread flour.png' },
-        { id: '244', category_id: 'all', name_en: 'Grilled Chicken Spices', name_ar: 'بهارات و تتبيلة دجاج مشوي', desc_en: 'Weight : 140 g
-Pieces  NO : 12', desc_ar: 'الوزن : 140 غم
-العدد : 12', weight: '140 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703965257643.png' },
-        { id: '243', category_id: 'all', name_en: 'French Fries Spices ( Pizza and Lemon Flavour )', name_ar: 'بهارات أصابع بطاطا ( نكهة البيتزا و الليمون )', desc_en: 'Weight : 50 g
-Pieces  NO : 60', desc_ar: 'الوزن : 50 غم 
-العدد : 60', weight: '50 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703965095frenchfries4.png' },
-        { id: '242', category_id: 'all', name_en: 'French Fries Spices ( Ketchup and Lemon Flavour )', name_ar: 'بهارات أصابع بطاطا ( نكهة الكاتشب و الليمون )', desc_en: 'Weight : 50 g
-Pieces  NO : 60', desc_ar: 'الوزن : 50 غم 
- العدد : 60', weight: '50 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703964922frenchfries2.png' },
-        { id: '241', category_id: 'all', name_en: 'French Fries Spices ( Chicken and Lemon Flavour )', name_ar: 'بهارات أصابع بطاطا ( نكهة الدجاج و الليمون )', desc_en: 'Weight : 50 g
-Pieces  NO : 60', desc_ar: 'الوزن : 50 غم 
-العدد : 60', weight: '50 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703964851frenchfries1.png' },
-        { id: '240', category_id: 'all', name_en: 'French Fries Spices ( Meat and Lemon Flavour )', name_ar: 'بهارات أصابع بطاطا ( نكهة اللحم و الليمون )', desc_en: 'Weight : 50 g
-Pieces  NO : 60', desc_ar: 'الوزن : 50 غم 
- العدد : 60', weight: '50 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703964693frenchfires3.png' },
-        { id: '239', category_id: 'all', name_en: 'Broasted Chicken Spices', name_ar: 'بهارات بروستد دجاج', desc_en: '', desc_ar: 'الوزن : -- غم
-العدد : 12', weight: '', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703964515642 Prosted.png' },
-        { id: '238', category_id: 'all', name_en: 'White Sesam', name_ar: 'سمسم أبيض', desc_en: 'Weight : 150 g
-Pieces  NO : 12', desc_ar: 'الوزن : 150 غم
-العدد : 12', weight: '150 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703964200641 seasame.png' },
-        { id: '237', category_id: 'all', name_en: 'Cream Shanti with Cocktail', name_ar: 'كريم شانتي كوكتيل فواكه', desc_en: 'Weight : 140 g
-Pieces  NO : 12', desc_ar: 'الوزن: 140 غم
-
-العدد: 12', weight: '140 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703963934632 cream shanti kokteyl.png' },
-        { id: '236', category_id: 'all', name_en: 'Cream Shanti with Banana', name_ar: 'كريم شانتي بالموز', desc_en: 'Weight : 140 g
-Pieces  NO : 12', desc_ar: 'الوزن: 140  غم 
-
-العدد:  12', weight: '140 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703963761631 Muz.png' },
-        { id: '235', category_id: 'all', name_en: 'Cream Shanti with Strawberry', name_ar: 'كريم شانتي بالفراولة', desc_en: 'Weight : 140 g
-Pieces  NO : 12', desc_ar: 'الوزن: 140 غم
-
-العدد: 12', weight: '140 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703963714630 ÇİLEK.png' },
-        { id: '234', category_id: 'all', name_en: 'Cream Shanti with Cocoa', name_ar: 'كريم شانتي بالكاكاو', desc_en: 'Weight : 140 g
-Pieces  NO : 12', desc_ar: 'الوزن: 140 غم
-
-العدد: 12', weight: '140 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703963651629 KAKAO.png' },
-        { id: '233', category_id: 'all', name_en: 'Cream Shanti with Vanilla', name_ar: 'كريم شانتي بالفانيلا', desc_en: 'Weight : 140 g
-Pieces  NO : 12', desc_ar: 'الوزن: 140 غم
-
-العدد: 12', weight: '140 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703963606628 VANİLYA.png' },
-        { id: '232', category_id: 'all', name_en: 'Ice Cream Powder with Lemon', name_ar: 'آيس كريم ليمون', desc_en: 'Weight : 110 g 
-Pieces  NO : 12', desc_ar: 'الوزن : 110 غم
- العدد: 12', weight: '110 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703963362627 lemon ice cream.png' },
-        { id: '231', category_id: 'all', name_en: 'Ice Cream Powder with Melon', name_ar: 'آيس كريم بطيخ', desc_en: 'Weight : 110 g
-Pieces  NO : 12', desc_ar: 'الوزن : 110 غم
- العدد: 12', weight: '110 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703963286626 Kavun Dondurma.png' },
-        { id: '230', category_id: 'all', name_en: 'Ice Cream Powder with Cocoa', name_ar: 'آيس كريم كاكاو', desc_en: 'Weight : 110 g 
-Pieces  NO : 12', desc_ar: 'الوزن : 110 غم
- العدد: 12', weight: '110 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703963205625 Kakao Dondurma.png' },
-        { id: '229', category_id: 'all', name_en: 'Ice Cream Powder with Banana', name_ar: 'آيس كريم موز', desc_en: 'Weight : 110 g 
-Pieces  NO : 12', desc_ar: 'الوزن : 110 غم
- العدد: 12', weight: '110 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703963042624 Muzlu Dondurma.png' },
-        { id: '228', category_id: 'all', name_en: 'Ice Cream Peach', name_ar: 'آيس كريم خوخ', desc_en: 'Weight : 110 g
-Pieces  NO : 12', desc_ar: 'الوزن : 110 غم
- العدد: 12', weight: '110 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703962945623 seftali_ice cream.png' },
-        { id: '227', category_id: 'all', name_en: 'Ice Cream Powder with Vanilla', name_ar: 'آيس كريم فانيلا', desc_en: 'Weight : 110 g
-Pieces  NO : 12', desc_ar: 'الوزن : 110 غم
- العدد: 12', weight: '110 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703962744622 Vanilya Dondurma.png' },
-        { id: '226', category_id: 'all', name_en: 'Ice Cream Powder with Orange', name_ar: 'آيس كريم برتقال', desc_en: 'Weight : 110 g 
-Pieces  NO : 12', desc_ar: 'الوزن : 110 غم
- العدد: 12', weight: '110 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703962668621 Portakal Dondurma.png' },
-        { id: '225', category_id: 'all', name_en: 'Ice Cream Powder with Strawberry', name_ar: 'آيس كريم فراولة', desc_en: 'Weight : 110 g
-Pieces  NO : 12', desc_ar: 'الوزن : 110 غم
- العدد:12', weight: '110 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703962565620 cilekli dondurma.png' },
-        { id: '224', category_id: 'all', name_en: 'Custard Strawberry Flavoured', name_ar: 'كاسترد بنكهة الفراولة', desc_en: 'Weight : 75 g
-Pieces  NO : 12', desc_ar: 'الوزن  : 75  غم 
- العدد : 12', weight: '75 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703962420619 strawberry.png' },
-        { id: '223', category_id: 'all', name_en: 'Custard Orange Flavoured', name_ar: 'كاسترد بنكهة البرتقال', desc_en: 'Weight : 75 g
-Pieces  NO : 12', desc_ar: 'الوزن :75 غم
- العدد : 12', weight: '75 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703962334618 orange.png' },
-        { id: '222', category_id: 'all', name_en: 'Custard Vanilla Flavoured', name_ar: 'كاسترد بنكهة فانيلا', desc_en: 'Weight : 75 g
-Pieces  NO : 12', desc_ar: 'الوزن :75 غم
- العدد: 12', weight: '75 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703962248617 vanilla.png' },
-        { id: '221', category_id: 'all', name_en: 'Sumac grains', name_ar: 'سماق ( حب )', desc_en: 'Weight : 70 g
-Pieces  NO : 12', desc_ar: 'الوزن : 70 غم
-العدد : 12', weight: '70 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703962124616 sumac grains.png' },
-        { id: '220', category_id: 'all', name_en: 'Cocoa ( Sweetend )', name_ar: 'كاكاو جاهز ( محلى )', desc_en: 'Weight : 75 g
-Pieces  NO : 12', desc_ar: 'الوزن : 75 غم
-العدد : 12', weight: '75 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703961917614 kakao sekerli.png' },
-        { id: '219', category_id: 'all', name_en: 'Cocoa Pastry', name_ar: 'كاكاو معجنات', desc_en: 'Weight : 75 g
-Pieces  NO : 12', desc_ar: 'الوزن : 75 غم
-العدد : 12', weight: '75 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703961810613 kakao pasta.png' },
-        { id: '218', category_id: 'all', name_en: 'Rice Flour', name_ar: 'دقيق الأرز ( طحين التمن )', desc_en: 'Weight : 200 g
-Pieces  NO : 12', desc_ar: 'الوزن : 200 غم
- العدد : 12', weight: '200 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703960993605 pirinc unu.png' },
-        { id: '217', category_id: 'all', name_en: 'Sugar Powder', name_ar: 'سكر مطحون', desc_en: 'Weight : 200 g
-Pieces  NO : 12', desc_ar: 'الوزن : 200 غم
-العدد : 12', weight: '200 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703960844604 sugar powder.png' },
-        { id: '216', category_id: 'all', name_en: 'Falafel Dough', name_ar: 'فلافل جاهزة', desc_en: 'Weight : 200 g
-Pieces  NO : 12', desc_ar: 'الوزن : 200 غم
-العدد : 12', weight: '200 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703960587603 falafel.png' },
-        { id: '215', category_id: 'all', name_en: 'Corn Flour', name_ar: 'نشا ( دقيق الذرة )', desc_en: 'Weight : 175 g
-Pieces  NO : 12', desc_ar: 'الوزن : 175 غم
-العدد : 12', weight: '175 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703960391601 misir nisastasi.png' },
-        { id: '214', category_id: 'all', name_en: 'Pastry Additive', name_ar: 'محسن الكيك بالفانيلا', desc_en: 'Weight : 45 g
-Pieces  NO : 12', desc_ar: 'الوزن : 45 غم
-العدد : 12', weight: '45 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703960285558 Pasta Katkısı.png' },
-        { id: '213', category_id: 'all', name_en: 'Tea Scent and Flavour', name_ar: 'نكهة و عطر الشاي', desc_en: 'Weight : 25 g
-Pieces  NO : 60', desc_ar: 'الوزن : 25 غم
-العدد : 60', weight: '25 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703960057557 cay kokusu.png' },
-        { id: '212', category_id: 'all', name_en: 'Salad Spices - vineger with garlic', name_ar: 'تتبيلة السلطة - خل مع الثوم', desc_en: 'Weight : 35 g
-Pieces  NO : 60', desc_ar: 'الوزن : 35 غم 
- العدد : 60', weight: '35 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703959668saladspices2.png' },
-        { id: '211', category_id: 'all', name_en: 'Salad Spices', name_ar: 'بهارات سلطة - زعتر مع نعناع', desc_en: 'Weight : 35 g
-Pieces  NO : 60', desc_ar: 'الوزن : 35 غم
-العدد : 60', weight: '35 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703958728saladspices.png' },
-        { id: '210', category_id: 'all', name_en: 'Saffron', name_ar: 'زعفران', desc_en: 'Weight : 10 g
-Pieces  NO : 12', desc_ar: 'الوزن : 10 غم
-العدد : 12', weight: '10 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703939870505.png' },
-        { id: '209', category_id: 'all', name_en: 'Citric Acid', name_ar: 'ليمون دوزي', desc_en: 'Weight : 40 g
-Pieces  NO : 60', desc_ar: 'الوزن : 40 غم
-العدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703939792119.png' }
+        { id: '344', category_id: 'all', name_en: 'Sugared Vanilla', name_ar: 'فانيليا بالسكر', desc_en: 'Weight : 5 g\nPieces  NO :--', desc_ar: 'الوزن : 5 غم\nالعدد :--', weight: '5 g', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704210615vanilla-sugar-powder.png' },
+        { id: '343', category_id: 'all', name_en: 'Baking Powder Strawberry', name_ar: 'مسحوق بيكنج باودر ( فراولة ) - ملون', desc_en: 'Weight : 15 g\nPieces  NO : 12', desc_ar: 'الوزن : 15 غم\nالعدد :--', weight: '15 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704210536strawberry-baking-powder.png' },
+        { id: '342', category_id: 'all', name_en: 'Baking Powder Orange', name_ar: 'مسحوق بيكنج باودر ( برتقال ) - ملون', desc_en: 'Weight : 15 g', desc_ar: 'الوزن : 15 غم\nالعدد :--', weight: '15 g', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704210499orange-baking-powder.png' },
+        { id: '341', category_id: 'all', name_en: 'Baking Powder Lemon', name_ar: 'مسحوق بيكنج باودر ( ليمون ) - ملون', desc_en: 'Weight : 15 g\nPieces  NO :--', desc_ar: 'الوزن : 15 غم\nالعدد :', weight: '15 g', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704210465lemon-baking-powder.png' },
+        { id: '340', category_id: 'all', name_en: 'Instant Yeast', name_ar: 'خميرة فورية', desc_en: 'Weight : 10 g\nPieces  NO :--', desc_ar: 'الوزن : 10 غم\nالعدد :--', weight: '10 g', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704210423instant-yeast.png' },
+        { id: '339', category_id: 'all', name_en: 'Baking Powder Banana', name_ar: 'مسحوق بيكنج باودر ( موز ) - ملون', desc_en: 'Weight : 15 g', desc_ar: 'الوزن : 15 غم\nالعدد :--', weight: '15 g', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704210379banana-baking-powder.png' },
+        { id: '338', category_id: 'all', name_en: 'Rizo Rice Spices', name_ar: 'بهارات أرز ريزو', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704209992rizo.png' },
+        { id: '337', category_id: 'all', name_en: 'Curry Chili', name_ar: 'كاري حار', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704209940acılı köri.png' },
+        { id: '336', category_id: 'all', name_en: 'Grilled Paprika Hot', name_ar: 'بابريكا مدخنة حارة', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704209892124 Grilled Paprika (Hot) (Yeni).png' },
+        { id: '335', category_id: 'all', name_en: 'Grilled Paprika Sweet', name_ar: 'بابريكا مدخنة باردة', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704209826123 Grilled Paprika (Sweet) (Yeni).png' },
+        { id: '334', category_id: 'all', name_en: 'Hot Paprika', name_ar: 'بابريكا حار', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704209787118 Hot Paprika (Yeni).png' },
+        { id: '333', category_id: 'all', name_en: 'Sweet Paprika', name_ar: 'بابريكا بارد', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704209753114 Sweet Paprika (Yeni).png' },
+        { id: '332', category_id: 'all', name_en: 'Black Seed', name_ar: 'حبة السوداء', desc_en: 'Weight : 50 g\nPieces  NO : 60', desc_ar: 'الوزن : 50 غم\nالعدد : 60', weight: '50 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704209694079 Çörek Otu (Yeni).png' },
+        { id: '331', category_id: 'all', name_en: 'Dry Garlic Ajami', name_ar: 'ثوم يابس عجم', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704209660076 Acem Sarimsağı (Yeni).png' },
+        { id: '330', category_id: 'all', name_en: 'Garlic Powder', name_ar: 'ثوم مطحون', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704209618069 Toz Sarımsak (Yeni).png' },
+        { id: '329', category_id: 'all', name_en: 'Cinnamon Sticks', name_ar: 'دارسين عود', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704209583064 Çubuk Tarçın (Yeni).png' },
+        { id: '328', category_id: 'all', name_en: 'Orange Biryani Seasoning', name_ar: 'بهارات البرياني البرتقالي', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704209538057 Orange Biryani (Yeni).png' },
+        { id: '327', category_id: 'all', name_en: 'Red Biryani Seasoning', name_ar: 'بهارات البرياني الأحمر', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704209424056 Red Biryani (Yeni).png' },
+        { id: '326', category_id: 'all', name_en: 'yellow Biryani Seasoning', name_ar: 'بهارات البرياني الأصفر', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704209381053 Yellow Biryani (Yeni).png' },
+        { id: '325', category_id: 'all', name_en: 'Stew Seasoning', name_ar: 'بهارات جدر', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704209323050 Pot (Yeni).png' },
+        { id: '324', category_id: 'all', name_en: 'Klejeh Odor for Stuffing', name_ar: 'ريحة كليجة للحشو', desc_en: 'Weight : 35 g\nPieces  NO : 60', desc_ar: 'الوزن : 35 غم\nالعدد : 60', weight: '35 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704209276029 Kuru Pasta İci Kokusu (Yeni).png' },
+        { id: '323', category_id: 'all', name_en: 'Mixed Spices', name_ar: 'بهارات مشكل', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704209232026 Karışık (Yeni).png' },
+        { id: '322', category_id: 'all', name_en: 'Curry', name_ar: 'كاري', desc_en: 'Weight : 50 g\nPieces  NO : 60', desc_ar: 'الوزن : 50 غم\nالعدد : 60', weight: '50 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704209193024 Kori (Yeni).png' },
+        { id: '321', category_id: 'all', name_en: 'Allspice Powder', name_ar: 'كبابية مطحونة', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704209141023 Allspice (Yeni).png' },
+        { id: '320', category_id: 'all', name_en: 'Kabsa Seasoning', name_ar: 'بهارات كبسة', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_320/17659541550 بهارات كبسة.png' },
+        { id: '319', category_id: 'all', name_en: 'Aleppo Kubba Seasoning', name_ar: 'بهارات كبة حلب', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704209048014 Halep Kofte (Yeni).png' },
+        { id: '318', category_id: 'all', name_en: 'Pizza Seasoning', name_ar: 'بهارات البيتزا', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704208958010 Pizza (Yeni).png' },
+        { id: '317', category_id: 'all', name_en: 'Klejeh Odor for Dough', name_ar: 'ريحة كليجة للعجين', desc_en: 'Weight : 35 g\nPieces  NO : 60', desc_ar: 'الوزن : 35 غم\nالعدد : 60', weight: '35 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704208919009 Kuru Pasta Hamur Kokusu (Yeni).png' },
+        { id: '316', category_id: 'all', name_en: 'Falafel Seasoning', name_ar: 'بهارات الفلافل', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704208875008 Felafil (Yeni).png' },
+        { id: '315', category_id: 'all', name_en: 'Kubba Seasoning', name_ar: 'بهارات الكبة', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704208839007 İcli Kofte (Yeni).png' },
+        { id: '314', category_id: 'all', name_en: 'Minced Meat Seasoning', name_ar: 'بهارات القيمة ( لحم مثروم )', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704208798006 kiyma (Yeni).png' },
+        { id: '313', category_id: 'all', name_en: 'Dolma Seasoning', name_ar: 'بهارات الدولمة', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704208752005 Sarma Dolma Yogurtsuz (Yeni).png' },
+        { id: '312', category_id: 'all', name_en: 'Brown Biryani Seasoning', name_ar: 'بهارات البرياني القهوائي', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704208714004 Brown Biryani (Yeni).png' },
+        { id: '311', category_id: 'all', name_en: 'Turmeric Powder', name_ar: 'كركم مطحون', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704208646003 Zerdecal (Yeni).png' },
+        { id: '310', category_id: 'all', name_en: 'Chicken Seasoning Spices', name_ar: 'بهارات الدجاج', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_310/1708847560001 Tavuk (Yeni).png' },
+        { id: '309', category_id: 'all', name_en: 'Cake Mix Lemon', name_ar: 'خليط الكيك الجاهز ( ليمون ) - ملون', desc_en: 'Weight : 500 g\nPieces  NO : 12', desc_ar: 'الوزن : 500 غم\nالعدد : 12', weight: '500 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704033666c457 CAKE Mix LİMON.png' },
+        { id: '308', category_id: 'all', name_en: 'Cake Mix Cocoa', name_ar: 'خليط الكيك الجاهز ( كاكاو ) - ملون', desc_en: 'Weight : 500 g\nPieces  NO : 12', desc_ar: 'الوزن : 500 غم\nالعدد : 12', weight: '500 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704033622c458 Cake Mix KAKAO.png' },
+        { id: '307', category_id: 'all', name_en: 'Cake Mix Orange', name_ar: 'خليط الكيك الجاهز ( برتقال ) - ملون', desc_en: 'Weight : 500 g\nPieces  NO : 12', desc_ar: 'الوزن : 500 غم\nالعدد : 12', weight: '500 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704033594c456 Cake Mix PORTAKAL.png' },
+        { id: '306', category_id: 'all', name_en: 'Cake Mix Banana', name_ar: 'خليط الكيك الجاهز ( موز ) - ملون', desc_en: 'Weight : 500 g\nPieces  NO : 12', desc_ar: 'الوزن : 500 غم\nالعدد : 12', weight: '500 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704033551c455 CAKE Mix MUZ.png' },
+        { id: '305', category_id: 'all', name_en: 'Cake Mix Strawberry', name_ar: 'خليط الكيك الجاهز ( فراولة ) - ملون', desc_en: 'Weight : 500 g\nPieces  NO : 12', desc_ar: 'الوزن : 500 غم\nالعدد : 12', weight: '500 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704033413c454 Cake Mix ÇİLEK.png' },
+        { id: '304', category_id: 'all', name_en: 'Cream Shanti Coconut', name_ar: 'كريم شانتي جوز الهند', desc_en: 'Weight : 140 g\nPieces  NO : 12', desc_ar: 'الوزن: 140 غم\n العدد: 12', weight: '140 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704033366c065 COCONUT.png' },
+        { id: '303', category_id: 'all', name_en: 'Cream Shanti Pineapple', name_ar: 'كريم شانتي أناناس', desc_en: 'Weight : 140 g\nPieces  NO : 12', desc_ar: 'الوزن: 140 غم\nالعدد: 12', weight: '140 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704033267c064 ANANAS.png' },
+        { id: '302', category_id: 'all', name_en: 'Corn Flakes', name_ar: 'رقائق الذرة', desc_en: 'Weight : 250 g\nPieces  NO : 12', desc_ar: 'الوزن : 250 غم\nالعدد : 12', weight: '250 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/17040331851337 Corn Flakes.png' },
+        { id: '301', category_id: 'all', name_en: 'Coco Flakes', name_ar: 'رقائق الذرة بالكاكاو', desc_en: 'Weight : 250 g\nPieces  NO : 12', desc_ar: 'الوزن : 250 غم\nالعدد : 12', weight: '250 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/17040331561336 Coco Flakes.png' },
+        { id: '299', category_id: 'all', name_en: 'Cocoa', name_ar: 'كاكاو ( مكيس )', desc_en: 'Weight : 25 g\nPieces  NO : 144', desc_ar: 'الوزن : 25 غم\nالعدد : 144', weight: '25 g', pieces_per_carton: '144', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/17040330621294 Cocoa 25g.png' },
+        { id: '298', category_id: 'all', name_en: 'Ready Kleje Powder', name_ar: 'مسحوق كليجة جاهزة', desc_en: 'Weight : 1900 g\nPieces  NO : 12', desc_ar: 'الوزن : 1900 غم\nالعدد : 12', weight: '1900 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704033036904 Pasta 1900g.png' },
+        { id: '297', category_id: 'all', name_en: 'White Flour', name_ar: 'طحين أبيض ( صفر )', desc_en: 'Weight : 900 g\nPieces  NO : 12', desc_ar: 'الوزن : 900 غم\nالعدد : 12', weight: '900 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704032972903.png' },
+        { id: '292', category_id: 'all', name_en: 'Green Food Dye', name_ar: 'صبغ لوزينا أخضر', desc_en: 'Weight : 15 g\nPieces  NO : 12', desc_ar: 'الوزن : 15 غم\nالعدد : 12', weight: '15 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704032558809.png' },
+        { id: '291', category_id: 'all', name_en: 'Red Food Dye', name_ar: 'صبغ لوزينا أحمر', desc_en: 'Weight : 15 g\nPieces  NO : 12', desc_ar: 'الوزن : 15 غم\nالعدد : 12', weight: '15 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704032519808.png' },
+        { id: '290', category_id: 'all', name_en: 'Yellow Food Dye', name_ar: 'صبغ لوزينا أصفر', desc_en: 'Weight : 15 g\nPieces  NO : 12', desc_ar: 'الوزن : 15 غم\nالعدد : 12', weight: '15 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704032045807.png' },
+        { id: '289', category_id: 'all', name_en: 'Orange Food Dye', name_ar: 'صبغ لوزينا برتقالي', desc_en: 'Weight : 15 g\nPieces  NO : 12', desc_ar: 'الوزن : 15 غم\nالعدد : 12', weight: '15 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704032010806.png' },
+        { id: '288', category_id: 'all', name_en: 'Paste Ornament', name_ar: 'زينة الكيك', desc_en: 'Weight : 50 g\nPieces  NO : 12', desc_ar: 'الوزن : 50 غم\nالعدد : 12', weight: '50 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704031880801 pasta susu.png' },
+        { id: '287', category_id: 'all', name_en: 'Dry Lemon White', name_ar: 'لومي بصرة أبيض', desc_en: 'Weight : 140 g\nPieces  NO : 12', desc_ar: 'الوزن : 140 غم\nالعدد : 12', weight: '140 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704031827755 Beyaz Kuru Limon.png' },
+        { id: '286', category_id: 'all', name_en: 'Dry Lemon Black', name_ar: 'لومي بصرة أسود', desc_en: 'Weight : 140 g\nPieces  NO : 12', desc_ar: 'الوزن : 140 غم\nالعدد : 12', weight: '140 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704031791754 Siyah Kuru Limon.png' },
+        { id: '285', category_id: 'all', name_en: 'Coconuts Dry', name_ar: 'جوز الهند ( ناشف )', desc_en: 'Weight : 175 g\nPieces  NO : 12', desc_ar: 'الوزن : 175 غم\nالعدد : 12', weight: '175 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704031750753.png' },
+        { id: '284', category_id: 'all', name_en: 'Coconuts Oily', name_ar: 'جوز الهند ( دهني )', desc_en: 'Weight : 175 g\nPieces  NO : 12', desc_ar: 'الوزن : 175 غم\nالعدد : 12', weight: '175 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704031682752.png' },
+        { id: '283', category_id: 'all', name_en: 'Flour Sweetness', name_ar: 'حلاوة الطحين', desc_en: 'Weight : 325 g\nPieces  NO : 12', desc_ar: 'الوزن : 325 غم\nالعدد : 12', weight: '325 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704031629724 flour sweetness.png' },
+        { id: '282', category_id: 'all', name_en: 'Flour Sweetness of Chocolate', name_ar: 'حلاوة الجكليت', desc_en: 'Weight : 375 g\nPieces  NO : 12', desc_ar: 'الوزن : 375 غم\nالعدد : 12', weight: '375 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704031588723 chocolate sweetness.png' },
+        { id: '281', category_id: 'all', name_en: 'Super Pizza Mix', name_ar: 'خليط عجينة سوبر البيتزا', desc_en: 'Weight : 500 g\nPieces  NO : 12', desc_ar: 'الوزن : 500 غم\nالعدد : 12', weight: '500 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704031502721 super pizza unu.png' },
+        { id: '280', category_id: 'all', name_en: 'Dumplings Coconut', name_ar: 'لقمة قاضي ( جوز الهند )', desc_en: 'Weight : 669 g\nPieces  NO : 12', desc_ar: 'الوزن : 669 غم\nالعدد : 12', weight: '669 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704031451720 hcvz saray lokma.png' },
+        { id: '279', category_id: 'all', name_en: 'Dumplings Vanilla', name_ar: 'لقمة قاضي ( فانيلا )', desc_en: 'Weight : 669 g\nPieces  NO : 12', desc_ar: 'الوزن : 669 غم\nالعدد : 12', weight: '669 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704031406719 vanyl saray lokma.png' },
+        { id: '278', category_id: 'all', name_en: 'Cake Mix Orange', name_ar: 'خليط الكيك الجاهز ( برتقال )', desc_en: 'Weight : 500 g\nPieces  NO : 12', desc_ar: 'الوزن : 500 غم\nالعدد : 12', weight: '500 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704031171718 Portakalli Kek Unu.png' },
+        { id: '277', category_id: 'all', name_en: 'Cake Mix Strawberry', name_ar: 'خليط الكيك الجاهز ( فراولة )', desc_en: 'Weight : 500 g\nPieces  NO : 12', desc_ar: 'الوزن : 500 غم\nالعدد : 12', weight: '500 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704031136717 Cilekli Kek Unu.png' },
+        { id: '276', category_id: 'all', name_en: 'Sponge Cake Mix Orange', name_ar: 'خليط الكيك الجاهز الاسفنجي ( برتقال )', desc_en: 'Weight : 500 g\nPieces  NO : 12', desc_ar: 'الوزن : 500 غم\nالعدد : 12', weight: '500 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704031078716 Portakal Pandispanya.png' },
+        { id: '274', category_id: 'all', name_en: 'Sponge Klejeh', name_ar: 'كليجة اسفنجية', desc_en: 'Weight : 1 kg\nPieces  NO : 12', desc_ar: 'الوزن : 1 كغم\nالعدد : 12', weight: '1 kg', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704030749713 pandispanya klejeh.png' },
+        { id: '273', category_id: 'all', name_en: 'Pizza Mix', name_ar: 'خليط عجينة البيتزا', desc_en: 'Weight : 500 g\nPieces  NO : 12', desc_ar: 'الوزن : 500 غم\nالعدد : 12', weight: '500 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704030694712 pizza unu.png' },
+        { id: '272', category_id: 'all', name_en: 'Cake Mix Coconut', name_ar: 'خليط الكيك الجاهز  ( جوز الهند )', desc_en: 'Weight : 500 g\nPieces  NO : 12', desc_ar: 'الوزن : 500 غم\nالعدد : 12', weight: '500 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704030621711 Hindistan Cevizli Kek Unu.png' },
+        { id: '271', category_id: 'all', name_en: 'Cake Mix Cocoa', name_ar: 'خليط الكيك الجاهز ( كاكاو )', desc_en: 'Weight : 500 g\nPieces  NO : 12', desc_ar: 'الوزن : 500 غم\nالعدد : 12', weight: '500 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704030417710 Kakao Kek Unu.png' },
+        { id: '270', category_id: 'all', name_en: 'Cake Mix Vanilla', name_ar: 'خليط الكيك الجاهز ( فانيلا )', desc_en: 'Weight : 500 g\nPieces  NO : 12', desc_ar: 'الوزن : 500 غم\nالعدد : 12', weight: '500 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704030378709 Vanilyali Kek Unu.png' },
+        { id: '269', category_id: 'all', name_en: 'Cake Mix Sade', name_ar: 'خليط الكيك الجاهز ( سادة )', desc_en: 'Weight : 500 g\nPieces  NO : 12', desc_ar: 'الوزن : 500 غم\nالعدد : 12', weight: '500 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704030236708 Sade Kek Unu.png' },
+        { id: '268', category_id: 'all', name_en: 'Sponge Cake Mix Coconut', name_ar: 'خليط الكيك الجاهز الاسفنجي ( جوز الهند )', desc_en: 'Weight : 500 g\nPieces  NO : 12', desc_ar: 'الوزن : 500 غم\nالعدد : 12', weight: '500 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704030139707 Hindistan cevizi pandispanya.png' },
+        { id: '267', category_id: 'all', name_en: 'Sahlep with Mix Cocoa', name_ar: 'خليط الكيك الاسفنجي الجاهز ( كاكاو )', desc_en: 'Weight : 500 g\nPieces  NO : 12', desc_ar: 'الوزن : 500 غم\nالعدد : 12', weight: '500 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1704030078706 Kakaolu pandispanya.png' },
+        { id: '266', category_id: 'all', name_en: 'Sponge Cake Mix Vanilla', name_ar: 'خليط الكيك الاسفنجي الجاهز ( فانيلا )', desc_en: 'Weight : 500 g\nPieces  NO : 12', desc_ar: 'الوزن : 500 غم\nالعدد : 12', weight: '500 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703969074705 sponge cake flour with vanilla.png' },
+        { id: '265', category_id: 'all', name_en: 'Sponge Cake Mix (Sade)', name_ar: 'خليط الكيك الاسفنجي الجاهز ( سادة )', desc_en: 'Weight : 500 g\nPieces  NO : 12', desc_ar: 'الوزن : 500 غم\nالعدد : 12', weight: '500 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703969038704 Sade Pandispanya.png' },
+        { id: '264', category_id: 'all', name_en: 'Semolina', name_ar: 'سميد إرميك', desc_en: 'Weight : 150 g\nPieces  NO : 12', desc_ar: 'الوزن : 500 غم\nالعدد : 12', weight: '150 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703968955702 İrmik.png' },
+        { id: '263', category_id: 'all', name_en: 'Crystal Sugar', name_ar: 'سكر كريستال', desc_en: 'Weight : 700 g \nPieces  NO : 12', desc_ar: 'الوزن : 700 غم\nالعدد : 12', weight: '700 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703968871700 cristal sugar.png' },
+        { id: '262', category_id: 'all', name_en: 'Cake Cream(Cocoa)', name_ar: 'كريم الكيك ( كاكاو )', desc_en: 'Weight : 150 g\nPieces  NO : 12', desc_ar: 'الوزن : 150 غم\nالعدد : 12', weight: '150 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703967815666 Kakao Pasta Kremasi.png' },
+        { id: '261', category_id: 'all', name_en: 'Cake Cream', name_ar: 'كريم الكيك ( فانيلا )', desc_en: 'Weight : 150 g\nPieces  NO : 12', desc_ar: 'الوزن : 150 غم\nالعدد : 12', weight: '150 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703967547665 Vanilla Pasta Kremasi.png' },
+        { id: '260', category_id: 'all', name_en: 'White Chocolate Sauce', name_ar: 'صوص الشوكولاتة الأبيض', desc_en: 'Weight : 128 g\nPieces  NO : 12', desc_ar: 'الوزن : 128 غم\nالعدد : 12', weight: '128 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703967422664 Beyaz Cikolatali Sos.png' },
+        { id: '259', category_id: 'all', name_en: 'Chocolate Sauce', name_ar: 'صوص الشوكولاتة', desc_en: 'Weight : 128 g\nPieces  NO : 12', desc_ar: 'الوزن : 128 غم\nالعدد : 12', weight: '128 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703967357663 Cikolatali Sos.png' },
+        { id: '258', category_id: 'all', name_en: 'Corn Flour', name_ar: 'دقيق الذرة', desc_en: 'Weight : 175 g\nPieces  NO : 12', desc_ar: 'الوزن :  175 غم \n \nالعدد : 12', weight: '175 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703967174661 Corn Flour.png' },
+        { id: '257', category_id: 'all', name_en: 'Custard Cocoa Flavoured', name_ar: 'كاسترد بنكهة كاكاو', desc_en: 'Weight : 75 g\nPieces  NO : 12', desc_ar: 'الوزن :75 غم\n العدد: 12', weight: '75 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703967072660 Cocoa.png' },
+        { id: '256', category_id: 'all', name_en: 'Sahlep with Milk', name_ar: 'سحلب بالحليب', desc_en: 'Weight : 150 g\nPieces  NO : 12', desc_ar: 'الوزن : 150 غم\nالعدد : 12', weight: '150 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703966956659 SALEP 150g.png' },
+        { id: '255', category_id: 'all', name_en: 'Rice Flour with Milk', name_ar: 'دقيق الأرز بالحليب ( طحين التمن )', desc_en: 'Weight : 200 g\nPieces  NO : 12', desc_ar: 'الوزن : 200 غم \nالعدد : 12', weight: '200 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703966602658 Pirinc Unu Sutlu.png' },
+        { id: '254', category_id: 'all', name_en: 'Blancmange Milk', name_ar: 'مهلبية بالحليب', desc_en: 'Weight : 375 g\nPieces  NO : 12', desc_ar: 'الوزن : 375 غم \n العدد : 12', weight: '375 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703966496657 Beyaz Muhallebi.png' },
+        { id: '253', category_id: 'all', name_en: 'Grated Coconut(Cocoa)', name_ar: 'جوز الهند المبشور ( كاكاو )', desc_en: 'Weight : 65 g\nPieces  NO : 12', desc_ar: 'الوزن : 65 غم\nالعدد : 12', weight: '65 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703966386656.png' },
+        { id: '252', category_id: 'all', name_en: 'Grated Coconut(Strawberry)', name_ar: 'جوز الهند المبشور ( فراولة )', desc_en: 'Weight : 65 g\nPieces  NO : 12', desc_ar: 'الوزن : 65 غم\nالعدد : 12', weight: '65 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703966339655.png' },
+        { id: '251', category_id: 'all', name_en: 'Grated Coconut(Orange)', name_ar: 'جوز الهند المبشور ( برتقال )', desc_en: 'Weight : 65 g\nPieces  NO : 12', desc_ar: 'الوزن : 65 غم\nالعدد : 12', weight: '65 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703966209654.png' },
+        { id: '250', category_id: 'all', name_en: 'Grated Coconut(Lemon)', name_ar: 'جوز الهند المبشور ( ليمون )', desc_en: 'Weight : 65 g\nPieces  NO : 12', desc_ar: 'الوزن : 65 غم\nالعدد : 12', weight: '65 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703965923653.png' },
+        { id: '249', category_id: 'all', name_en: 'Grated Coconut(Banana)', name_ar: 'جوز الهند المبشور ( موز )', desc_en: 'Weight : 65 g\nPieces  NO : 12', desc_ar: 'الوزن : 65 غم\nالعدد : 12', weight: '65 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703965816652.png' },
+        { id: '248', category_id: 'all', name_en: 'Grated Coconut(oily)', name_ar: 'جوز الهند المبشور ( دهني )', desc_en: 'Weight : 75 g\nPieces  NO : 12', desc_ar: 'الوزن : 75 غم\nالعدد : 12', weight: '75 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703965759649.png' },
+        { id: '247', category_id: 'all', name_en: 'Grated Coconut', name_ar: 'جوز الهند المبشور ( ناشف )', desc_en: 'Weight : 75 g\nPieces  NO : 12', desc_ar: 'الوزن : 75 غم\nالعدد : 12', weight: '75 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703965705648.png' },
+        { id: '246', category_id: 'all', name_en: 'Cocoa powder', name_ar: 'كاكاو باودر', desc_en: 'Weight : 75 g\nPieces  NO : 12', desc_ar: 'الوزن : 75 غم\nالعدد : 12', weight: '75 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703965565647 kakao.png' },
+        { id: '245', category_id: 'all', name_en: 'Spiced and Dried Bread Flour', name_ar: 'بقسماط بالبهارات', desc_en: 'Weight : 175 g\nPieces  NO : 12', desc_ar: 'الوزن : 175 غم\nالعدد : 12', weight: '175 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703965487645 dried bread flour.png' },
+        { id: '244', category_id: 'all', name_en: 'Grilled Chicken Spices', name_ar: 'بهارات و تتبيلة دجاج مشوي', desc_en: 'Weight : 140 g\nPieces  NO : 12', desc_ar: 'الوزن : 140 غم\nالعدد : 12', weight: '140 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703965257643.png' },
+        { id: '243', category_id: 'all', name_en: 'French Fries Spices ( Pizza and Lemon Flavour )', name_ar: 'بهارات أصابع بطاطا ( نكهة البيتزا و الليمون )', desc_en: 'Weight : 50 g\nPieces  NO : 60', desc_ar: 'الوزن : 50 غم \nالعدد : 60', weight: '50 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703965095frenchfries4.png' },
+        { id: '242', category_id: 'all', name_en: 'French Fries Spices ( Ketchup and Lemon Flavour )', name_ar: 'بهارات أصابع بطاطا ( نكهة الكاتشب و الليمون )', desc_en: 'Weight : 50 g\nPieces  NO : 60', desc_ar: 'الوزن : 50 غم \n العدد : 60', weight: '50 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703964922frenchfries2.png' },
+        { id: '241', category_id: 'all', name_en: 'French Fries Spices ( Chicken and Lemon Flavour )', name_ar: 'بهارات أصابع بطاطا ( نكهة الدجاج و الليمون )', desc_en: 'Weight : 50 g\nPieces  NO : 60', desc_ar: 'الوزن : 50 غم \nالعدد : 60', weight: '50 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703964851frenchfries1.png' },
+        { id: '240', category_id: 'all', name_en: 'French Fries Spices ( Meat and Lemon Flavour )', name_ar: 'بهارات أصابع بطاطا ( نكهة اللحم و الليمون )', desc_en: 'Weight : 50 g\nPieces  NO : 60', desc_ar: 'الوزن : 50 غم \n العدد : 60', weight: '50 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703964693frenchfires3.png' },
+        { id: '239', category_id: 'all', name_en: 'Broasted Chicken Spices', name_ar: 'بهارات بروستد دجاج', desc_en: '', desc_ar: 'الوزن : -- غم\nالعدد : 12', weight: '', pieces_per_carton: '', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703964515642 Prosted.png' },
+        { id: '238', category_id: 'all', name_en: 'White Sesam', name_ar: 'سمسم أبيض', desc_en: 'Weight : 150 g\nPieces  NO : 12', desc_ar: 'الوزن : 150 غم\nالعدد : 12', weight: '150 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703964200641 seasame.png' },
+        { id: '237', category_id: 'all', name_en: 'Cream Shanti with Cocktail', name_ar: 'كريم شانتي كوكتيل فواكه', desc_en: 'Weight : 140 g\nPieces  NO : 12', desc_ar: 'الوزن: 140 غم\n\nالعدد: 12', weight: '140 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703963934632 cream shanti kokteyl.png' },
+        { id: '236', category_id: 'all', name_en: 'Cream Shanti with Banana', name_ar: 'كريم شانتي بالموز', desc_en: 'Weight : 140 g\nPieces  NO : 12', desc_ar: 'الوزن: 140  غم \n\nالعدد:  12', weight: '140 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703963761631 Muz.png' },
+        { id: '235', category_id: 'all', name_en: 'Cream Shanti with Strawberry', name_ar: 'كريم شانتي بالفراولة', desc_en: 'Weight : 140 g\nPieces  NO : 12', desc_ar: 'الوزن: 140 غم\n\nالعدد: 12', weight: '140 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703963714630 ÇİLEK.png' },
+        { id: '234', category_id: 'all', name_en: 'Cream Shanti with Cocoa', name_ar: 'كريم شانتي بالكاكاو', desc_en: 'Weight : 140 g\nPieces  NO : 12', desc_ar: 'الوزن: 140 غم\n\nالعدد: 12', weight: '140 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703963651629 KAKAO.png' },
+        { id: '233', category_id: 'all', name_en: 'Cream Shanti with Vanilla', name_ar: 'كريم شانتي بالفانيلا', desc_en: 'Weight : 140 g\nPieces  NO : 12', desc_ar: 'الوزن: 140 غم\n\nالعدد: 12', weight: '140 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703963606628 VANİLYA.png' },
+        { id: '232', category_id: 'all', name_en: 'Ice Cream Powder with Lemon', name_ar: 'آيس كريم ليمون', desc_en: 'Weight : 110 g \nPieces  NO : 12', desc_ar: 'الوزن : 110 غم\n العدد: 12', weight: '110 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703963362627 lemon ice cream.png' },
+        { id: '231', category_id: 'all', name_en: 'Ice Cream Powder with Melon', name_ar: 'آيس كريم بطيخ', desc_en: 'Weight : 110 g\nPieces  NO : 12', desc_ar: 'الوزن : 110 غم\n العدد: 12', weight: '110 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703963286626 Kavun Dondurma.png' },
+        { id: '230', category_id: 'all', name_en: 'Ice Cream Powder with Cocoa', name_ar: 'آيس كريم كاكاو', desc_en: 'Weight : 110 g \nPieces  NO : 12', desc_ar: 'الوزن : 110 غم\n العدد: 12', weight: '110 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703963205625 Kakao Dondurma.png' },
+        { id: '229', category_id: 'all', name_en: 'Ice Cream Powder with Banana', name_ar: 'آيس كريم موز', desc_en: 'Weight : 110 g \nPieces  NO : 12', desc_ar: 'الوزن : 110 غم\n العدد: 12', weight: '110 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703963042624 Muzlu Dondurma.png' },
+        { id: '228', category_id: 'all', name_en: 'Ice Cream Peach', name_ar: 'آيس كريم خوخ', desc_en: 'Weight : 110 g\nPieces  NO : 12', desc_ar: 'الوزن : 110 غم\n العدد: 12', weight: '110 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703962945623 seftali_ice cream.png' },
+        { id: '227', category_id: 'all', name_en: 'Ice Cream Powder with Vanilla', name_ar: 'آيس كريم فانيلا', desc_en: 'Weight : 110 g\nPieces  NO : 12', desc_ar: 'الوزن : 110 غم\n العدد: 12', weight: '110 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703962744622 Vanilya Dondurma.png' },
+        { id: '226', category_id: 'all', name_en: 'Ice Cream Powder with Orange', name_ar: 'آيس كريم برتقال', desc_en: 'Weight : 110 g \nPieces  NO : 12', desc_ar: 'الوزن : 110 غم\n العدد: 12', weight: '110 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703962668621 Portakal Dondurma.png' },
+        { id: '225', category_id: 'all', name_en: 'Ice Cream Powder with Strawberry', name_ar: 'آيس كريم فراولة', desc_en: 'Weight : 110 g\nPieces  NO : 12', desc_ar: 'الوزن : 110 غم\n العدد:12', weight: '110 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703962565620 cilekli dondurma.png' },
+        { id: '224', category_id: 'all', name_en: 'Custard Strawberry Flavoured', name_ar: 'كاسترد بنكهة الفراولة', desc_en: 'Weight : 75 g\nPieces  NO : 12', desc_ar: 'الوزن  : 75  غم \n العدد : 12', weight: '75 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703962420619 strawberry.png' },
+        { id: '223', category_id: 'all', name_en: 'Custard Orange Flavoured', name_ar: 'كاسترد بنكهة البرتقال', desc_en: 'Weight : 75 g\nPieces  NO : 12', desc_ar: 'الوزن :75 غم\n العدد : 12', weight: '75 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703962334618 orange.png' },
+        { id: '222', category_id: 'all', name_en: 'Custard Vanilla Flavoured', name_ar: 'كاسترد بنكهة فانيلا', desc_en: 'Weight : 75 g\nPieces  NO : 12', desc_ar: 'الوزن :75 غم\n العدد: 12', weight: '75 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703962248617 vanilla.png' },
+        { id: '221', category_id: 'all', name_en: 'Sumac grains', name_ar: 'سماق ( حب )', desc_en: 'Weight : 70 g\nPieces  NO : 12', desc_ar: 'الوزن : 70 غم\nالعدد : 12', weight: '70 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703962124616 sumac grains.png' },
+        { id: '220', category_id: 'all', name_en: 'Cocoa ( Sweetend )', name_ar: 'كاكاو جاهز ( محلى )', desc_en: 'Weight : 75 g\nPieces  NO : 12', desc_ar: 'الوزن : 75 غم\nالعدد : 12', weight: '75 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703961917614 kakao sekerli.png' },
+        { id: '219', category_id: 'all', name_en: 'Cocoa Pastry', name_ar: 'كاكاو معجنات', desc_en: 'Weight : 75 g\nPieces  NO : 12', desc_ar: 'الوزن : 75 غم\nالعدد : 12', weight: '75 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703961810613 kakao pasta.png' },
+        { id: '218', category_id: 'all', name_en: 'Rice Flour', name_ar: 'دقيق الأرز ( طحين التمن )', desc_en: 'Weight : 200 g\nPieces  NO : 12', desc_ar: 'الوزن : 200 غم\n العدد : 12', weight: '200 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703960993605 pirinc unu.png' },
+        { id: '217', category_id: 'all', name_en: 'Sugar Powder', name_ar: 'سكر مطحون', desc_en: 'Weight : 200 g\nPieces  NO : 12', desc_ar: 'الوزن : 200 غم\nالعدد : 12', weight: '200 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703960844604 sugar powder.png' },
+        { id: '216', category_id: 'all', name_en: 'Falafel Dough', name_ar: 'فلافل جاهزة', desc_en: 'Weight : 200 g\nPieces  NO : 12', desc_ar: 'الوزن : 200 غم\nالعدد : 12', weight: '200 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703960587603 falafel.png' },
+        { id: '215', category_id: 'all', name_en: 'Corn Flour', name_ar: 'نشا ( دقيق الذرة )', desc_en: 'Weight : 175 g\nPieces  NO : 12', desc_ar: 'الوزن : 175 غم\nالعدد : 12', weight: '175 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703960391601 misir nisastasi.png' },
+        { id: '214', category_id: 'all', name_en: 'Pastry Additive', name_ar: 'محسن الكيك بالفانيلا', desc_en: 'Weight : 45 g\nPieces  NO : 12', desc_ar: 'الوزن : 45 غم\nالعدد : 12', weight: '45 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703960285558 Pasta Katkısı.png' },
+        { id: '213', category_id: 'all', name_en: 'Tea Scent and Flavour', name_ar: 'نكهة و عطر الشاي', desc_en: 'Weight : 25 g\nPieces  NO : 60', desc_ar: 'الوزن : 25 غم\nالعدد : 60', weight: '25 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703960057557 cay kokusu.png' },
+        { id: '212', category_id: 'all', name_en: 'Salad Spices - vineger with garlic', name_ar: 'تتبيلة السلطة - خل مع الثوم', desc_en: 'Weight : 35 g\nPieces  NO : 60', desc_ar: 'الوزن : 35 غم \n العدد : 60', weight: '35 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703959668saladspices2.png' },
+        { id: '211', category_id: 'all', name_en: 'Salad Spices', name_ar: 'بهارات سلطة - زعتر مع نعناع', desc_en: 'Weight : 35 g\nPieces  NO : 60', desc_ar: 'الوزن : 35 غم\nالعدد : 60', weight: '35 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703958728saladspices.png' },
+        { id: '210', category_id: 'all', name_en: 'Saffron', name_ar: 'زعفران', desc_en: 'Weight : 10 g\nPieces  NO : 12', desc_ar: 'الوزن : 10 غم\nالعدد : 12', weight: '10 g', pieces_per_carton: '12', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703939870505.png' },
+        { id: '209', category_id: 'all', name_en: 'Citric Acid', name_ar: 'ليمون دوزي', desc_en: 'Weight : 40 g\nPieces  NO : 60', desc_ar: 'الوزن : 40 غم\nالعدد : 60', weight: '40 g', pieces_per_carton: '60', price: '0', image_url: 'https://menu.orcatech.pro/assets/altabakh/product_/1703939792119.png' }
+    ],
+    themePresets: [
+        {
+            id: 'dark',
+            name_en: 'Dark',
+            name_ar: 'داكن',
+            icon: 'bx-moon',
+            theme: {
+                accentColor: '#D11D1D',
+                accentColorLight: '#E93C3C',
+                accentColorDark: '#A51414',
+                bgColor: '#0D0D12',
+                surfaceColor: '#16161E',
+                surface2Color: '#1E1E2A',
+                surface3Color: '#262635',
+                navbarColor: 'rgba(22, 22, 30, 0.75)',
+                textPrimary: '#F0F0F5',
+                textSecondary: 'rgba(240, 240, 245, 0.70)',
+                textMuted: 'rgba(240, 240, 245, 0.45)',
+                borderColor: 'rgba(255, 255, 255, 0.10)'
+            }
+        },
+        {
+            id: 'light',
+            name_en: 'Light',
+            name_ar: 'فاتح',
+            icon: 'bx-sun',
+            theme: {
+                accentColor: '#D11D1D',
+                accentColorLight: '#E93C3C',
+                accentColorDark: '#A51414',
+                bgColor: '#FFFFFF',
+                surfaceColor: '#F5F5F7',
+                surface2Color: '#EBEBEF',
+                surface3Color: '#DDDDE3',
+                navbarColor: 'rgba(245, 245, 247, 0.75)',
+                textPrimary: '#1A1A2E',
+                textSecondary: 'rgba(26, 26, 46, 0.70)',
+                textMuted: 'rgba(26, 26, 46, 0.45)',
+                borderColor: 'rgba(0, 0, 0, 0.10)'
+            }
+        },
+        {
+            id: 'midnight',
+            name_en: 'Midnight',
+            name_ar: 'منتصف الليل',
+            icon: 'bx-star',
+            theme: {
+                accentColor: '#4F46E5',
+                accentColorLight: '#6366F1',
+                accentColorDark: '#3730A3',
+                bgColor: '#0A0A1A',
+                surfaceColor: '#12122A',
+                surface2Color: '#1A1A3A',
+                surface3Color: '#22224A',
+                navbarColor: 'rgba(18, 18, 42, 0.75)',
+                textPrimary: '#E8E8F5',
+                textSecondary: 'rgba(232, 232, 245, 0.70)',
+                textMuted: 'rgba(232, 232, 245, 0.45)',
+                borderColor: 'rgba(255, 255, 255, 0.08)'
+            }
+        },
+        {
+            id: 'emerald',
+            name_en: 'Emerald',
+            name_ar: 'زمرد',
+            icon: 'bx-leaf',
+            theme: {
+                accentColor: '#059669',
+                accentColorLight: '#10B981',
+                accentColorDark: '#047857',
+                bgColor: '#0F1A14',
+                surfaceColor: '#182A1E',
+                surface2Color: '#203A28',
+                surface3Color: '#284A32',
+                navbarColor: 'rgba(24, 42, 30, 0.75)',
+                textPrimary: '#ECFDF5',
+                textSecondary: 'rgba(236, 253, 245, 0.70)',
+                textMuted: 'rgba(236, 253, 245, 0.45)',
+                borderColor: 'rgba(255, 255, 255, 0.08)'
+            }
+        }
     ],
 
     locations: [
-        {
-                "id": "kirkuk",
-                "lat": 35.4681,
-                "lng": 44.3922,
-                "name_en": "Kirkuk",
-                "name_ar": "كركوك",
-                "label_en": "Main Sales Center",
-                "label_ar": "مركز المبيعات الرئيسي",
-                "isMain": true
-        },
-        {
-                "id": "baghdad",
-                "lat": 33.3152,
-                "lng": 44.3661,
-                "name_en": "Baghdad",
-                "name_ar": "بغداد",
-                "label_en": "Sales Center",
-                "label_ar": "مركز مبيعات",
-                "isMain": false
-        },
-        {
-                "id": "mosul",
-                "lat": 36.34,
-                "lng": 43.13,
-                "name_en": "Mosul",
-                "name_ar": "الموصل",
-                "label_en": "Sales Center",
-                "label_ar": "مركز مبيعات",
-                "isMain": false
-        },
-        {
-                "id": "basra",
-                "lat": 30.5086,
-                "lng": 47.7801,
-                "name_en": "Basra",
-                "name_ar": "البصرة",
-                "label_en": "Sales Center",
-                "label_ar": "مركز مبيعات",
-                "isMain": false
-        },
-        {
-                "id": "kalar",
-                "lat": 35.6133,
-                "lng": 45.9886,
-                "name_en": "Kalar",
-                "name_ar": "كلار",
-                "label_en": "Sales Center",
-                "label_ar": "مركز مبيعات",
-                "isMain": false
-        },
-        {
-                "id": "diwaniya",
-                "lat": 31.9877,
-                "lng": 44.9249,
-                "name_en": "Diwaniya",
-                "name_ar": "الديوانية",
-                "label_en": "Sales Center",
-                "label_ar": "مركز مبيعات",
-                "isMain": false
-        },
-        {
-                "id": "ramadi",
-                "lat": 33.4206,
-                "lng": 43.3077,
-                "name_en": "Ramadi",
-                "name_ar": "الرمادي",
-                "label_en": "Sales Center",
-                "label_ar": "مركز مبيعات",
-                "isMain": false
-        }
-],
+        { id: 'kirkuk', lat: 35.4681, lng: 44.3922, name_en: 'Kirkuk', name_ar: 'كركوك', label_en: 'Main Sales Center', label_ar: 'مركز المبيعات الرئيسي', isMain: true },
+        { id: 'baghdad', lat: 33.3152, lng: 44.3661, name_en: 'Baghdad', name_ar: 'بغداد', label_en: 'Sales Center', label_ar: 'مركز مبيعات', isMain: false },
+        { id: 'mosul', lat: 36.3400, lng: 43.1300, name_en: 'Mosul', name_ar: 'الموصل', label_en: 'Sales Center', label_ar: 'مركز مبيعات', isMain: false },
+        { id: 'basra', lat: 30.5086, lng: 47.7801, name_en: 'Basra', name_ar: 'البصرة', label_en: 'Sales Center', label_ar: 'مركز مبيعات', isMain: false },
+        { id: 'kalar', lat: 35.6133, lng: 45.9886, name_en: 'Kalar', name_ar: 'كلار', label_en: 'Sales Center', label_ar: 'مركز مبيعات', isMain: false },
+        { id: 'diwaniya', lat: 31.9877, lng: 44.9249, name_en: 'Diwaniya', name_ar: 'الديوانية', label_en: 'Sales Center', label_ar: 'مركز مبيعات', isMain: false },
+        { id: 'ramadi', lat: 33.4206, lng: 43.3077, name_en: 'Ramadi', name_ar: 'الرمادي', label_en: 'Sales Center', label_ar: 'مركز مبيعات', isMain: false }
+    ],
 
     translations: {
-        "en": {
-                "heroTitle": "Premium Ingredients for Perfect Meals",
-                "heroSubtitle": "With Al-Tabakh, life has a different taste.",
-                "btnInquire": "Inquire via WhatsApp",
-                "specWeight": "Pack Weight",
-                "specCarton": "Pieces / Carton",
-                "langToggle": "العربية",
-                "searchPlaceholder": "Search products...",
-                "productCount": "products",
-                "footerContact": "Contact Us",
-                "noResults": "No products match your search.",
-                "allProducts": "All Products",
-                "scrollTop": "Back to top",
-                "locations": "Our Locations",
-                "locationsTitle": "Our Sales Network",
-                "locationsDesc": "Find Al-Tabakh sales centers across Iraq",
-                "cart": "Cart",
-                "cartEmpty": "Your cart is empty",
-                "cartTotal": "Total",
-                "addToCart": "Add to Cart",
-                "remove": "Remove",
-                "qty": "Qty",
-                "checkout": "Generate Order",
-                "orderTitle": "Purchase Order",
-                "orderDate": "Date",
-                "orderCustomer": "Customer",
-                "orderProduct": "Product",
-                "orderWeight": "Weight",
-                "orderPrice": "Price",
-                "orderQty": "Quantity",
-                "orderSubtotal": "Subtotal",
-                "orderTotal": "Total Amount",
-                "orderNote": "Please send this order to the factory for processing.",
-                "downloadCsv": "Download CSV",
-                "printPdf": "Print / Save as PDF",
-                "price": "Price"
+        en: {
+            heroTitle: 'Premium Ingredients for Perfect Meals',
+            heroSubtitle: 'With Al-Tabakh, life has a different taste.',
+            btnInquire: 'Inquire via WhatsApp',
+            specWeight: 'Pack Weight',
+            specCarton: 'Pieces / Carton',
+            langToggle: 'العربية',
+            searchPlaceholder: 'Search products...',
+            productCount: 'products',
+            footerContact: 'Contact Us',
+            noResults: 'No products match your search.',
+            allProducts: 'All Products',
+            scrollTop: 'Back to top',
+            locations: 'Our Locations',
+            locationsTitle: 'Our Sales Network',
+            locationsDesc: 'Find Al-Tabakh sales centers across Iraq',
+            cart: 'Cart',
+            cartEmpty: 'Your cart is empty',
+            cartTotal: 'Total',
+            addToCart: 'Add to Cart',
+            remove: 'Remove',
+            qty: 'Qty',
+            checkout: 'Generate Order',
+            orderTitle: 'Purchase Order',
+            orderDate: 'Date',
+            orderCustomer: 'Customer',
+            orderProduct: 'Product',
+            orderWeight: 'Weight',
+            orderPrice: 'Price',
+            orderQty: 'Quantity',
+            orderSubtotal: 'Subtotal',
+            orderTotal: 'Total Amount',
+            orderNote: 'Please send this order to the factory for processing.',
+            downloadCsv: 'Download CSV',
+            printPdf: 'Print / Save as PDF',
+            price: 'Price'
         },
-        "ar": {
-                "heroTitle": "مكونات ممتازة لوجبات مثالية",
-                "locations": "فروعنا",
-                "locationsTitle": "شبكة مبيعاتنا",
-                "locationsDesc": "اعثر على مراكز مبيعات الطباخ في جميع أنحاء العراق",
-                "heroSubtitle": "مع الطباخ، للحياة طعم مختلف.",
-                "btnInquire": "استفسر عبر واتساب",
-                "specWeight": "وزن العبوة",
-                "specCarton": "قطعة / كارتون",
-                "langToggle": "English",
-                "searchPlaceholder": "ابحث عن المنتجات...",
-                "productCount": "منتج",
-                "footerContact": "اتصل بنا",
-                "noResults": "لا توجد منتجات تطابق بحثك.",
-                "allProducts": "جميع المنتجات",
-                "scrollTop": "العودة للأعلى",
-                "cart": "السلة",
-                "cartEmpty": "سلتك فارغة",
-                "cartTotal": "المجموع",
-                "addToCart": "أضف إلى السلة",
-                "remove": "إزالة",
-                "qty": "الكمية",
-                "checkout": "إنشاء الطلب",
-                "orderTitle": "أمر شراء",
-                "orderDate": "التاريخ",
-                "orderCustomer": "العميل",
-                "orderProduct": "المنتج",
-                "orderWeight": "الوزن",
-                "orderPrice": "السعر",
-                "orderQty": "الكمية",
-                "orderSubtotal": "المجموع الفرعي",
-                "orderTotal": "المبلغ الإجمالي",
-                "orderNote": "يرجى إرسال هذا الطلب إلى المصنع للمعالجة.",
-                "downloadCsv": "تنزيل CSV",
-                "printPdf": "طباعة / حفظ كـ PDF",
-                "price": "السعر"
+        ar: {
+            heroTitle: 'مكونات ممتازة لوجبات مثالية',
+            locations: 'فروعنا',
+            locationsTitle: 'شبكة مبيعاتنا',
+            locationsDesc: 'اعثر على مراكز مبيعات الطباخ في جميع أنحاء العراق',
+            heroSubtitle: 'مع الطباخ، للحياة طعم مختلف.',
+            btnInquire: 'استفسر عبر واتساب',
+            specWeight: 'وزن العبوة',
+            specCarton: 'قطعة / كارتون',
+            langToggle: 'English',
+            searchPlaceholder: 'ابحث عن المنتجات...',
+            productCount: 'منتج',
+            footerContact: 'اتصل بنا',
+            noResults: 'لا توجد منتجات تطابق بحثك.',
+            allProducts: 'جميع المنتجات',
+            scrollTop: 'العودة للأعلى',
+            cart: 'السلة',
+            cartEmpty: 'سلتك فارغة',
+            cartTotal: 'المجموع',
+            addToCart: 'أضف إلى السلة',
+            remove: 'إزالة',
+            qty: 'الكمية',
+            checkout: 'إنشاء الطلب',
+            orderTitle: 'أمر شراء',
+            orderDate: 'التاريخ',
+            orderCustomer: 'العميل',
+            orderProduct: 'المنتج',
+            orderWeight: 'الوزن',
+            orderPrice: 'السعر',
+            orderQty: 'الكمية',
+            orderSubtotal: 'المجموع الفرعي',
+            orderTotal: 'المبلغ الإجمالي',
+            orderNote: 'يرجى إرسال هذا الطلب إلى المصنع للمعالجة.',
+            downloadCsv: 'تنزيل CSV',
+            printPdf: 'طباعة / حفظ كـ PDF',
+            price: 'السعر'
         }
-}
-
+    }
 };
