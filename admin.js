@@ -435,6 +435,7 @@ function deleteProduct(id) {
         `Are you sure you want to delete "${product?.name_en}"? This cannot be undone.`,
         () => {
             adminDb.products = adminDb.products.filter(p => p.id !== id);
+            selectedProductIds.delete(id);
             renderProductsTable(document.getElementById('productSearch').value);
             renderDashboard();
             toast('Product deleted.', 'info');
@@ -532,6 +533,8 @@ function saveCat() {
     closeCatModal();
     renderCategoriesTable();
     renderDashboard();
+    populateBatchCategorySelect();
+    populateCategorySelect();
 }
 
 function deleteCat(id) {
@@ -543,6 +546,8 @@ function deleteCat(id) {
             adminDb.categories = adminDb.categories.filter(c => c.id !== id);
             renderCategoriesTable();
             toast('Category deleted.', 'info');
+            populateBatchCategorySelect();
+            populateCategorySelect();
         }
     );
 }
