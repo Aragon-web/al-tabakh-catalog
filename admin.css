@@ -705,36 +705,7 @@ tbody td {
     width: 100%;
 }
 
-/* Batch action bar */
-.batch-bar {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 0.6rem 1rem;
-    background: var(--admin-blue-soft);
-    border: 1px solid var(--admin-blue);
-    border-radius: var(--radius-sm);
-    margin-bottom: 0.75rem;
-    font-size: 0.85rem;
-    font-weight: 500;
-    transition: all var(--transition);
-}
-.batch-bar.hidden {
-    display: none;
-}
-.batch-bar #selectedCount {
-    min-width: 100px;
-}
-.batch-bar select.form-control {
-    padding: 0.4rem 0.7rem;
-    border-radius: var(--radius-sm);
-    border: 1px solid var(--admin-border);
-    background: var(--admin-bg);
-    color: var(--text-primary);
-}
-
-/* Checkbox in table rows */
-table input[type="checkbox"] {
+input[type="checkbox"] {
     width: 16px;
     height: 16px;
     cursor: pointer;
